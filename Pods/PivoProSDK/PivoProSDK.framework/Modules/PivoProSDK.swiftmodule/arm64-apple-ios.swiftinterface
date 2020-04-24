@@ -1,0 +1,145 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
+// swift-module-flags: -target arm64-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name PivoProSDK
+import CoreBluetooth
+import CoreML
+import Foundation
+@_exported import PivoProSDK
+import Security
+import Swift
+import UIKit
+import Vision
+@_hasMissingDesignatedInitializers public class PivoProSDK {
+  public static var shared: PivoProSDK.PivoProSDK
+  public func unlockWithLicenseKey(licenseKeyFileURL url: Foundation.URL) throws
+  public func isPivoConnected() -> Swift.Bool
+  public func addDelegate(_ delegate: PivoProSDK.PivoConnectionDelegate)
+  public func removeDelegate(_ delegate: PivoProSDK.PivoConnectionDelegate)
+  public func scan() throws
+  public func stopScan()
+  public func connect(id: Swift.String)
+  public func disconnect()
+  public func setFastestSpeed()
+  public func getSupportedSpeedsInSecondsPerRound() -> [Swift.Int]
+  public func setSpeedBySecondsPerRound(_ speed: Swift.Int)
+  public func getSupportedSpeedsByRemoteControllerInSecoundsPerRound() -> [Swift.Int]
+  public func turnRight(angle: Swift.Int)
+  public func turnRight(angle: Swift.Int, speed: Swift.Int)
+  public func turnLeft(angle: Swift.Int)
+  public func turnLeft(angle: Swift.Int, speed: Swift.Int)
+  public func turnRightContinuously()
+  public func turnRightContinuously(speed: Swift.Int)
+  public func turnLeftContinuously()
+  public func turnLeftContinuously(speed: Swift.Int)
+  public func stop()
+  public func requestBatteryLevel()
+  public func changePivoName(newName: Swift.String)
+  public func keepPivoWakeUp(_ wakeUp: Swift.Bool)
+  public func getPivoVersion() -> Swift.String
+  public func getSupportedTrackingModes() -> [PivoProSDK.TrackingType]
+  public func startObjectTracking(image: UIKit.UIImage, boundingBox: CoreGraphics.CGRect, trackingSensitivity: PivoProSDK.TrackingSensitivity, delegate: PivoProSDK.TrackerDelegate) throws
+  public func startHumanTracking(image: UIKit.UIImage, trackingSensitivity: PivoProSDK.TrackingSensitivity, delegate: PivoProSDK.TrackerDelegate) throws
+  public func startHorseTracking(image: UIKit.UIImage, trackingSensitivity: PivoProSDK.TrackingSensitivity, delegate: PivoProSDK.TrackerDelegate) throws
+  public func updateTracking(image: UIKit.UIImage)
+  public func stopTracking()
+  @objc deinit
+}
+public enum TrackingSensitivity {
+  case off
+  case slow
+  case normal
+  case fast
+  public static func == (a: PivoProSDK.TrackingSensitivity, b: PivoProSDK.TrackingSensitivity) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum PivoError : Swift.Error {
+  case cannotReadLicenseKeyFile
+  case licenseNotProvided
+  case invalidLicenseKey
+  case expiredLicenseKey
+  case bluetoothOff
+  case bluetoothPermissionNotAllowed
+  case trackingModeNotSupported
+  public static func == (a: PivoProSDK.PivoError, b: PivoProSDK.PivoError) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public enum TrackingType {
+  case object
+  case human
+  case horse
+  public static func == (a: PivoProSDK.TrackingType, b: PivoProSDK.TrackingType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public protocol PivoConnectionDelegate : AnyObject {
+  func pivoConnection(didDiscover id: Swift.String, deviceName: Swift.String)
+  func pivoConnection(didConnect id: Swift.String)
+  func pivoConnection(didDisconnect id: Swift.String)
+  func pivoConnection(didFailToConnect id: Swift.String)
+  func pivoConnection(didEstablishSuccessfully id: Swift.String)
+  func pivoConnectionDidRotate()
+  func pivoConnection(batteryLevel: Swift.Int)
+  func pivoConnection(remoteControlerCommandReceived command: PivoProSDK.PivoEvent)
+  func pivoConnection(bluetoothIsOn: Swift.Bool)
+}
+extension PivoConnectionDelegate {
+  public func pivoConnection(didDiscover id: Swift.String, deviceName: Swift.String)
+  public func pivoConnection(didConnect id: Swift.String)
+  public func pivoConnection(didDisconnect id: Swift.String)
+  public func pivoConnection(didFailToConnect id: Swift.String)
+  public func pivoConnection(didEstablishSuccessfully id: Swift.String)
+  public func pivoConnectionDidRotate()
+  public func pivoConnection(batteryLevel: Swift.Int)
+  public func pivoConnection(remoteControlerCommandReceived command: PivoProSDK.PivoEvent)
+  public func pivoConnection(bluetoothIsOn: Swift.Bool)
+}
+public struct Target {
+  public let boundingBox: CoreGraphics.CGRect
+  public var isTracking: Swift.Bool
+  public init(boundingBox: CoreGraphics.CGRect, isTracking: Swift.Bool)
+}
+public protocol TrackerDelegate {
+  func tracker(didDetected targets: [PivoProSDK.Target])
+}
+public enum PivoEvent {
+  case MODE
+  case CAMERA
+  case STOP
+  case OFF
+  case CONNECTION_COMPLETED
+  case NAME_CHANGED
+  case VERSION
+  case BATTERY_CHANGED(batteryLevel: Swift.Int)
+  case LEFT_PRESSED
+  case LEFT_RELEASED
+  case RIGHT_PRESSED
+  case RIGHT_RELEASED
+  case LEFT_CONTINOUS_PRESSED
+  case RIGHT_CONTINOUS_PRESSED
+  case SPEEDUP_PRESSED(secondsPerRound: Swift.Int)
+  case SPEEDUP_RELEASED(secondsPerRound: Swift.Int)
+  case SPEEDDOWN_PRESSED(secondsPerRound: Swift.Int)
+  case SPEEDDOWN_RELEASED(secondsPerRound: Swift.Int)
+  case SPEED(secondsPerRound: Swift.Int)
+  case ROTATED(direction: PivoProSDK.Direction, angle: Swift.Int)
+}
+extension PivoEvent : Swift.Equatable {
+  public static func == (lhs: PivoProSDK.PivoEvent, rhs: PivoProSDK.PivoEvent) -> Swift.Bool
+}
+public enum Direction {
+  case RIGHT
+  case LEFT
+  public static func == (a: PivoProSDK.Direction, b: PivoProSDK.Direction) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+}

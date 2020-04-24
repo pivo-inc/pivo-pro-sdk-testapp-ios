@@ -1,0 +1,11 @@
+framework module PivoProSDK {
+  umbrella header "PivoProSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module PivoProSDK.Swift {
+    header "PivoProSDK-Swift.h"
+    requires objc
+}

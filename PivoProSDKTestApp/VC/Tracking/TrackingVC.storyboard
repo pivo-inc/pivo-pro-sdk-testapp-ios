@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JYK-4h-vC0">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--TrackingVC-->
+        <scene sceneID="Uqo-mx-Zn5">
+            <objects>
+                <viewController id="JYK-4h-vC0" customClass="TrackingVC" customModule="PivoProSDKTestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aWX-Hw-isC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C1A-QU-Vxh">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hVD-gi-KKX" customClass="TargetSelectionView" customModule="PivoProSDKTestApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draw bounding box to start object tracking" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuF-KZ-Ehw">
+                                <rect key="frame" x="44" y="402.5" width="326" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQQ-R9-sdw">
+                                <rect key="frame" x="20" y="44" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="Jcl-Fw-6dM"/>
+                                    <constraint firstAttribute="height" constant="44" id="Xgm-Og-2oj"/>
+                                </constraints>
+                                <state key="normal" image="ic_camera_flip"/>
+                                <connections>
+                                    <action selector="didFlipCameraButtonClicked:" destination="JYK-4h-vC0" eventType="touchUpInside" id="zV6-MN-Mj6"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6r-Pg-LqI">
+                                <rect key="frame" x="137" y="692" width="140" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="2la-dO-22b"/>
+                                    <constraint firstAttribute="height" constant="40" id="6uC-j5-kw8"/>
+                                </constraints>
+                                <state key="normal" title="Start Tracking">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didStartTrackingButtonClicked:" destination="JYK-4h-vC0" eventType="touchUpInside" id="7u0-v4-hJ2"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="D0u-eN-LmE">
+                                <rect key="frame" x="20" y="742" width="374" height="90"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VGW-Y0-dBj">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="41"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <segments>
+                                            <segment title="Object"/>
+                                            <segment title="Human"/>
+                                            <segment title="Horse"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="didTrackingTypeOptionChanged:" destination="JYK-4h-vC0" eventType="valueChanged" id="r0Z-C9-gRO"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="JYD-8P-m91">
+                                        <rect key="frame" x="0.0" y="50" width="374" height="41"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <segments>
+                                            <segment title="Off"/>
+                                            <segment title="Slow"/>
+                                            <segment title="Normal"/>
+                                            <segment title="Fast"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="didTrackingSensitivityOptionChanged:" destination="JYK-4h-vC0" eventType="valueChanged" id="cws-Oz-0sS"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="XQQ-R9-sdw" firstAttribute="leading" secondItem="bAN-XY-UJJ" secondAttribute="leading" constant="20" id="0xs-gf-Qog"/>
+                            <constraint firstItem="hVD-gi-KKX" firstAttribute="leading" secondItem="C1A-QU-Vxh" secondAttribute="leading" id="2eC-IW-Z8K"/>
+                            <constraint firstItem="C1A-QU-Vxh" firstAttribute="bottom" secondItem="aWX-Hw-isC" secondAttribute="bottom" id="BmG-eN-j8Z"/>
+                            <constraint firstItem="C1A-QU-Vxh" firstAttribute="trailing" secondItem="bAN-XY-UJJ" secondAttribute="trailing" id="D0W-Cw-e4n"/>
+                            <constraint firstItem="hVD-gi-KKX" firstAttribute="trailing" secondItem="C1A-QU-Vxh" secondAttribute="trailing" id="E50-NS-dm4"/>
+                            <constraint firstItem="D0u-eN-LmE" firstAttribute="leading" secondItem="bAN-XY-UJJ" secondAttribute="leading" constant="20" id="Lqk-Cr-scl"/>
+                            <constraint firstItem="C1A-QU-Vxh" firstAttribute="top" secondItem="aWX-Hw-isC" secondAttribute="top" id="TEG-YT-oNE"/>
+                            <constraint firstItem="hVD-gi-KKX" firstAttribute="top" secondItem="C1A-QU-Vxh" secondAttribute="top" id="cNB-Ba-Cg0"/>
+                            <constraint firstItem="C1A-QU-Vxh" firstAttribute="leading" secondItem="bAN-XY-UJJ" secondAttribute="leading" id="cPH-qF-2At"/>
+                            <constraint firstItem="BuF-KZ-Ehw" firstAttribute="centerY" secondItem="bAN-XY-UJJ" secondAttribute="centerY" constant="-30" id="dqe-LZ-U0s"/>
+                            <constraint firstItem="D0u-eN-LmE" firstAttribute="top" secondItem="u6r-Pg-LqI" secondAttribute="bottom" constant="10" id="k0z-se-dSe"/>
+                            <constraint firstItem="u6r-Pg-LqI" firstAttribute="centerX" secondItem="bAN-XY-UJJ" secondAttribute="centerX" id="lF5-iN-1bM"/>
+                            <constraint firstItem="bAN-XY-UJJ" firstAttribute="bottom" secondItem="u6r-Pg-LqI" secondAttribute="bottom" constant="130" id="mFE-5y-Jek"/>
+                            <constraint firstItem="hVD-gi-KKX" firstAttribute="bottom" secondItem="C1A-QU-Vxh" secondAttribute="bottom" id="mof-ON-CdA"/>
+                            <constraint firstItem="bAN-XY-UJJ" firstAttribute="trailing" secondItem="BuF-KZ-Ehw" secondAttribute="trailing" constant="44" id="n5B-NF-aVX"/>
+                            <constraint firstItem="bAN-XY-UJJ" firstAttribute="trailing" secondItem="D0u-eN-LmE" secondAttribute="trailing" constant="20" id="paU-bJ-CNg"/>
+                            <constraint firstItem="bAN-XY-UJJ" firstAttribute="bottom" secondItem="D0u-eN-LmE" secondAttribute="bottom" constant="30" id="uDT-jy-9n9"/>
+                            <constraint firstItem="XQQ-R9-sdw" firstAttribute="top" secondItem="bAN-XY-UJJ" secondAttribute="top" id="voB-ZC-kYQ"/>
+                            <constraint firstItem="BuF-KZ-Ehw" firstAttribute="leading" secondItem="bAN-XY-UJJ" secondAttribute="leading" constant="44" id="zRC-3q-wvv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="bAN-XY-UJJ"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonTrackingState" destination="u6r-Pg-LqI" id="PCh-5d-vtc"/>
+                        <outlet property="cameraPreview" destination="C1A-QU-Vxh" id="OyK-oe-dLx"/>
+                        <outlet property="labelDrawBoudingBox" destination="BuF-KZ-Ehw" id="EnO-li-fa7"/>
+                        <outlet property="segmentTrackingSensitivitySelection" destination="JYD-8P-m91" id="Opd-OL-3gW"/>
+                        <outlet property="segmentTrackingTypeSelection" destination="VGW-Y0-dBj" id="wx7-ll-Ugf"/>
+                        <outlet property="targetSelectionView" destination="hVD-gi-KKX" id="WgS-4F-2Wi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dqg-V5-A0H" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="133.33333333333334" y="133.25892857142856"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ic_camera_flip" width="28" height="26"/>
+    </resources>
+</document>
