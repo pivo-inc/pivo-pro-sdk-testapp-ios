@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.2 (swiftlang-1103.0.32.6 clang-1103.0.32.51)
+// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
 // swift-module-flags: -target armv7-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name PivoProSDK
 import CoreBluetooth
 import CoreML
@@ -49,13 +49,24 @@ public enum TrackingSensitivity {
   case slow
   case normal
   case fast
+  case frenzy
   public static func == (a: PivoProSDK.TrackingSensitivity, b: PivoProSDK.TrackingSensitivity) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
-public enum PivoError : Swift.Error {
+public enum TrackingPosition : Swift.Int {
+  case left
+  case center
+  case right
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum PivoError : Foundation.LocalizedError {
   case cannotReadLicenseKeyFile
   case licenseNotProvided
   case invalidLicenseKey
@@ -63,6 +74,9 @@ public enum PivoError : Swift.Error {
   case bluetoothOff
   case bluetoothPermissionNotAllowed
   case trackingModeNotSupported
+  public var errorDescription: Swift.String? {
+    get
+  }
   public static func == (a: PivoProSDK.PivoError, b: PivoProSDK.PivoError) -> Swift.Bool
   public var hashValue: Swift.Int {
     get
@@ -89,6 +103,7 @@ public protocol PivoConnectionDelegate : AnyObject {
   func pivoConnection(batteryLevel: Swift.Int)
   func pivoConnection(remoteControlerCommandReceived command: PivoProSDK.PivoEvent)
   func pivoConnection(bluetoothIsOn: Swift.Bool)
+  func pivoConnectionBluetoothPermissionDenied()
 }
 extension PivoConnectionDelegate {
   public func pivoConnection(didDiscover id: Swift.String, deviceName: Swift.String)
@@ -106,7 +121,7 @@ public struct Target {
   public var isTracking: Swift.Bool
   public init(boundingBox: CoreGraphics.CGRect, isTracking: Swift.Bool)
 }
-public protocol TrackerDelegate {
+public protocol TrackerDelegate : AnyObject {
   func tracker(didDetected targets: [PivoProSDK.Target])
 }
 public enum PivoEvent {

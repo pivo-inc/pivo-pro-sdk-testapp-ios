@@ -191,4 +191,8 @@ extension ControlPivoVC: PivoConnectionDelegate {
     navigationController?.popViewController(animated: true)
   }
   
+  func pivoConnectionBluetoothPermissionDenied() {
+    print("Permission denied")
+  }
+  
 }

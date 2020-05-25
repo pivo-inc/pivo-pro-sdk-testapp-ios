@@ -90,10 +90,7 @@ class SelectPivoVC: UIViewController, UIImagePickerControllerDelegate {
   
   func scanBluetoothDevice() {
     guard !isScanning else {
-      pivoSDK.stopScan()
-      isScanning = false
-      scanBarButton.title = "Scan"
-      handleAfterScanning()
+      stopScan()
       return
     }
     
@@ -137,13 +134,17 @@ class SelectPivoVC: UIViewController, UIImagePickerControllerDelegate {
     DispatchQueue.global(qos: .userInitiated).asyncAfter(deadline: scanningPeriod, execute: {
       DispatchQueue.main.async { () in
         if self.isScanning {
-          self.pivoSDK.stopScan()
-          self.isScanning = false
-          self.scanBarButton.title = "Scan"
-          self.handleAfterScanning()
+          self.stopScan()
         }
       }
     })
+  }
+  
+  private func stopScan() {
+    pivoSDK.stopScan()
+    isScanning = false
+    scanBarButton.title = "Scan"
+    handleAfterScanning()
   }
   
   private func presentAlert(title: String?, message: String?) {
@@ -192,6 +193,11 @@ extension SelectPivoVC: PivoConnectionDelegate {
     tableView.reloadData()
     handleRotatorConnected()
     view.isUserInteractionEnabled = true
+  }
+  
+  func pivoConnectionBluetoothPermissionDenied() {
+    stopScan()
+    presentAlert(title: "Failed", message: "Bluetooth premission denied")
   }
   
   func pivoConnection(didConnectionFailed id: String) {
