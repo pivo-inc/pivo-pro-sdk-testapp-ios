@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.2.4 (swiftlang-1103.0.32.9 clang-1103.0.32.53)
-// swift-module-flags: -target arm64-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name PivoProSDK
+// swift-compiler-version: Apple Swift version 5.3.2 (swiftlang-1200.0.45 clang-1200.0.32.28)
+// swift-module-flags: -target arm64-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PivoProSDK
 import CoreBluetooth
 import CoreML
 import Foundation
@@ -158,3 +158,14 @@ public enum Direction {
   }
   public func hash(into hasher: inout Swift.Hasher)
 }
+extension PivoProSDK.TrackingSensitivity : Swift.Equatable {}
+extension PivoProSDK.TrackingSensitivity : Swift.Hashable {}
+extension PivoProSDK.TrackingPosition : Swift.Equatable {}
+extension PivoProSDK.TrackingPosition : Swift.Hashable {}
+extension PivoProSDK.TrackingPosition : Swift.RawRepresentable {}
+extension PivoProSDK.PivoError : Swift.Equatable {}
+extension PivoProSDK.PivoError : Swift.Hashable {}
+extension PivoProSDK.TrackingType : Swift.Equatable {}
+extension PivoProSDK.TrackingType : Swift.Hashable {}
+extension PivoProSDK.Direction : Swift.Equatable {}
+extension PivoProSDK.Direction : Swift.Hashable {}

@@ -77,6 +77,15 @@ class TrackingVC: UIViewController {
     setupViewModel()
   }
   
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    stopTracking()
+  }
+  
+  private func stopTracking() {
+    viewModel.stopTracking()
+  }
+  
   private func setupViewModel() {
     deviceOrientation = UIDevice.current.orientation
     statusBarOrientation = UIApplication.shared.statusBarOrientation

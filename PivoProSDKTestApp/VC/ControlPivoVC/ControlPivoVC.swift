@@ -32,12 +32,13 @@ class ControlPivoVC: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     pivoSDK.addDelegate(self)
+    setPivoFastestSpeed()
   }
   
   override func viewWillDisappear(_ animated: Bool) {
     super.viewWillDisappear(animated)
     pivoSDK.removeDelegate(self)
-    pivoSDK.setFastestSpeed()
+    setPivoFastestSpeed()
   }
   
   private func setupView() {
@@ -45,9 +46,13 @@ class ControlPivoVC: UIViewController {
     guard supportedSpeeds.count > 0 else { return }
     let maxSpeed = supportedSpeeds[0]
     buttonSpeed.setTitle("\(maxSpeed) s/r", for: .normal)
-    pivoSDK.setFastestSpeed()
+    setPivoFastestSpeed()
     
     scrollView.keyboardDismissMode = .onDrag
+  }
+  
+  private func setPivoFastestSpeed() {
+    pivoSDK.setFastestSpeed()
   }
   
   @IBAction func didRotateLeftByDegreeButtonClicked(_ sender: Any) {

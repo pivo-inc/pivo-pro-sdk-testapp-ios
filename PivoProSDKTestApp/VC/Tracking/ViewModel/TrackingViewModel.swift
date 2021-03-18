@@ -178,7 +178,7 @@ class TrackingViewModel {
     pivoSDK.updateTracking(image: image)
   }
   
-  private func stopTracking() {
+  func stopTracking() {
     pivoSDK.stopTracking()
     trackingState = .prepare
   }
