@@ -198,8 +198,8 @@
         "fastest": 20,
         "slowest": 240,
         "middleMargin": 5.0,
-        "kp": 2.4,
-        "kd": 0.5
+        "kp": 2.0,
+        "kd": 0.6
       }],
       "normal": [{
         "minZoomLevel": 1.0,
@@ -281,8 +281,8 @@
         "fastest": 10,
         "slowest": 100,
         "middleMargin": 5.0,
-        "kp": 1.9,
-        "kd": 0.7
+        "kp": 1.6,
+        "kd": 0.8
       },
       {
         "minZoomLevel": 3.0,
@@ -290,8 +290,8 @@
         "fastest": 12,
         "slowest": 140,
         "middleMargin": 5.0,
-        "kp": 1.6,
-        "kd": 0.8
+        "kp": 1.4,
+        "kd": 0.7
       }],
       "fast": [{
         "minZoomLevel": 1.0,
@@ -326,7 +326,7 @@
         "fastest": 20,
         "slowest": 240,
         "middleMargin": 5.0,
-        "kp": 2.4,
+        "kp": 2.2,
         "kd": 0.5
       }],
       "normal": [{
@@ -414,11 +414,20 @@
       }],
       "fast": [{
         "minZoomLevel": 1.0,
-        "maxZoomLevel": 2.0,
+        "maxZoomLevel": 1.5,
         "fastest": 10,
         "slowest": 80,
         "middleMargin": 5.0,
         "kp": 2.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 12,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 2.4,
         "kd": 0.4
       },
       {
@@ -436,8 +445,8 @@
         "fastest": 20,
         "slowest": 240,
         "middleMargin": 5.0,
-        "kp": 2.4,
-        "kd": 0.5
+        "kp": 2.0,
+        "kd": 0.6
       }],
       "normal": [{
         "minZoomLevel": 1.0,
@@ -519,8 +528,8 @@
         "fastest": 10,
         "slowest": 100,
         "middleMargin": 5.0,
-        "kp": 1.9,
-        "kd": 0.7
+        "kp": 1.6,
+        "kd": 0.8
       },
       {
         "minZoomLevel": 3.0,
@@ -528,8 +537,8 @@
         "fastest": 12,
         "slowest": 140,
         "middleMargin": 5.0,
-        "kp": 1.6,
-        "kd": 0.8
+        "kp": 1.4,
+        "kd": 0.7
       }],
       "fast": [{
         "minZoomLevel": 1.0,
@@ -564,7 +573,7 @@
         "fastest": 20,
         "slowest": 240,
         "middleMargin": 5.0,
-        "kp": 2.4,
+        "kp": 2.2,
         "kd": 0.5
       }],
       "normal": [{
@@ -647,8 +656,8 @@
         "fastest": 10,
         "slowest": 100,
         "middleMargin": 5.0,
-        "kp": 1.9,
-        "kd": 0.7
+        "kp": 1.6,
+        "kd": 0.8
       },
       {
         "minZoomLevel": 3.0,
@@ -656,8 +665,8 @@
         "fastest": 12,
         "slowest": 140,
         "middleMargin": 5.0,
-        "kp": 1.6,
-        "kd": 0.8
+        "kp": 1.4,
+        "kd": 0.7
       }],
       "fast": [{
         "minZoomLevel": 1.0,
@@ -692,7 +701,7 @@
         "fastest": 20,
         "slowest": 240,
         "middleMargin": 5.0,
-        "kp": 2.4,
+        "kp": 2.2,
         "kd": 0.5
       }],
       "normal": [{
@@ -885,8 +894,8 @@
         "fastest": 10,
         "slowest": 100,
         "middleMargin": 5.0,
-        "kp": 1.9,
-        "kd": 0.7
+        "kp": 1.6,
+        "kd": 0.8
       },
       {
         "minZoomLevel": 3.0,
@@ -894,8 +903,8 @@
         "fastest": 12,
         "slowest": 140,
         "middleMargin": 5.0,
-        "kp": 1.6,
-        "kd": 0.8
+        "kp": 1.4,
+        "kd": 0.7
       }],
       "fast": [{
         "minZoomLevel": 1.0,
@@ -930,7 +939,7 @@
         "fastest": 20,
         "slowest": 240,
         "middleMargin": 5.0,
-        "kp": 2.4,
+        "kp": 2.2,
         "kd": 0.5
       }],
       "normal": [{
