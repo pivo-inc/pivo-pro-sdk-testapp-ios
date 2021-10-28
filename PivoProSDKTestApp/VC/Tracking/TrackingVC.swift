@@ -31,7 +31,7 @@ class TrackingVC: UIViewController {
       updateTrackingStateButtonText()
     }
   }
-  private var pivoSDK = PivoProSDK.shared
+  private var pivoSDK = PivoSDK.shared
   private var trackingType: TrackingType = .object
   
   private var trackingViews: [UIView] = []

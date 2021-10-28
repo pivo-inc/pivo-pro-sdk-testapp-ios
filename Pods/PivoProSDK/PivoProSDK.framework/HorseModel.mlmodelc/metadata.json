@@ -34,7 +34,9 @@
     ],
     "author" : "Farkhod Khudayberganov & Mikhail Li",
     "specificationVersion" : 3,
+    "storagePrecision" : "Int8",
     "license" : "https:\/\/www.3i.ai\/privacy-policy\/",
+    "computePrecision" : "Float16",
     "isUpdatable" : "0",
     "availability" : {
       "macOS" : "10.14",

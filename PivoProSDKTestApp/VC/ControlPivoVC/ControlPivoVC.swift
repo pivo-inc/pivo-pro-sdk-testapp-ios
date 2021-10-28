@@ -22,7 +22,7 @@ class ControlPivoVC: UIViewController {
   @IBOutlet weak var tfAngle: UITextField!
   @IBOutlet weak var buttonSpeed: UIButton!
   
-  private lazy var pivoSDK = PivoProSDK.shared
+  private lazy var pivoSDK = PivoSDK.shared
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -61,6 +61,12 @@ class ControlPivoVC: UIViewController {
       angle = angle > 360 ? 360 : angle
       tfAngle.text = "\(angle)"
       pivoSDK.turnLeft(angle: angle)
+      do {
+        try pivoSDK.turnLeftWithFeedback(angle: angle)
+      }
+      catch {
+        pivoSDK.turnLeft(angle: angle)
+      }
     }
   }
   
@@ -69,7 +75,12 @@ class ControlPivoVC: UIViewController {
     if let angleStr = tfAngle.text, var angle = Int(angleStr) {
       angle = angle > 360 ? 360 : angle
       tfAngle.text = "\(angle)"
-      pivoSDK.turnRight(angle: angle)
+      do {
+        try pivoSDK.turnRightWithFeedback(angle: angle)
+      }
+      catch {
+        pivoSDK.turnRight(angle: angle)
+      }
     }
   }
   

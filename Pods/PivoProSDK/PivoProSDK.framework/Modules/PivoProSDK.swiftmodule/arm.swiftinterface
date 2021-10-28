@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.4.2 (swiftlang-1205.0.28.2 clang-1205.0.19.57)
+// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
 // swift-module-flags: -target armv7-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PivoProSDK
 import CoreBluetooth
 import CoreML
@@ -9,8 +9,9 @@ import Security
 import Swift
 import UIKit
 import Vision
-@_hasMissingDesignatedInitializers public class PivoProSDK {
-  public static var shared: PivoProSDK.PivoProSDK
+import _Concurrency
+@_hasMissingDesignatedInitializers public class PivoSDK {
+  public static var shared: PivoProSDK.PivoSDK
   public func unlockWithLicenseKey(licenseKeyFileURL url: Foundation.URL) throws
   public func isPivoConnected() -> Swift.Bool
   public func addDelegate(_ delegate: PivoProSDK.PivoConnectionDelegate)
@@ -42,6 +43,9 @@ import Vision
   public func startHorseTracking(image: UIKit.UIImage, trackingSensitivity: PivoProSDK.TrackingSensitivity, delegate: PivoProSDK.TrackerDelegate) throws
   public func updateTracking(image: UIKit.UIImage)
   public func stopTracking()
+  public func turnHold()
+  public func turnLeftWithFeedback(angle: Swift.Int) throws
+  public func turnRightWithFeedback(angle: Swift.Int) throws
   @objc deinit
 }
 public enum TrackingSensitivity {
@@ -74,6 +78,7 @@ public enum PivoError : Foundation.LocalizedError {
   case bluetoothOff
   case bluetoothPermissionNotAllowed
   case trackingModeNotSupported
+  case feedbackNotSupported
   public var errorDescription: Swift.String? {
     get
   }
@@ -107,7 +112,7 @@ public protocol PivoConnectionDelegate : AnyObject {
   func pivoConnection(bluetoothIsOn: Swift.Bool)
   func pivoConnectionBluetoothPermissionDenied()
 }
-extension PivoConnectionDelegate {
+extension PivoProSDK.PivoConnectionDelegate {
   public func pivoConnection(didDiscover id: Swift.String, deviceName: Swift.String)
   public func pivoConnection(didConnect id: Swift.String)
   public func pivoConnection(didDisconnect id: Swift.String)
@@ -152,13 +157,15 @@ public enum PivoEvent {
   case ROTATED_1DEGREE_LEFT
   case ROTATED_1DEGREE_RIGHT
 }
-extension PivoEvent : Swift.Equatable {
+extension PivoProSDK.PivoEvent : Swift.Equatable {
   public static func == (lhs: PivoProSDK.PivoEvent, rhs: PivoProSDK.PivoEvent) -> Swift.Bool
 }
 public enum PivoType {
   case red
   case silver
   case black
+  case gold
+  case lite
   public static func == (a: PivoProSDK.PivoType, b: PivoProSDK.PivoType) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {

@@ -30,7 +30,7 @@ class SelectPivoVC: UIViewController, UIImagePickerControllerDelegate {
     let name: String
   }
   
-  private var pivoSDK = PivoProSDK.shared
+  private var pivoSDK = PivoSDK.shared
   private var rotators: [Rotator] = []
   
   private var isScanning = false
@@ -117,6 +117,8 @@ class SelectPivoVC: UIViewController, UIImagePickerControllerDelegate {
         break
       case .bluetoothPermissionNotAllowed:
         presentAlert(title: "Failed", message: "Bluetooth premission denied")
+      case .feedbackNotSupported:
+        break
       }
       return
     }

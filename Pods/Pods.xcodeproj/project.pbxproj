@@ -19,13 +19,13 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		2678B168EE5085233A63FF12FE5716BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		61A7618870A9978459AF21F471E0B5E5 /* Pods-PivoProSDKTestApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 667E08E466A0C3B816FBFB82BE1B668C /* Pods-PivoProSDKTestApp-dummy.m */; };
-		A3F1F470AE518BD4FCA2CE8AD6B7A899 /* Pods-PivoProSDKTestApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8CA3F4D8557E529E554935CFB53837B /* Pods-PivoProSDKTestApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0FADD7D2BFCC3F1D5E9A22F10D6A9BD7 /* Pods-PivoProSDKTestApp-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 667E08E466A0C3B816FBFB82BE1B668C /* Pods-PivoProSDKTestApp-dummy.m */; };
+		C76B7DA38876F3EF24F5180CD71E6F2E /* Pods-PivoProSDKTestApp-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A8CA3F4D8557E529E554935CFB53837B /* Pods-PivoProSDKTestApp-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F7D01941C2DB61C968CA73C909D3E09B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		52D13834FEDC6A67F3AB32B5786253EE /* PBXContainerItemProxy */ = {
+		D2AA07182C7E51C38FA3748EB25DBF59 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -39,7 +39,7 @@
 		46BE575B98DDAED8EA73F0AFAE941009 /* PivoProSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PivoProSDK.framework; sourceTree = "<group>"; };
 		4A248EACA5F8FF67669804205E89B95C /* Pods-PivoProSDKTestApp-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PivoProSDKTestApp-acknowledgements.markdown"; sourceTree = "<group>"; };
 		667E08E466A0C3B816FBFB82BE1B668C /* Pods-PivoProSDKTestApp-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PivoProSDKTestApp-dummy.m"; sourceTree = "<group>"; };
-		71FEF41C938B072A29B5EFD7F14EFE4C /* Pods_PivoProSDKTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_PivoProSDKTestApp.framework; path = "Pods-PivoProSDKTestApp.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		71FEF41C938B072A29B5EFD7F14EFE4C /* Pods-PivoProSDKTestApp */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-PivoProSDKTestApp"; path = Pods_PivoProSDKTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		74D08AC19E1A31319516F1EBAF235025 /* Pods-PivoProSDKTestApp-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PivoProSDKTestApp-Info.plist"; sourceTree = "<group>"; };
 		9B4CD50167DC40C38C9A6CE6C7E1EF93 /* Pods-PivoProSDKTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PivoProSDKTestApp.release.xcconfig"; sourceTree = "<group>"; };
@@ -54,17 +54,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		A4930B8D6F5F12A5F59C0A22955E0FA8 /* Frameworks */ = {
+		82B91C80C56C573A9790179372B23CAB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2678B168EE5085233A63FF12FE5716BC /* Foundation.framework in Frameworks */,
+				F7D01941C2DB61C968CA73C909D3E09B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A78960A2AC1C7B55968DC7E898CBAF6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				71FEF41C938B072A29B5EFD7F14EFE4C /* Pods-PivoProSDKTestApp */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		28F73C010DA09AA00E6AC7284C8B3BD5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,21 +135,13 @@
 			path = "Target Support Files/Pods-PivoProSDKTestApp";
 			sourceTree = "<group>";
 		};
-		7FFCF4A4FE4B2ACA97F99553AC86F602 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				71FEF41C938B072A29B5EFD7F14EFE4C /* Pods_PivoProSDKTestApp.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				48C8943DD4D08ED5FA3DBB14F4C2C111 /* Pods */,
-				7FFCF4A4FE4B2ACA97F99553AC86F602 /* Products */,
+				0A78960A2AC1C7B55968DC7E898CBAF6 /* Products */,
 				FCF6F64BDE4450C3C4F1333436E13284 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -165,11 +165,11 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		33EC8C92DF5A219E178F52911B5D8ABB /* Headers */ = {
+		D783BAA8705B1D926AADCF33B0699FE9 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A3F1F470AE518BD4FCA2CE8AD6B7A899 /* Pods-PivoProSDKTestApp-umbrella.h in Headers */,
+				C76B7DA38876F3EF24F5180CD71E6F2E /* Pods-PivoProSDKTestApp-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -178,21 +178,21 @@
 /* Begin PBXNativeTarget section */
 		663F4A2CC7EF5E287E89344394ACD4C3 /* Pods-PivoProSDKTestApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 73E6798A4363A565AE27C42FA0744EAA /* Build configuration list for PBXNativeTarget "Pods-PivoProSDKTestApp" */;
+			buildConfigurationList = 237863E7CDF85A72F5E68F44E4E57429 /* Build configuration list for PBXNativeTarget "Pods-PivoProSDKTestApp" */;
 			buildPhases = (
-				33EC8C92DF5A219E178F52911B5D8ABB /* Headers */,
-				7D40968EF372ECF379FC00FAC2E7C6D4 /* Sources */,
-				A4930B8D6F5F12A5F59C0A22955E0FA8 /* Frameworks */,
-				440C45DF3C156205BFD0357038067F7B /* Resources */,
+				D783BAA8705B1D926AADCF33B0699FE9 /* Headers */,
+				DB65058CC1668040D88C7556AB2000A7 /* Sources */,
+				82B91C80C56C573A9790179372B23CAB /* Frameworks */,
+				305AEC278E0093276BF7280E6D66E56B /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				CC3343163EC8196EF1409F6C2B1DAB71 /* PBXTargetDependency */,
+				C71A4766F724CA3950CA1761D3E9B2F1 /* PBXTargetDependency */,
 			);
 			name = "Pods-PivoProSDKTestApp";
-			productName = "Pods-PivoProSDKTestApp";
-			productReference = 71FEF41C938B072A29B5EFD7F14EFE4C /* Pods_PivoProSDKTestApp.framework */;
+			productName = Pods_PivoProSDKTestApp;
+			productReference = 71FEF41C938B072A29B5EFD7F14EFE4C /* Pods-PivoProSDKTestApp */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -201,19 +201,19 @@
 		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastSwiftUpdateCheck = 1240;
+				LastUpgradeCheck = 1240;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 7FFCF4A4FE4B2ACA97F99553AC86F602 /* Products */;
+			productRefGroup = 0A78960A2AC1C7B55968DC7E898CBAF6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -224,7 +224,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		440C45DF3C156205BFD0357038067F7B /* Resources */ = {
+		305AEC278E0093276BF7280E6D66E56B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -234,27 +234,27 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7D40968EF372ECF379FC00FAC2E7C6D4 /* Sources */ = {
+		DB65058CC1668040D88C7556AB2000A7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61A7618870A9978459AF21F471E0B5E5 /* Pods-PivoProSDKTestApp-dummy.m in Sources */,
+				0FADD7D2BFCC3F1D5E9A22F10D6A9BD7 /* Pods-PivoProSDKTestApp-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		CC3343163EC8196EF1409F6C2B1DAB71 /* PBXTargetDependency */ = {
+		C71A4766F724CA3950CA1761D3E9B2F1 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = PivoProSDK;
 			target = ADE47C04085DEB63B8A23DDEC64689A5 /* PivoProSDK */;
-			targetProxy = 52D13834FEDC6A67F3AB32B5786253EE /* PBXContainerItemProxy */;
+			targetProxy = D2AA07182C7E51C38FA3748EB25DBF59 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1BAF4FAB21BA5C507890185BFBC469E1 /* Debug */ = {
+		0865B5E01B6D729619CA5BA6C12C2841 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F91B579B7C22F5ABFB14DE607A472B8E /* Pods-PivoProSDKTestApp.debug.xcconfig */;
 			buildSettings = {
@@ -290,6 +290,44 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		1450EA76A9DB063AE92DB414D4065936 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B4CD50167DC40C38C9A6CE6C7E1EF93 /* Pods-PivoProSDKTestApp.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		417E6B9114C8EE166EC5F42EEFC4C1F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -366,44 +404,6 @@
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		9CBAAE8597C7CFA703BB6D6D75D8A0CD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9B4CD50167DC40C38C9A6CE6C7E1EF93 /* Pods-PivoProSDKTestApp.release.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -493,6 +493,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		237863E7CDF85A72F5E68F44E4E57429 /* Build configuration list for PBXNativeTarget "Pods-PivoProSDKTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0865B5E01B6D729619CA5BA6C12C2841 /* Debug */,
+				1450EA76A9DB063AE92DB414D4065936 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		3BCE48CC7BD1A4DE9F51BD6536FFD5DB /* Build configuration list for PBXAggregateTarget "PivoProSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -507,15 +516,6 @@
 			buildConfigurations = (
 				B4EFE046ACF8F37157F6E322C7FCFC28 /* Debug */,
 				903A0004D3E6651EFD5D2E16214D101B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		73E6798A4363A565AE27C42FA0744EAA /* Build configuration list for PBXNativeTarget "Pods-PivoProSDKTestApp" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1BAF4FAB21BA5C507890185BFBC469E1 /* Debug */,
-				9CBAAE8597C7CFA703BB6D6D75D8A0CD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

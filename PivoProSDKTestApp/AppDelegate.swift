@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     if let licenseFileURL = Bundle.main.url(forResource: "licenseKey", withExtension: "json") {
       do {
-        try PivoProSDK.shared.unlockWithLicenseKey(licenseKeyFileURL: licenseFileURL)
+        try PivoSDK.shared.unlockWithLicenseKey(licenseKeyFileURL: licenseFileURL)
       }
       catch {
         print(error)

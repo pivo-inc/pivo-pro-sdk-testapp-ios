@@ -10,6 +10,7 @@
 		1711F0CE2434163700956868 /* UIAlertController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1711F0BD2434163700956868 /* UIAlertController+Extensions.swift */; };
 		1711F0D42434168000956868 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1711F0D32434168000956868 /* UIView+Extensions.swift */; };
 		1736DD7B2447D9C2006A1EE9 /* TargetSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1736DD7A2447D9C2006A1EE9 /* TargetSelectionView.swift */; };
+		17402721272A37CF00217B50 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 17402720272A37CF00217B50 /* README.md */; };
 		178BAB762443F776003A4030 /* CoordinatorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178BAB752443F776003A4030 /* CoordinatorHelper.swift */; };
 		178BAB8C24454BE6003A4030 /* CameraEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 178BAB8B24454BE6003A4030 /* CameraEngine.swift */; };
 		178BAB8E24455170003A4030 /* TrackingVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 178BAB8D24455170003A4030 /* TrackingVC.storyboard */; };
@@ -35,6 +36,7 @@
 		1711F0BD2434163700956868 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		1711F0D32434168000956868 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		1736DD7A2447D9C2006A1EE9 /* TargetSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TargetSelectionView.swift; sourceTree = "<group>"; };
+		17402720272A37CF00217B50 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		178BAB752443F776003A4030 /* CoordinatorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorHelper.swift; sourceTree = "<group>"; };
 		178BAB8B24454BE6003A4030 /* CameraEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraEngine.swift; sourceTree = "<group>"; };
 		178BAB8D24455170003A4030 /* TrackingVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TrackingVC.storyboard; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 		17BDA4DE23FF965000D68E52 /* PivoProSDKTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				17402720272A37CF00217B50 /* README.md */,
 				179F69222445570F005B762B /* Helper */,
 				178BEBB8242C724600897252 /* licenseKey.json */,
 				17BDA4ED23FF965200D68E52 /* Info.plist */,
@@ -296,6 +299,7 @@
 				178BAB8E24455170003A4030 /* TrackingVC.storyboard in Resources */,
 				17BDA50523FF977400D68E52 /* SelectPivoVC.storyboard in Resources */,
 				17BDA4EC23FF965200D68E52 /* LaunchScreen.storyboard in Resources */,
+				17402721272A37CF00217B50 /* README.md in Resources */,
 				17BDA4E923FF965200D68E52 /* Assets.xcassets in Resources */,
 				17BDA50B23FFA5E900D68E52 /* ControlPivoVC.storyboard in Resources */,
 				178BEBBB242C724600897252 /* licenseKey.json in Resources */,

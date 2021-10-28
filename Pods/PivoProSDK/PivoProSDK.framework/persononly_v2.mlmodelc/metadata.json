@@ -34,7 +34,9 @@
     ],
     "author" : "Farkhod Khudayberganov & Mikhail Li",
     "specificationVersion" : 3,
+    "storagePrecision" : "Float32",
     "license" : "https:\/\/www.3i.ai\/privacy-policy\/",
+    "computePrecision" : "Float16",
     "isUpdatable" : "0",
     "availability" : {
       "macOS" : "10.14",
@@ -90,8 +92,8 @@
     ],
     "generatedClassName" : "persononly_v2",
     "userDefinedMetadata" : {
-      "confidence_threshold" : "0.4",
       "classes" : "person",
+      "confidence_threshold" : "0.4",
       "iou_threshold" : "0.6",
       "coremltoolsVersion" : "3.4"
     },

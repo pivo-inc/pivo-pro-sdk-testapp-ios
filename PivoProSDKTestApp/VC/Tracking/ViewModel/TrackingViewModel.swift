@@ -26,7 +26,7 @@ class TrackingViewModel {
   
   var delegate: TrackingViewModelDelegate?
   
-  private var pivoSDK = PivoProSDK.shared
+  private var pivoSDK = PivoSDK.shared
   private var trackingType: TrackingType = .object
   private var trackingSensitivity: TrackingSensitivity = .normal
   
