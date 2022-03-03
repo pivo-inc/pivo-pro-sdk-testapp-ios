@@ -119,6 +119,8 @@ class SelectPivoVC: UIViewController, UIImagePickerControllerDelegate {
         presentAlert(title: "Failed", message: "Bluetooth premission denied")
       case .feedbackNotSupported:
         break
+      case .pivoNotConnected:
+        presentAlert(title: "Failed", message: "Pivo not connected")
       }
       return
     }

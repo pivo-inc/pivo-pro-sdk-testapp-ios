@@ -6,5 +6,5 @@ target 'PivoProSDKTestApp' do
   use_frameworks!
 
   # Pods for PivoProSDKTestApp
-  pod 'PivoProSDK', :git => 'https://github.com/pivo-inc/pivo-pro-sdk-ios.git', :tag => '0.0.8'
+  pod 'PivoProSDK', :git => 'https://github.com/pivo-inc/pivo-pro-sdk-ios.git', :tag => '0.0.9'
 end

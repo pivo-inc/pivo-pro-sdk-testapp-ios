@@ -1,6 +1,6 @@
 {
   "name": "PivoProSDK",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "summary": "Pivo SDK to control Pivo and also includes tracking and following algorithms",
   "description": "Pivo SDK to control Pivo and also includes tracking and following algorithms",
   "homepage": "https://developer.pivo.app/",
@@ -20,7 +20,7 @@
   },
   "source": {
     "git": "https://github.com/pivo-inc/pivo-pro-sdk-ios.git",
-    "tag": "0.0.8"
+    "tag": "0.0.9"
   },
   "source_files": "PivoProSDK.framework/Headers/*.h",
   "ios": {

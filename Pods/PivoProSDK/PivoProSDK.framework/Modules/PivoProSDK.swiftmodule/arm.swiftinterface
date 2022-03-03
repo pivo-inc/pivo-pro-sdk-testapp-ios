@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.5 (swiftlang-1300.0.31.1 clang-1300.0.29.1)
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
 // swift-module-flags: -target armv7-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PivoProSDK
 import CoreBluetooth
 import CoreML
@@ -46,6 +46,9 @@ import _Concurrency
   public func turnHold()
   public func turnLeftWithFeedback(angle: Swift.Int) throws
   public func turnRightWithFeedback(angle: Swift.Int) throws
+  public func isByPassRemoteControllerSupported() throws -> Swift.Bool
+  public func turnOnByPassRemoteController()
+  public func turnOffBypassRemoteController()
   @objc deinit
 }
 public enum TrackingSensitivity {
@@ -79,6 +82,7 @@ public enum PivoError : Foundation.LocalizedError {
   case bluetoothPermissionNotAllowed
   case trackingModeNotSupported
   case feedbackNotSupported
+  case pivoNotConnected
   public var errorDescription: Swift.String? {
     get
   }
@@ -111,6 +115,8 @@ public protocol PivoConnectionDelegate : AnyObject {
   func pivoConnection(remoteControlerCommandReceived command: PivoProSDK.PivoEvent)
   func pivoConnection(bluetoothIsOn: Swift.Bool)
   func pivoConnectionBluetoothPermissionDenied()
+  func pivoConnectionByPassRemoteControllerOn()
+  func pivoConnectionByPassRemoteControllerOff()
 }
 extension PivoProSDK.PivoConnectionDelegate {
   public func pivoConnection(didDiscover id: Swift.String, deviceName: Swift.String)
@@ -124,6 +130,8 @@ extension PivoProSDK.PivoConnectionDelegate {
   public func pivoConnection(bluetoothIsOn: Swift.Bool)
   public func pivoConnectionDidRotate1DegreeLeft()
   public func pivoConnectionDidRotate1DegreeRight()
+  public func pivoConnectionByPassRemoteControllerOn()
+  public func pivoConnectionByPassRemoteControllerOff()
 }
 public struct Target {
   public let boundingBox: CoreGraphics.CGRect
@@ -156,6 +164,8 @@ public enum PivoEvent {
   case ROTATED(direction: PivoProSDK.Direction, angle: Swift.Int)
   case ROTATED_1DEGREE_LEFT
   case ROTATED_1DEGREE_RIGHT
+  case BYPASS_RC_ON
+  case BYPASS_RC_OFF
 }
 extension PivoProSDK.PivoEvent : Swift.Equatable {
   public static func == (lhs: PivoProSDK.PivoEvent, rhs: PivoProSDK.PivoEvent) -> Swift.Bool
