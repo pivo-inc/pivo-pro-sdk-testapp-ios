@@ -6,6 +6,6 @@ framework module PivoProSDK {
 }
 
 module PivoProSDK.Swift {
-    header "PivoProSDK-Swift.h"
-    requires objc
+  header "PivoProSDK-Swift.h"
+  requires objc
 }
