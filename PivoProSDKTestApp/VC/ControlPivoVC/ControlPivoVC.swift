@@ -139,6 +139,7 @@ class ControlPivoVC: UIViewController {
       }
       
       sender.isOn ? pivoSDK.turnOnByPassRemoteController() : pivoSDK.turnOffBypassRemoteController()
+      sender.isOn ? pivoConnectionByPassRemoteControllerOn() : pivoConnectionByPassRemoteControllerOff()
     }
     catch {
       print(error)
@@ -202,30 +203,42 @@ extension ControlPivoVC {
   }
 }
 
-extension ControlPivoVC: PivoConnectionDelegate {
+extension ControlPivoVC: PodConnectionDelegate {
   
   func pivoConnectionDidRotate() {
-    labelCommand.text = "ROTATED"
+    DispatchQueue.main.async { [weak self] in
+      self?.labelCommand.text = "ROTATED"
+    }
   }
   
-  func pivoConnection(remoteControlerCommandReceived command: PivoEvent) {
-    labelCommand.text = "\(command)"
+  func pivoConnection(remoteControlerCommandReceived command: PodResponse) {
+    DispatchQueue.main.async { [weak self] in
+      self?.labelCommand.text = "\(command)"
+    }
   }
   
   func pivoConnectionByPassRemoteControllerOn() {
-    labelCommand.text = "By Pass Remote Controller On"
+    DispatchQueue.main.async { [weak self] in
+      self?.labelCommand.text = "By Pass Remote Controller On"
+    }
   }
   
   func pivoConnectionByPassRemoteControllerOff() {
-    labelCommand.text = "By Pass Remote Controller Off"
+    DispatchQueue.main.async { [weak self] in
+      self?.labelCommand.text = "By Pass Remote Controller Off"
+    }
   }
   
-  func pivoConnection(batteryLevel: Int) {
-    labelBatteryLevel.text = "Battery Level: \(batteryLevel)%"
+  func pivoBatteryUpdate(device: BluetoothDevice) {
+    DispatchQueue.main.async { [weak self] in
+      self?.labelBatteryLevel.text = "Battery Level: \(device.batteryLevel)%"
+    }
   }
   
-  func pivoConnection(didDisconnect id: String) {
-    navigationController?.popViewController(animated: true)
+  func pivoConnection(didDisconnect device: BluetoothDevice) {
+    DispatchQueue.main.async { [weak self] in
+      self?.navigationController?.popViewController(animated: true)
+    }
   }
   
   func pivoConnectionBluetoothPermissionDenied() {

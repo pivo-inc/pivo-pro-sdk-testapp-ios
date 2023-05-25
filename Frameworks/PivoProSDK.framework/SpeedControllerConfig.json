@@ -1,0 +1,1394 @@
+{
+  "pivo": {
+    "v0": {
+      "frenzy": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 10,
+        "slowest": 60,
+        "middleMargin": 5.0,
+        "kp": 2.0,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 1.9,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 10,
+        "slowest": 100,
+        "middleMargin": 5.0,
+        "kp": 1.6,
+        "kd": 0.8
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 12,
+        "slowest": 140,
+        "middleMargin": 5.0,
+        "kp": 1.4,
+        "kd": 0.7
+      }],
+      "fast": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 10,
+        "slowest": 60,
+        "middleMargin": 5.0,
+        "kp": 2.8,
+        "kd": 0.5
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 2.6,
+        "kd": 0.5
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 20,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 2.6,
+        "kd": 0.5
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 20,
+        "slowest": 300,
+        "middleMargin": 5.0,
+        "kp": 2.8,
+        "kd": 0.6
+      }],
+      "normal": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 20,
+        "slowest": 300,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 20,
+        "slowest": 300,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.5
+      }],
+      "slow": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 20,
+        "slowest": 300,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 20,
+        "slowest": 600,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 30,
+        "slowest": 600,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      }]
+    },
+    "v1": {
+      "frenzy": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 6,
+        "slowest": 60,
+        "middleMargin": 5.0,
+        "kp": 2.0,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 1.9,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 10,
+        "slowest": 100,
+        "middleMargin": 5.0,
+        "kp": 1.6,
+        "kd": 0.8
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 12,
+        "slowest": 140,
+        "middleMargin": 5.0,
+        "kp": 1.4,
+        "kd": 0.7
+      }],
+      "fast": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 10,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 2.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 12,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 2.4,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 2.6,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 20,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 2.0,
+        "kd": 0.6
+      }],
+      "normal": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 22,
+        "slowest": 240,
+        "middleMargin": 10.0,
+        "kp": 1.8,
+        "kd": 0.5
+      }],
+      "slow": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 20,
+        "slowest": 280,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 24,
+        "slowest": 340,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 28,
+        "slowest": 400,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      }]
+    },
+    "v2": {
+      "frenzy": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 6,
+        "slowest": 60,
+        "middleMargin": 5.0,
+        "kp": 2.0,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 1.9,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 10,
+        "slowest": 100,
+        "middleMargin": 5.0,
+        "kp": 1.6,
+        "kd": 0.8
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 12,
+        "slowest": 140,
+        "middleMargin": 5.0,
+        "kp": 1.4,
+        "kd": 0.7
+      }],
+      "fast": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 2.2,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 12,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 2.4,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 2.6,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 20,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 2.2,
+        "kd": 0.5
+      }],
+      "normal": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 180,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 22,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.5
+      }],
+      "slow": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 20,
+        "slowest": 280,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 24,
+        "slowest": 340,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 28,
+        "slowest": 400,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      }]
+    },
+    "v3": {
+      "frenzy": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 6,
+        "slowest": 60,
+        "middleMargin": 5.0,
+        "kp": 2.0,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 1.9,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 10,
+        "slowest": 100,
+        "middleMargin": 5.0,
+        "kp": 1.6,
+        "kd": 0.8
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 12,
+        "slowest": 140,
+        "middleMargin": 5.0,
+        "kp": 1.4,
+        "kd": 0.7
+      }],
+      "fast": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 10,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 2.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 12,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 2.4,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 2.6,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 20,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 2.0,
+        "kd": 0.6
+      }],
+      "normal": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 22,
+        "slowest": 240,
+        "middleMargin": 10.0,
+        "kp": 1.8,
+        "kd": 0.5
+      }],
+      "slow": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 20,
+        "slowest": 280,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 24,
+        "slowest": 340,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 28,
+        "slowest": 400,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      }]
+    },
+    "v4": {
+      "frenzy": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 6,
+        "slowest": 60,
+        "middleMargin": 5.0,
+        "kp": 2.0,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 1.9,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 10,
+        "slowest": 100,
+        "middleMargin": 5.0,
+        "kp": 1.6,
+        "kd": 0.8
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 12,
+        "slowest": 140,
+        "middleMargin": 5.0,
+        "kp": 1.4,
+        "kd": 0.7
+      }],
+      "fast": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 2.2,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 12,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 2.4,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 2.6,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 20,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 2.2,
+        "kd": 0.5
+      }],
+      "normal": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 180,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 22,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.5
+      }],
+      "slow": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 20,
+        "slowest": 280,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 24,
+        "slowest": 340,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 28,
+        "slowest": 400,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      }]
+    },
+    "vSilver": {
+      "frenzy": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 6,
+        "slowest": 60,
+        "middleMargin": 5.0,
+        "kp": 2.0,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 1.9,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 10,
+        "slowest": 100,
+        "middleMargin": 5.0,
+        "kp": 1.6,
+        "kd": 0.8
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 12,
+        "slowest": 140,
+        "middleMargin": 5.0,
+        "kp": 1.4,
+        "kd": 0.7
+      }],
+      "fast": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 2.2,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 12,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 2.4,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 2.6,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 20,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 2.2,
+        "kd": 0.5
+      }],
+      "normal": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 180,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 22,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.5
+      }],
+      "slow": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 20,
+        "slowest": 280,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 24,
+        "slowest": 340,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 28,
+        "slowest": 400,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      }]
+    },
+    "vRed": {
+      "frenzy": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 6,
+        "slowest": 60,
+        "middleMargin": 5.0,
+        "kp": 2.0,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 1.9,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 10,
+        "slowest": 100,
+        "middleMargin": 5.0,
+        "kp": 1.6,
+        "kd": 0.8
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 12,
+        "slowest": 140,
+        "middleMargin": 5.0,
+        "kp": 1.4,
+        "kd": 0.7
+      }],
+      "fast": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 2.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 2.6,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 20,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 2.4,
+        "kd": 0.5
+      }],
+      "normal": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 22,
+        "slowest": 240,
+        "middleMargin": 10.0,
+        "kp": 1.8,
+        "kd": 0.5
+      }],
+      "slow": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 20,
+        "slowest": 280,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 24,
+        "slowest": 340,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 28,
+        "slowest": 400,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      }]
+    },
+    "vBlack": {
+      "frenzy": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 6,
+        "slowest": 60,
+        "middleMargin": 5.0,
+        "kp": 2.0,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 1.9,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 10,
+        "slowest": 100,
+        "middleMargin": 5.0,
+        "kp": 1.6,
+        "kd": 0.8
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 12,
+        "slowest": 140,
+        "middleMargin": 5.0,
+        "kp": 1.4,
+        "kd": 0.7
+      }],
+      "fast": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 2.2,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 12,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 2.4,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 2.6,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 20,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 2.2,
+        "kd": 0.5
+      }],
+      "normal": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 180,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 22,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.5
+      }],
+      "slow": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 20,
+        "slowest": 280,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 24,
+        "slowest": 340,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 28,
+        "slowest": 400,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      }]
+    },
+    "vLite": {
+      "frenzy": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 6,
+        "slowest": 60,
+        "middleMargin": 5.0,
+        "kp": 2.0,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 1.9,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 10,
+        "slowest": 100,
+        "middleMargin": 5.0,
+        "kp": 1.6,
+        "kd": 0.8
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 12,
+        "slowest": 140,
+        "middleMargin": 5.0,
+        "kp": 1.4,
+        "kd": 0.7
+      }],
+      "fast": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 2.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 2.6,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 20,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 2.4,
+        "kd": 0.5
+      }],
+      "normal": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 22,
+        "slowest": 240,
+        "middleMargin": 10.0,
+        "kp": 1.8,
+        "kd": 0.5
+      }],
+      "slow": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 20,
+        "slowest": 280,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 24,
+        "slowest": 340,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 28,
+        "slowest": 400,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      }]
+    },
+    "vGold": {
+      "frenzy": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 6,
+        "slowest": 60,
+        "middleMargin": 5.0,
+        "kp": 2.0,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 1.9,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 10,
+        "slowest": 100,
+        "middleMargin": 5.0,
+        "kp": 1.6,
+        "kd": 0.8
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 12,
+        "slowest": 140,
+        "middleMargin": 5.0,
+        "kp": 1.4,
+        "kd": 0.7
+      }],
+      "fast": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 2.2,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 12,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 2.4,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 2.6,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 20,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 2.2,
+        "kd": 0.5
+      }],
+      "normal": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 180,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 22,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.5
+      }],
+      "slow": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 20,
+        "slowest": 280,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 24,
+        "slowest": 340,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 28,
+        "slowest": 400,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      }]
+    },
+    "vMax": {
+      "frenzy": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 6,
+        "slowest": 60,
+        "middleMargin": 5.0,
+        "kp": 2.0,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 1.9,
+        "kd": 0.6
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 10,
+        "slowest": 100,
+        "middleMargin": 5.0,
+        "kp": 1.6,
+        "kd": 0.8
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 12,
+        "slowest": 140,
+        "middleMargin": 5.0,
+        "kp": 1.4,
+        "kd": 0.7
+      }],
+      "fast": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 1.5,
+        "fastest": 8,
+        "slowest": 80,
+        "middleMargin": 5.0,
+        "kp": 2.2,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 1.5,
+        "maxZoomLevel": 2.0,
+        "fastest": 12,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 2.4,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 160,
+        "middleMargin": 5.0,
+        "kp": 2.6,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 20,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 2.2,
+        "kd": 0.5
+      }],
+      "normal": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 10,
+        "slowest": 120,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 16,
+        "slowest": 180,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 22,
+        "slowest": 240,
+        "middleMargin": 5.0,
+        "kp": 1.8,
+        "kd": 0.5
+      }],
+      "slow": [{
+        "minZoomLevel": 1.0,
+        "maxZoomLevel": 2.0,
+        "fastest": 20,
+        "slowest": 280,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 2.0,
+        "maxZoomLevel": 3.0,
+        "fastest": 24,
+        "slowest": 340,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.4
+      },
+      {
+        "minZoomLevel": 3.0,
+        "maxZoomLevel": 4.0,
+        "fastest": 28,
+        "slowest": 400,
+        "middleMargin": 5.0,
+        "kp": 1.0,
+        "kd": 0.5
+      }]
+    }
+  }
+}
