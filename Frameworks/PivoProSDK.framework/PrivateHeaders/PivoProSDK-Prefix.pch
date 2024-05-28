@@ -1,0 +1,11 @@
+//
+//  HandHeld Sticher-Prefix.pch
+//  HandHeld Sticher
+//
+//  Created by Do Thanh Tuan on 8/3/17.
+//  Copyright © 2017 Do Thanh Tuan. All rights reserved.
+//
+
+#ifdef __cplusplus
+#import <opencv2/opencv.hpp>
+#endif
