@@ -11096,27 +11096,72 @@
           },
           {
             "kind": "Var",
-            "name": "handShakeTimer",
-            "printedName": "handShakeTimer",
+            "name": "handShakeFirstTimer",
+            "printedName": "handShakeFirstTimer",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Timer?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Timer",
-                    "printedName": "Foundation.Timer",
-                    "usr": "c:objc(cs)NSTimer"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "WeakStorage",
+                "printedName": "Foundation.Timer?"
               }
             ],
             "declKind": "Var",
-            "usr": "s:10PivoProSDK0A6SilverC14handShakeTimer33_8B24C0A03FF9C14A8647E0C48E7338B6LLSo7NSTimerCSgvp",
-            "mangledName": "$s10PivoProSDK0A6SilverC14handShakeTimer33_8B24C0A03FF9C14A8647E0C48E7338B6LLSo7NSTimerCSgvp",
+            "usr": "s:10PivoProSDK0A6SilverC19handShakeFirstTimer33_8B24C0A03FF9C14A8647E0C48E7338B6LLSo7NSTimerCSgvp",
+            "mangledName": "$s10PivoProSDK0A6SilverC19handShakeFirstTimer33_8B24C0A03FF9C14A8647E0C48E7338B6LLSo7NSTimerCSgvp",
+            "moduleName": "PivoProSDK",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 15,
+            "ownership": 1,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
+            "name": "handShakeSecondTimer",
+            "printedName": "handShakeSecondTimer",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "Foundation.Timer?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10PivoProSDK0A6SilverC20handShakeSecondTimer33_8B24C0A03FF9C14A8647E0C48E7338B6LLSo7NSTimerCSgvp",
+            "mangledName": "$s10PivoProSDK0A6SilverC20handShakeSecondTimer33_8B24C0A03FF9C14A8647E0C48E7338B6LLSo7NSTimerCSgvp",
+            "moduleName": "PivoProSDK",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl"
+            ],
+            "fixedbinaryorder": 16,
+            "ownership": 1,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
+            "name": "type",
+            "printedName": "type",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HandShakeType",
+                "printedName": "PivoProSDK.HandShakeType",
+                "usr": "s:10PivoProSDK13HandShakeTypeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10PivoProSDK0A6SilverC4type33_8B24C0A03FF9C14A8647E0C48E7338B6LLAA13HandShakeTypeOvp",
+            "mangledName": "$s10PivoProSDK0A6SilverC4type33_8B24C0A03FF9C14A8647E0C48E7338B6LLAA13HandShakeTypeOvp",
             "moduleName": "PivoProSDK",
             "isInternal": true,
             "declAttributes": [
@@ -11124,7 +11169,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 15,
+            "fixedbinaryorder": 17,
             "hasStorage": true
           },
           {
@@ -11149,7 +11194,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 16,
+            "fixedbinaryorder": 18,
             "hasStorage": true
           },
           {
@@ -11174,7 +11219,7 @@
               "HasStorage",
               "SetterAccess"
             ],
-            "fixedbinaryorder": 17,
+            "fixedbinaryorder": 19,
             "hasStorage": true,
             "accessors": [
               {
@@ -11616,7 +11661,7 @@
               "HasInitialValue",
               "HasStorage"
             ],
-            "fixedbinaryorder": 18,
+            "fixedbinaryorder": 20,
             "hasStorage": true,
             "accessors": [
               {
@@ -12886,6 +12931,226 @@
         "moduleName": "PivoProSDK",
         "genericSig": "<τ_0_0 : AnyObject>",
         "sugared_genericSig": "<Self : AnyObject>"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "PivoProSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "HandShakeType",
+        "printedName": "HandShakeType",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "first",
+            "printedName": "first",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PivoProSDK.HandShakeType.Type) -> PivoProSDK.HandShakeType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HandShakeType",
+                    "printedName": "PivoProSDK.HandShakeType",
+                    "usr": "s:10PivoProSDK13HandShakeTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PivoProSDK.HandShakeType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HandShakeType",
+                        "printedName": "PivoProSDK.HandShakeType",
+                        "usr": "s:10PivoProSDK13HandShakeTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10PivoProSDK13HandShakeTypeO5firstyA2CmF",
+            "mangledName": "$s10PivoProSDK13HandShakeTypeO5firstyA2CmF",
+            "moduleName": "PivoProSDK",
+            "fixedbinaryorder": 0
+          },
+          {
+            "kind": "Var",
+            "name": "second",
+            "printedName": "second",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(PivoProSDK.HandShakeType.Type) -> PivoProSDK.HandShakeType",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "HandShakeType",
+                    "printedName": "PivoProSDK.HandShakeType",
+                    "usr": "s:10PivoProSDK13HandShakeTypeO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "PivoProSDK.HandShakeType.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "HandShakeType",
+                        "printedName": "PivoProSDK.HandShakeType",
+                        "usr": "s:10PivoProSDK13HandShakeTypeO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:10PivoProSDK13HandShakeTypeO6secondyA2CmF",
+            "mangledName": "$s10PivoProSDK13HandShakeTypeO6secondyA2CmF",
+            "moduleName": "PivoProSDK",
+            "fixedbinaryorder": 1
+          },
+          {
+            "kind": "Function",
+            "name": "==",
+            "printedName": "==(_:_:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HandShakeType",
+                "printedName": "PivoProSDK.HandShakeType",
+                "usr": "s:10PivoProSDK13HandShakeTypeO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "HandShakeType",
+                "printedName": "PivoProSDK.HandShakeType",
+                "usr": "s:10PivoProSDK13HandShakeTypeO"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10PivoProSDK13HandShakeTypeO2eeoiySbAC_ACtFZ",
+            "mangledName": "$s10PivoProSDK13HandShakeTypeO2eeoiySbAC_ACtFZ",
+            "moduleName": "PivoProSDK",
+            "static": true,
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Var",
+            "name": "hashValue",
+            "printedName": "hashValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10PivoProSDK13HandShakeTypeO9hashValueSivp",
+            "mangledName": "$s10PivoProSDK13HandShakeTypeO9hashValueSivp",
+            "moduleName": "PivoProSDK",
+            "implicit": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10PivoProSDK13HandShakeTypeO9hashValueSivg",
+                "mangledName": "$s10PivoProSDK13HandShakeTypeO9hashValueSivg",
+                "moduleName": "PivoProSDK",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Function",
+            "name": "hash",
+            "printedName": "hash(into:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Hasher",
+                "printedName": "Swift.Hasher",
+                "paramValueOwnership": "InOut",
+                "usr": "s:s6HasherV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10PivoProSDK13HandShakeTypeO4hash4intoys6HasherVz_tF",
+            "mangledName": "$s10PivoProSDK13HandShakeTypeO4hash4intoys6HasherVz_tF",
+            "moduleName": "PivoProSDK",
+            "implicit": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:10PivoProSDK13HandShakeTypeO",
+        "mangledName": "$s10PivoProSDK13HandShakeTypeO",
+        "moduleName": "PivoProSDK",
+        "declAttributes": [
+          "RawDocComment"
+        ],
+        "isEnumExhaustive": true,
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Equatable",
+            "printedName": "Equatable",
+            "usr": "s:SQ",
+            "mangledName": "$sSQ"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Hashable",
+            "printedName": "Hashable",
+            "usr": "s:SH",
+            "mangledName": "$sSH"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Sendable",
+            "printedName": "Sendable",
+            "usr": "s:s8SendableP",
+            "mangledName": "$ss8SendableP"
+          }
+        ]
       },
       {
         "kind": "Import",
@@ -14603,27 +14868,72 @@
           },
           {
             "kind": "Var",
-            "name": "handShakeTimer",
-            "printedName": "handShakeTimer",
+            "name": "handShakeFirstTimer",
+            "printedName": "handShakeFirstTimer",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Timer?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Timer",
-                    "printedName": "Foundation.Timer",
-                    "usr": "c:objc(cs)NSTimer"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "WeakStorage",
+                "printedName": "Foundation.Timer?"
               }
             ],
             "declKind": "Var",
-            "usr": "s:10PivoProSDK0A5BlackC14handShakeTimer33_1200C957AD609BDD0C50D002112DC9F0LLSo7NSTimerCSgvp",
-            "mangledName": "$s10PivoProSDK0A5BlackC14handShakeTimer33_1200C957AD609BDD0C50D002112DC9F0LLSo7NSTimerCSgvp",
+            "usr": "s:10PivoProSDK0A5BlackC19handShakeFirstTimer33_1200C957AD609BDD0C50D002112DC9F0LLSo7NSTimerCSgvp",
+            "mangledName": "$s10PivoProSDK0A5BlackC19handShakeFirstTimer33_1200C957AD609BDD0C50D002112DC9F0LLSo7NSTimerCSgvp",
+            "moduleName": "PivoProSDK",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 15,
+            "ownership": 1,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
+            "name": "handShakeSecondTimer",
+            "printedName": "handShakeSecondTimer",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "Foundation.Timer?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10PivoProSDK0A5BlackC20handShakeSecondTimer33_1200C957AD609BDD0C50D002112DC9F0LLSo7NSTimerCSgvp",
+            "mangledName": "$s10PivoProSDK0A5BlackC20handShakeSecondTimer33_1200C957AD609BDD0C50D002112DC9F0LLSo7NSTimerCSgvp",
+            "moduleName": "PivoProSDK",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl"
+            ],
+            "fixedbinaryorder": 16,
+            "ownership": 1,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
+            "name": "type",
+            "printedName": "type",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HandShakeType",
+                "printedName": "PivoProSDK.HandShakeType",
+                "usr": "s:10PivoProSDK13HandShakeTypeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10PivoProSDK0A5BlackC4type33_1200C957AD609BDD0C50D002112DC9F0LLAA13HandShakeTypeOvp",
+            "mangledName": "$s10PivoProSDK0A5BlackC4type33_1200C957AD609BDD0C50D002112DC9F0LLAA13HandShakeTypeOvp",
             "moduleName": "PivoProSDK",
             "isInternal": true,
             "declAttributes": [
@@ -14631,7 +14941,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 15,
+            "fixedbinaryorder": 17,
             "hasStorage": true
           },
           {
@@ -14656,7 +14966,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 16,
+            "fixedbinaryorder": 18,
             "hasStorage": true
           },
           {
@@ -14681,7 +14991,7 @@
               "HasStorage",
               "SetterAccess"
             ],
-            "fixedbinaryorder": 17,
+            "fixedbinaryorder": 19,
             "hasStorage": true,
             "accessors": [
               {
@@ -15123,7 +15433,7 @@
               "HasInitialValue",
               "HasStorage"
             ],
-            "fixedbinaryorder": 18,
+            "fixedbinaryorder": 20,
             "hasStorage": true,
             "accessors": [
               {
@@ -23467,27 +23777,72 @@
           },
           {
             "kind": "Var",
-            "name": "handShakeTimer",
-            "printedName": "handShakeTimer",
+            "name": "handShakeFirstTimer",
+            "printedName": "handShakeFirstTimer",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Timer?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Timer",
-                    "printedName": "Foundation.Timer",
-                    "usr": "c:objc(cs)NSTimer"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "WeakStorage",
+                "printedName": "Foundation.Timer?"
               }
             ],
             "declKind": "Var",
-            "usr": "s:10PivoProSDK0A2V2C14handShakeTimer33_52495B637FAD44BBA9CA70A64C941F1BLLSo7NSTimerCSgvp",
-            "mangledName": "$s10PivoProSDK0A2V2C14handShakeTimer33_52495B637FAD44BBA9CA70A64C941F1BLLSo7NSTimerCSgvp",
+            "usr": "s:10PivoProSDK0A2V2C19handShakeFirstTimer33_52495B637FAD44BBA9CA70A64C941F1BLLSo7NSTimerCSgvp",
+            "mangledName": "$s10PivoProSDK0A2V2C19handShakeFirstTimer33_52495B637FAD44BBA9CA70A64C941F1BLLSo7NSTimerCSgvp",
+            "moduleName": "PivoProSDK",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 15,
+            "ownership": 1,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
+            "name": "handShakeSecondTimer",
+            "printedName": "handShakeSecondTimer",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "Foundation.Timer?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10PivoProSDK0A2V2C20handShakeSecondTimer33_52495B637FAD44BBA9CA70A64C941F1BLLSo7NSTimerCSgvp",
+            "mangledName": "$s10PivoProSDK0A2V2C20handShakeSecondTimer33_52495B637FAD44BBA9CA70A64C941F1BLLSo7NSTimerCSgvp",
+            "moduleName": "PivoProSDK",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl"
+            ],
+            "fixedbinaryorder": 16,
+            "ownership": 1,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
+            "name": "type",
+            "printedName": "type",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HandShakeType",
+                "printedName": "PivoProSDK.HandShakeType",
+                "usr": "s:10PivoProSDK13HandShakeTypeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10PivoProSDK0A2V2C4type33_52495B637FAD44BBA9CA70A64C941F1BLLAA13HandShakeTypeOvp",
+            "mangledName": "$s10PivoProSDK0A2V2C4type33_52495B637FAD44BBA9CA70A64C941F1BLLAA13HandShakeTypeOvp",
             "moduleName": "PivoProSDK",
             "isInternal": true,
             "declAttributes": [
@@ -23495,7 +23850,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 15,
+            "fixedbinaryorder": 17,
             "hasStorage": true
           },
           {
@@ -23520,7 +23875,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 16,
+            "fixedbinaryorder": 18,
             "hasStorage": true
           },
           {
@@ -23910,7 +24265,7 @@
               "HasInitialValue",
               "HasStorage"
             ],
-            "fixedbinaryorder": 17,
+            "fixedbinaryorder": 19,
             "hasStorage": true,
             "accessors": [
               {
@@ -28903,27 +29258,72 @@
           },
           {
             "kind": "Var",
-            "name": "handShakeTimer",
-            "printedName": "handShakeTimer",
+            "name": "handShakeFirstTimer",
+            "printedName": "handShakeFirstTimer",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Timer?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Timer",
-                    "printedName": "Foundation.Timer",
-                    "usr": "c:objc(cs)NSTimer"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "WeakStorage",
+                "printedName": "Foundation.Timer?"
               }
             ],
             "declKind": "Var",
-            "usr": "s:10PivoProSDK0A2V3C14handShakeTimer33_9CBB223D1A1E5EE9F0B33F1668F17758LLSo7NSTimerCSgvp",
-            "mangledName": "$s10PivoProSDK0A2V3C14handShakeTimer33_9CBB223D1A1E5EE9F0B33F1668F17758LLSo7NSTimerCSgvp",
+            "usr": "s:10PivoProSDK0A2V3C19handShakeFirstTimer33_9CBB223D1A1E5EE9F0B33F1668F17758LLSo7NSTimerCSgvp",
+            "mangledName": "$s10PivoProSDK0A2V3C19handShakeFirstTimer33_9CBB223D1A1E5EE9F0B33F1668F17758LLSo7NSTimerCSgvp",
+            "moduleName": "PivoProSDK",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 15,
+            "ownership": 1,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
+            "name": "handShakeSecondTimer",
+            "printedName": "handShakeSecondTimer",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "Foundation.Timer?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10PivoProSDK0A2V3C20handShakeSecondTimer33_9CBB223D1A1E5EE9F0B33F1668F17758LLSo7NSTimerCSgvp",
+            "mangledName": "$s10PivoProSDK0A2V3C20handShakeSecondTimer33_9CBB223D1A1E5EE9F0B33F1668F17758LLSo7NSTimerCSgvp",
+            "moduleName": "PivoProSDK",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl"
+            ],
+            "fixedbinaryorder": 16,
+            "ownership": 1,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
+            "name": "type",
+            "printedName": "type",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HandShakeType",
+                "printedName": "PivoProSDK.HandShakeType",
+                "usr": "s:10PivoProSDK13HandShakeTypeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10PivoProSDK0A2V3C4type33_9CBB223D1A1E5EE9F0B33F1668F17758LLAA13HandShakeTypeOvp",
+            "mangledName": "$s10PivoProSDK0A2V3C4type33_9CBB223D1A1E5EE9F0B33F1668F17758LLAA13HandShakeTypeOvp",
             "moduleName": "PivoProSDK",
             "isInternal": true,
             "declAttributes": [
@@ -28931,7 +29331,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 15,
+            "fixedbinaryorder": 17,
             "hasStorage": true
           },
           {
@@ -28956,7 +29356,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 16,
+            "fixedbinaryorder": 18,
             "hasStorage": true
           },
           {
@@ -29346,7 +29746,7 @@
               "HasInitialValue",
               "HasStorage"
             ],
-            "fixedbinaryorder": 17,
+            "fixedbinaryorder": 19,
             "hasStorage": true,
             "accessors": [
               {
@@ -35983,27 +36383,72 @@
           },
           {
             "kind": "Var",
-            "name": "handShakeTimer",
-            "printedName": "handShakeTimer",
+            "name": "handShakeFirstTimer",
+            "printedName": "handShakeFirstTimer",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Timer?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Timer",
-                    "printedName": "Foundation.Timer",
-                    "usr": "c:objc(cs)NSTimer"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "WeakStorage",
+                "printedName": "Foundation.Timer?"
               }
             ],
             "declKind": "Var",
-            "usr": "s:10PivoProSDK0A2V4C14handShakeTimer33_F5408881E6D91ECC92BC07BD23005622LLSo7NSTimerCSgvp",
-            "mangledName": "$s10PivoProSDK0A2V4C14handShakeTimer33_F5408881E6D91ECC92BC07BD23005622LLSo7NSTimerCSgvp",
+            "usr": "s:10PivoProSDK0A2V4C19handShakeFirstTimer33_F5408881E6D91ECC92BC07BD23005622LLSo7NSTimerCSgvp",
+            "mangledName": "$s10PivoProSDK0A2V4C19handShakeFirstTimer33_F5408881E6D91ECC92BC07BD23005622LLSo7NSTimerCSgvp",
+            "moduleName": "PivoProSDK",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 15,
+            "ownership": 1,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
+            "name": "handShakeSecondTimer",
+            "printedName": "handShakeSecondTimer",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "Foundation.Timer?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10PivoProSDK0A2V4C20handShakeSecondTimer33_F5408881E6D91ECC92BC07BD23005622LLSo7NSTimerCSgvp",
+            "mangledName": "$s10PivoProSDK0A2V4C20handShakeSecondTimer33_F5408881E6D91ECC92BC07BD23005622LLSo7NSTimerCSgvp",
+            "moduleName": "PivoProSDK",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl"
+            ],
+            "fixedbinaryorder": 16,
+            "ownership": 1,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
+            "name": "type",
+            "printedName": "type",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HandShakeType",
+                "printedName": "PivoProSDK.HandShakeType",
+                "usr": "s:10PivoProSDK13HandShakeTypeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10PivoProSDK0A2V4C4type33_F5408881E6D91ECC92BC07BD23005622LLAA13HandShakeTypeOvp",
+            "mangledName": "$s10PivoProSDK0A2V4C4type33_F5408881E6D91ECC92BC07BD23005622LLAA13HandShakeTypeOvp",
             "moduleName": "PivoProSDK",
             "isInternal": true,
             "declAttributes": [
@@ -36011,7 +36456,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 15,
+            "fixedbinaryorder": 17,
             "hasStorage": true
           },
           {
@@ -36036,7 +36481,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 16,
+            "fixedbinaryorder": 18,
             "hasStorage": true
           },
           {
@@ -36426,7 +36871,7 @@
               "HasInitialValue",
               "HasStorage"
             ],
-            "fixedbinaryorder": 17,
+            "fixedbinaryorder": 19,
             "hasStorage": true,
             "accessors": [
               {
@@ -42458,27 +42903,72 @@
           },
           {
             "kind": "Var",
-            "name": "handShakeTimer",
-            "printedName": "handShakeTimer",
+            "name": "handShakeFirstTimer",
+            "printedName": "handShakeFirstTimer",
             "children": [
               {
                 "kind": "TypeNominal",
-                "name": "Optional",
-                "printedName": "Foundation.Timer?",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Timer",
-                    "printedName": "Foundation.Timer",
-                    "usr": "c:objc(cs)NSTimer"
-                  }
-                ],
-                "usr": "s:Sq"
+                "name": "WeakStorage",
+                "printedName": "Foundation.Timer?"
               }
             ],
             "declKind": "Var",
-            "usr": "s:10PivoProSDK0A3RedC14handShakeTimer33_60295765CFF22B0B000E623E2BB1F7C2LLSo7NSTimerCSgvp",
-            "mangledName": "$s10PivoProSDK0A3RedC14handShakeTimer33_60295765CFF22B0B000E623E2BB1F7C2LLSo7NSTimerCSgvp",
+            "usr": "s:10PivoProSDK0A3RedC19handShakeFirstTimer33_60295765CFF22B0B000E623E2BB1F7C2LLSo7NSTimerCSgvp",
+            "mangledName": "$s10PivoProSDK0A3RedC19handShakeFirstTimer33_60295765CFF22B0B000E623E2BB1F7C2LLSo7NSTimerCSgvp",
+            "moduleName": "PivoProSDK",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 15,
+            "ownership": 1,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
+            "name": "handShakeSecondTimer",
+            "printedName": "handShakeSecondTimer",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "WeakStorage",
+                "printedName": "Foundation.Timer?"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10PivoProSDK0A3RedC20handShakeSecondTimer33_60295765CFF22B0B000E623E2BB1F7C2LLSo7NSTimerCSgvp",
+            "mangledName": "$s10PivoProSDK0A3RedC20handShakeSecondTimer33_60295765CFF22B0B000E623E2BB1F7C2LLSo7NSTimerCSgvp",
+            "moduleName": "PivoProSDK",
+            "isInternal": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "ReferenceOwnership",
+              "AccessControl"
+            ],
+            "fixedbinaryorder": 16,
+            "ownership": 1,
+            "hasStorage": true
+          },
+          {
+            "kind": "Var",
+            "name": "type",
+            "printedName": "type",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "HandShakeType",
+                "printedName": "PivoProSDK.HandShakeType",
+                "usr": "s:10PivoProSDK13HandShakeTypeO"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10PivoProSDK0A3RedC4type33_60295765CFF22B0B000E623E2BB1F7C2LLAA13HandShakeTypeOvp",
+            "mangledName": "$s10PivoProSDK0A3RedC4type33_60295765CFF22B0B000E623E2BB1F7C2LLAA13HandShakeTypeOvp",
             "moduleName": "PivoProSDK",
             "isInternal": true,
             "declAttributes": [
@@ -42486,7 +42976,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 15,
+            "fixedbinaryorder": 17,
             "hasStorage": true
           },
           {
@@ -42511,7 +43001,7 @@
               "HasStorage",
               "AccessControl"
             ],
-            "fixedbinaryorder": 16,
+            "fixedbinaryorder": 18,
             "hasStorage": true
           },
           {
@@ -42536,7 +43026,7 @@
               "HasStorage",
               "SetterAccess"
             ],
-            "fixedbinaryorder": 17,
+            "fixedbinaryorder": 19,
             "hasStorage": true,
             "accessors": [
               {
@@ -43013,7 +43503,7 @@
               "HasInitialValue",
               "HasStorage"
             ],
-            "fixedbinaryorder": 18,
+            "fixedbinaryorder": 20,
             "hasStorage": true,
             "accessors": [
               {
@@ -60704,21 +61194,21 @@
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoSilver.swift",
       "kind": "IntegerLiteral",
-      "offset": 1035,
+      "offset": 1175,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoSilver.swift",
       "kind": "IntegerLiteral",
-      "offset": 1082,
+      "offset": 1222,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoSilver.swift",
       "kind": "IntegerLiteral",
-      "offset": 8287,
+      "offset": 8427,
       "length": 2,
       "value": "16"
     },
@@ -60760,21 +61250,21 @@
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoBlack.swift",
       "kind": "IntegerLiteral",
-      "offset": 1033,
+      "offset": 1173,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoBlack.swift",
       "kind": "IntegerLiteral",
-      "offset": 1080,
+      "offset": 1220,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoBlack.swift",
       "kind": "IntegerLiteral",
-      "offset": 8284,
+      "offset": 8424,
       "length": 2,
       "value": "16"
     },
@@ -60886,14 +61376,14 @@
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoV2.swift",
       "kind": "IntegerLiteral",
-      "offset": 1022,
+      "offset": 1162,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoV2.swift",
       "kind": "IntegerLiteral",
-      "offset": 8056,
+      "offset": 8196,
       "length": 2,
       "value": "16"
     },
@@ -60956,14 +61446,14 @@
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoV3.swift",
       "kind": "IntegerLiteral",
-      "offset": 1022,
+      "offset": 1162,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoV3.swift",
       "kind": "IntegerLiteral",
-      "offset": 8053,
+      "offset": 8193,
       "length": 2,
       "value": "16"
     },
@@ -61012,14 +61502,14 @@
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoV4.swift",
       "kind": "IntegerLiteral",
-      "offset": 1022,
+      "offset": 1162,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoV4.swift",
       "kind": "IntegerLiteral",
-      "offset": 8055,
+      "offset": 8195,
       "length": 2,
       "value": "16"
     },
@@ -61152,21 +61642,21 @@
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoRed.swift",
       "kind": "IntegerLiteral",
-      "offset": 1029,
+      "offset": 1169,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoRed.swift",
       "kind": "IntegerLiteral",
-      "offset": 1076,
+      "offset": 1216,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Rotator\/PivoRed.swift",
       "kind": "IntegerLiteral",
-      "offset": 8351,
+      "offset": 8491,
       "length": 2,
       "value": "16"
     },
