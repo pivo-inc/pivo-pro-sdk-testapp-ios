@@ -179,11 +179,15 @@ public enum PivoType {
   case black
   case gold
   case lite
+  case max
   public static func == (a: PivoProSDK.PivoType, b: PivoProSDK.PivoType) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
+}
+extension Swift.Int {
+  public func toUInt8(noOfBytes: Swift.Int = 2) -> [Swift.UInt8]
 }
 public enum Direction {
   case RIGHT
