@@ -153,14 +153,6 @@ class TrackingViewModel {
       catch {
         trackingState = .prepare
       }
-//    case .horse:
-//      do {
-//        try pivoSDK.startHorseTracking(image: image, trackingSensitivity: trackingSensitivity, delegate: self)
-//        trackingState = .updating
-//      }
-//      catch {
-//        trackingState = .prepare
-//      }
     case .object:
       guard let boundingBox = boundingBox else {
         trackingState = .prepare

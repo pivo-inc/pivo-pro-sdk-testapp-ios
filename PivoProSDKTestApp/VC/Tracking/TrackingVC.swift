@@ -167,8 +167,6 @@ class TrackingVC: UIViewController {
       self.trackingType = .face
     case 2:
       self.trackingType = .human
-//    case 2:
-//      self.trackingType = .horse
     default:
       break
     }
