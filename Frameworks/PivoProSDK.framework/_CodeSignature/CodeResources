@@ -18,7 +18,7 @@
 		</data>
 		<key>HorseModel.mlmodelc/metadata.json</key>
 		<data>
-		1rz3rx0DN8Xj6dZswVgrB0au/FI=
+		1RZWE9+sW2F4aH52SB/IU3CPgxY=
 		</data>
 		<key>HorseModel.mlmodelc/model0/analytics/coremldata.bin</key>
 		<data>
@@ -90,7 +90,7 @@
 		</data>
 		<key>MobileNetV2_SSDLite.mlmodelc/coremldata.bin</key>
 		<data>
-		1UVldcBbSd1tANS7IaJ/XXfq9hc=
+		6rwH2CKMOJC7nwq6clyRov0hPmM=
 		</data>
 		<key>MobileNetV2_SSDLite.mlmodelc/metadata.json</key>
 		<data>
@@ -158,11 +158,11 @@
 		</data>
 		<key>Modules/PivoProSDK.swiftmodule/Project/arm64-apple-ios.swiftsourceinfo</key>
 		<data>
-		hXc+xmaLcIgLxeP92q6NZfQLhJ0=
+		Wspj/O098zXwZKgOKbvBidn1MRM=
 		</data>
 		<key>Modules/PivoProSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		XH7SCSfRmxzq+XPE43Ye5PI94EA=
+		y0xg5aoEODbj3ZJHILl7K6tvXmc=
 		</data>
 		<key>Modules/PivoProSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
@@ -178,7 +178,7 @@
 		</data>
 		<key>Modules/PivoProSDK.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		+ocmtDOdp7ojjT2zB8uA9b5Hqc0=
+		WODvz+JjxDoZ4RhoLYthy7C3/Q0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -246,7 +246,7 @@
 		</data>
 		<key>face.mlmodelc/metadata.json</key>
 		<data>
-		/iG1c3VbCLEgcppFivWvUEayXOA=
+		LmvCfm5H0bFgqmCDxC+q02rJBi4=
 		</data>
 		<key>face.mlmodelc/model0/analytics/coremldata.bin</key>
 		<data>
@@ -314,11 +314,11 @@
 		</data>
 		<key>horseonly.mlmodelc/coremldata.bin</key>
 		<data>
-		duYhib8KxHlrzNpmG5d8nQGN1IE=
+		yZeHp7/O4MIK9O9b4LZsSN9dd24=
 		</data>
 		<key>horseonly.mlmodelc/metadata.json</key>
 		<data>
-		0izSUefCp0Zh8BOPsmyBqi2E1fA=
+		zaIewQuz/CbL6lmJOVsSZgcK8Z0=
 		</data>
 		<key>horseonly.mlmodelc/model0/analytics/coremldata.bin</key>
 		<data>
@@ -386,11 +386,11 @@
 		</data>
 		<key>persononly_v2.mlmodelc/coremldata.bin</key>
 		<data>
-		K4iprJjdjX+ciUmHCSIh5/NK4tE=
+		jsbYbidVGW6FLZh6g/uJcNok4JI=
 		</data>
 		<key>persononly_v2.mlmodelc/metadata.json</key>
 		<data>
-		GzSk6Eqm9DGOEV66Z+2GaWGDRSk=
+		MbOi1kw4Dw2F4KJiMcPuK1a8ZsQ=
 		</data>
 		<key>persononly_v2.mlmodelc/model0/analytics/coremldata.bin</key>
 		<data>
@@ -496,11 +496,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1rz3rx0DN8Xj6dZswVgrB0au/FI=
+			1RZWE9+sW2F4aH52SB/IU3CPgxY=
 			</data>
 			<key>hash2</key>
 			<data>
-			MapaQDjBJZWkncorS7WyfNgigcZLxvXuFX/dIRq4R/0=
+			nMHJkfNuO8z4PvDlnK4fwU+ts9NeOpi7C1dRiC/cSOo=
 			</data>
 		</dict>
 		<key>HorseModel.mlmodelc/model0/analytics/coremldata.bin</key>
@@ -683,11 +683,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			1UVldcBbSd1tANS7IaJ/XXfq9hc=
+			6rwH2CKMOJC7nwq6clyRov0hPmM=
 			</data>
 			<key>hash2</key>
 			<data>
-			VTszLoJodmY+jOj0KQfih677ad8ioVQ91FKkxfGFEU8=
+			V4Vwx9Cc61fGQkZKzkm0sQelDoQQwh84WHhSnueY1v0=
 			</data>
 		</dict>
 		<key>MobileNetV2_SSDLite.mlmodelc/metadata.json</key>
@@ -870,22 +870,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hXc+xmaLcIgLxeP92q6NZfQLhJ0=
+			Wspj/O098zXwZKgOKbvBidn1MRM=
 			</data>
 			<key>hash2</key>
 			<data>
-			KWew5+0OQUU2JsD4zA7DSLFiXPcBFOtbZXIG1PHXAO4=
+			bqje17bVWFKwHPomzvEEP14ZLH3WjTJ9C0L2MMCUtOE=
 			</data>
 		</dict>
 		<key>Modules/PivoProSDK.swiftmodule/arm64-apple-ios.abi.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			XH7SCSfRmxzq+XPE43Ye5PI94EA=
+			y0xg5aoEODbj3ZJHILl7K6tvXmc=
 			</data>
 			<key>hash2</key>
 			<data>
-			7OdNOI2yFssIgXsrOe661wnHxf6IROqnvXtgyFKY9P8=
+			zdUin7NwbEifYJeQYz+achjwCZZNH/XF055ZVcRhye8=
 			</data>
 		</dict>
 		<key>Modules/PivoProSDK.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
@@ -925,11 +925,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			+ocmtDOdp7ojjT2zB8uA9b5Hqc0=
+			WODvz+JjxDoZ4RhoLYthy7C3/Q0=
 			</data>
 			<key>hash2</key>
 			<data>
-			GrADvk0L1XKh0fZJ7GcEXOc0EqP7Te6oNdwvY9KRL98=
+			MV9Wj2p3pqzISiOwPGAKsV4tJbNZVGO3MmYXPnpYpbw=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1112,11 +1112,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			/iG1c3VbCLEgcppFivWvUEayXOA=
+			LmvCfm5H0bFgqmCDxC+q02rJBi4=
 			</data>
 			<key>hash2</key>
 			<data>
-			W8IGjsvOia4m6eyUrbsVq+LbPL1Hn6noduaIQaRuNQE=
+			BhMvx4+3LnncnULsCFL7Vq3r7Qbq1shd+N+yT4JuxSI=
 			</data>
 		</dict>
 		<key>face.mlmodelc/model0/analytics/coremldata.bin</key>
@@ -1299,22 +1299,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			duYhib8KxHlrzNpmG5d8nQGN1IE=
+			yZeHp7/O4MIK9O9b4LZsSN9dd24=
 			</data>
 			<key>hash2</key>
 			<data>
-			4+pDQlvVcUDqz50+euujyav6tYXaTeLRBMjXRGthy5M=
+			ueTFl8c91wTqUKUgaxLQk+opVTe+Wq63WdwHZbBvsCQ=
 			</data>
 		</dict>
 		<key>horseonly.mlmodelc/metadata.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			0izSUefCp0Zh8BOPsmyBqi2E1fA=
+			zaIewQuz/CbL6lmJOVsSZgcK8Z0=
 			</data>
 			<key>hash2</key>
 			<data>
-			nF2FirnLkBm5Gwa7baCc7sBjmPcnPjJR+hyk6BZvMjA=
+			MjrkmeNFDgx/dECerEi5KAb0b6sV/1Fe9qhuptnShYs=
 			</data>
 		</dict>
 		<key>horseonly.mlmodelc/model0/analytics/coremldata.bin</key>
@@ -1497,22 +1497,22 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			K4iprJjdjX+ciUmHCSIh5/NK4tE=
+			jsbYbidVGW6FLZh6g/uJcNok4JI=
 			</data>
 			<key>hash2</key>
 			<data>
-			Mh52nS6fRpCXPzEQNxjjgUmU7nK4YkO2cMn8X2/ySF0=
+			/GU7buIoOJ0paOsTvYh3t6sEI/oPHyzlXQNLvVqM8Aw=
 			</data>
 		</dict>
 		<key>persononly_v2.mlmodelc/metadata.json</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			GzSk6Eqm9DGOEV66Z+2GaWGDRSk=
+			MbOi1kw4Dw2F4KJiMcPuK1a8ZsQ=
 			</data>
 			<key>hash2</key>
 			<data>
-			Yp4K5zyaWYzAW3Neb0W9vW0n6L1BzwZchIwqva5waqA=
+			2VvECjL0MiKhOEsTCPCjvGYD1vsD/F3hnEnmZlxeXTA=
 			</data>
 		</dict>
 		<key>persononly_v2.mlmodelc/model0/analytics/coremldata.bin</key>

@@ -93,8 +93,8 @@
     ],
     "generatedClassName" : "face",
     "userDefinedMetadata" : {
-      "classes" : "face",
       "confidence_threshold" : "0.4",
+      "classes" : "face",
       "iou_threshold" : "0.6",
       "coremltoolsVersion" : "3.4"
     },

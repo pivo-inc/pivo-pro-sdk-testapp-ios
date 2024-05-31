@@ -93,8 +93,8 @@
     ],
     "generatedClassName" : "persononly_v2",
     "userDefinedMetadata" : {
-      "confidence_threshold" : "0.4",
       "classes" : "person",
+      "confidence_threshold" : "0.4",
       "iou_threshold" : "0.6",
       "coremltoolsVersion" : "3.4"
     },

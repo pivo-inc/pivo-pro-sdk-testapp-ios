@@ -374,44 +374,6 @@
           },
           {
             "kind": "Var",
-            "name": "horse",
-            "printedName": "horse",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(PivoProSDK.SmartTrackingTargetType.Type) -> PivoProSDK.SmartTrackingTargetType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "SmartTrackingTargetType",
-                    "printedName": "PivoProSDK.SmartTrackingTargetType",
-                    "usr": "s:10PivoProSDK23SmartTrackingTargetTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "PivoProSDK.SmartTrackingTargetType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "SmartTrackingTargetType",
-                        "printedName": "PivoProSDK.SmartTrackingTargetType",
-                        "usr": "s:10PivoProSDK23SmartTrackingTargetTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10PivoProSDK23SmartTrackingTargetTypeO5horseyA2CmF",
-            "mangledName": "$s10PivoProSDK23SmartTrackingTargetTypeO5horseyA2CmF",
-            "moduleName": "PivoProSDK",
-            "fixedbinaryorder": 1
-          },
-          {
-            "kind": "Var",
             "name": "face",
             "printedName": "face",
             "children": [
@@ -446,7 +408,10 @@
             "usr": "s:10PivoProSDK23SmartTrackingTargetTypeO4faceyA2CmF",
             "mangledName": "$s10PivoProSDK23SmartTrackingTargetTypeO4faceyA2CmF",
             "moduleName": "PivoProSDK",
-            "fixedbinaryorder": 2
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "fixedbinaryorder": 1
           },
           {
             "kind": "Function",
@@ -3189,208 +3154,6 @@
         ]
       },
       {
-        "kind": "TypeDecl",
-        "name": "HorseDetector",
-        "printedName": "HorseDetector",
-        "children": [
-          {
-            "kind": "Var",
-            "name": "delegate",
-            "printedName": "delegate",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "WeakStorage",
-                "printedName": "PivoProSDK.DetectorDelegate?"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:10PivoProSDK13HorseDetectorC8delegateAA0E8Delegate_pSgvp",
-            "mangledName": "$s10PivoProSDK13HorseDetectorC8delegateAA0E8Delegate_pSgvp",
-            "moduleName": "PivoProSDK",
-            "isOpen": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage",
-              "ReferenceOwnership"
-            ],
-            "fixedbinaryorder": 0,
-            "ownership": 1,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "PivoProSDK.DetectorDelegate?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "DetectorDelegate",
-                        "printedName": "PivoProSDK.DetectorDelegate",
-                        "usr": "s:10PivoProSDK16DetectorDelegateP"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10PivoProSDK13HorseDetectorC8delegateAA0E8Delegate_pSgvg",
-                "mangledName": "$s10PivoProSDK13HorseDetectorC8delegateAA0E8Delegate_pSgvg",
-                "moduleName": "PivoProSDK",
-                "implicit": true,
-                "isOpen": true,
-                "accessorKind": "get"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Set",
-                "printedName": "Set()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Optional",
-                    "printedName": "PivoProSDK.DetectorDelegate?",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "DetectorDelegate",
-                        "printedName": "PivoProSDK.DetectorDelegate",
-                        "usr": "s:10PivoProSDK16DetectorDelegateP"
-                      }
-                    ],
-                    "usr": "s:Sq"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10PivoProSDK13HorseDetectorC8delegateAA0E8Delegate_pSgvs",
-                "mangledName": "$s10PivoProSDK13HorseDetectorC8delegateAA0E8Delegate_pSgvs",
-                "moduleName": "PivoProSDK",
-                "implicit": true,
-                "isOpen": true,
-                "accessorKind": "set"
-              },
-              {
-                "kind": "Accessor",
-                "name": "Modify",
-                "printedName": "Modify()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Void",
-                    "printedName": "()"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10PivoProSDK13HorseDetectorC8delegateAA0E8Delegate_pSgvM",
-                "mangledName": "$s10PivoProSDK13HorseDetectorC8delegateAA0E8Delegate_pSgvM",
-                "moduleName": "PivoProSDK",
-                "implicit": true,
-                "isOpen": true,
-                "intro_iOS": "12.0",
-                "declAttributes": [
-                  "Available"
-                ],
-                "accessorKind": "_modify"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "detector",
-            "printedName": "detector",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Detector",
-                "printedName": "PivoProSDK.Detector",
-                "usr": "s:10PivoProSDK8DetectorP"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:10PivoProSDK13HorseDetectorC8detector33_58FFCB83D277EEB1187153239D97AE91LLAA0E0_pvp",
-            "mangledName": "$s10PivoProSDK13HorseDetectorC8detector33_58FFCB83D277EEB1187153239D97AE91LLAA0E0_pvp",
-            "moduleName": "PivoProSDK",
-            "isInternal": true,
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl"
-            ],
-            "fixedbinaryorder": 1,
-            "hasStorage": true
-          },
-          {
-            "kind": "Constructor",
-            "name": "init",
-            "printedName": "init()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "HorseDetector",
-                "printedName": "PivoProSDK.HorseDetector",
-                "usr": "s:10PivoProSDK13HorseDetectorC"
-              }
-            ],
-            "declKind": "Constructor",
-            "usr": "s:10PivoProSDK13HorseDetectorCACycfc",
-            "mangledName": "$s10PivoProSDK13HorseDetectorCACycfc",
-            "moduleName": "PivoProSDK",
-            "init_kind": "Designated"
-          },
-          {
-            "kind": "Function",
-            "name": "predict",
-            "printedName": "predict(image:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UIImage",
-                "printedName": "UIKit.UIImage",
-                "usr": "c:objc(cs)UIImage"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10PivoProSDK13HorseDetectorC7predict5imageySo7UIImageC_tF",
-            "mangledName": "$s10PivoProSDK13HorseDetectorC7predict5imageySo7UIImageC_tF",
-            "moduleName": "PivoProSDK",
-            "isOpen": true,
-            "funcSelfKind": "NonMutating"
-          }
-        ],
-        "declKind": "Class",
-        "usr": "s:10PivoProSDK13HorseDetectorC",
-        "mangledName": "$s10PivoProSDK13HorseDetectorC",
-        "moduleName": "PivoProSDK",
-        "isOpen": true,
-        "intro_iOS": "12.0",
-        "declAttributes": [
-          "Available"
-        ],
-        "conformances": [
-          {
-            "kind": "Conformance",
-            "name": "Detector",
-            "printedName": "Detector",
-            "usr": "s:10PivoProSDK8DetectorP",
-            "mangledName": "$s10PivoProSDK8DetectorP"
-          }
-        ]
-      },
-      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -5685,153 +5448,6 @@
           },
           {
             "kind": "Var",
-            "name": "mobileSSD",
-            "printedName": "mobileSSD",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "MobileNetV2_SSDLite",
-                "printedName": "PivoProSDK.MobileNetV2_SSDLite",
-                "usr": "s:10PivoProSDK19MobileNetV2_SSDLiteC"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:10PivoProSDK10AppMLModelV9mobileSSDAA19MobileNetV2_SSDLiteCvpZ",
-            "mangledName": "$s10PivoProSDK10AppMLModelV9mobileSSDAA19MobileNetV2_SSDLiteCvpZ",
-            "moduleName": "PivoProSDK",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "MobileNetV2_SSDLite",
-                    "printedName": "PivoProSDK.MobileNetV2_SSDLite",
-                    "usr": "s:10PivoProSDK19MobileNetV2_SSDLiteC"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10PivoProSDK10AppMLModelV9mobileSSDAA19MobileNetV2_SSDLiteCvgZ",
-                "mangledName": "$s10PivoProSDK10AppMLModelV9mobileSSDAA19MobileNetV2_SSDLiteCvgZ",
-                "moduleName": "PivoProSDK",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Transparent"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "horse",
-            "printedName": "horse",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "HorseModel",
-                "printedName": "PivoProSDK.HorseModel",
-                "usr": "s:10PivoProSDK10HorseModelC"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:10PivoProSDK10AppMLModelV5horseAA10HorseModelCvpZ",
-            "mangledName": "$s10PivoProSDK10AppMLModelV5horseAA10HorseModelCvpZ",
-            "moduleName": "PivoProSDK",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "HorseModel",
-                    "printedName": "PivoProSDK.HorseModel",
-                    "usr": "s:10PivoProSDK10HorseModelC"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10PivoProSDK10AppMLModelV5horseAA10HorseModelCvgZ",
-                "mangledName": "$s10PivoProSDK10AppMLModelV5horseAA10HorseModelCvgZ",
-                "moduleName": "PivoProSDK",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Transparent"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "horseOnly",
-            "printedName": "horseOnly",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "horseonly",
-                "printedName": "PivoProSDK.horseonly",
-                "usr": "s:10PivoProSDK9horseonlyC"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:10PivoProSDK10AppMLModelV9horseOnlyAA9horseonlyCvpZ",
-            "mangledName": "$s10PivoProSDK10AppMLModelV9horseOnlyAA9horseonlyCvpZ",
-            "moduleName": "PivoProSDK",
-            "static": true,
-            "declAttributes": [
-              "HasInitialValue",
-              "HasStorage"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "horseonly",
-                    "printedName": "PivoProSDK.horseonly",
-                    "usr": "s:10PivoProSDK9horseonlyC"
-                  }
-                ],
-                "declKind": "Accessor",
-                "usr": "s:10PivoProSDK10AppMLModelV9horseOnlyAA9horseonlyCvgZ",
-                "mangledName": "$s10PivoProSDK10AppMLModelV9horseOnlyAA9horseonlyCvgZ",
-                "moduleName": "PivoProSDK",
-                "static": true,
-                "implicit": true,
-                "declAttributes": [
-                  "Transparent"
-                ],
-                "accessorKind": "get"
-              }
-            ]
-          },
-          {
-            "kind": "Var",
             "name": "personOnly",
             "printedName": "personOnly",
             "children": [
@@ -5849,7 +5465,8 @@
             "static": true,
             "declAttributes": [
               "HasInitialValue",
-              "HasStorage"
+              "HasStorage",
+              "RawDocComment"
             ],
             "isLet": true,
             "hasStorage": true,
@@ -64862,42 +64479,42 @@
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Tracker\/Tracker\/SmartTracker.swift",
       "kind": "StringLiteral",
-      "offset": 639,
+      "offset": 641,
       "length": 24,
       "value": "\"ai.3i.ios.pivo.tracker\""
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Tracker\/Tracker\/SmartTracker.swift",
       "kind": "IntegerLiteral",
-      "offset": 776,
+      "offset": 778,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Tracker\/Tracker\/SmartTracker.swift",
       "kind": "BooleanLiteral",
-      "offset": 905,
+      "offset": 907,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Tracker\/Tracker\/SmartTracker.swift",
       "kind": "Array",
-      "offset": 956,
+      "offset": 958,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Tracker\/Tracker\/SmartTracker.swift",
       "kind": "BooleanLiteral",
-      "offset": 1025,
+      "offset": 1027,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Tracker\/Tracker\/SmartTracker.swift",
       "kind": "BooleanLiteral",
-      "offset": 1558,
+      "offset": 1560,
       "length": 5,
       "value": "false"
     },
@@ -64967,70 +64584,28 @@
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoMeetAppSDK\/FollowController\/Detector\/AppMLModel.swift",
       "kind": "StringLiteral",
-      "offset": 627,
+      "offset": 1447,
       "length": 39,
       "value": "\"[DEBUG] Load model with configuration\""
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoMeetAppSDK\/FollowController\/Detector\/AppMLModel.swift",
       "kind": "StringLiteral",
-      "offset": 758,
+      "offset": 1572,
       "length": 42,
       "value": "\"[DEBUG] Load model without configuration\""
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoMeetAppSDK\/FollowController\/Detector\/AppMLModel.swift",
       "kind": "StringLiteral",
-      "offset": 908,
+      "offset": 1714,
       "length": 39,
       "value": "\"[DEBUG] Load model with configuration\""
     },
     {
       "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoMeetAppSDK\/FollowController\/Detector\/AppMLModel.swift",
       "kind": "StringLiteral",
-      "offset": 1030,
-      "length": 42,
-      "value": "\"[DEBUG] Load model without configuration\""
-    },
-    {
-      "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoMeetAppSDK\/FollowController\/Detector\/AppMLModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1174,
-      "length": 39,
-      "value": "\"[DEBUG] Load model with configuration\""
-    },
-    {
-      "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoMeetAppSDK\/FollowController\/Detector\/AppMLModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1295,
-      "length": 42,
-      "value": "\"[DEBUG] Load model without configuration\""
-    },
-    {
-      "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoMeetAppSDK\/FollowController\/Detector\/AppMLModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1443,
-      "length": 39,
-      "value": "\"[DEBUG] Load model with configuration\""
-    },
-    {
-      "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoMeetAppSDK\/FollowController\/Detector\/AppMLModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1568,
-      "length": 42,
-      "value": "\"[DEBUG] Load model without configuration\""
-    },
-    {
-      "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoMeetAppSDK\/FollowController\/Detector\/AppMLModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1710,
-      "length": 39,
-      "value": "\"[DEBUG] Load model with configuration\""
-    },
-    {
-      "filePath": "\/Users\/arlinkim\/Documents\/1.iOS-SDK\/mobile.ios.sdk.pro\/PivoMeetAppSDK\/FollowController\/Detector\/AppMLModel.swift",
-      "kind": "StringLiteral",
-      "offset": 1826,
+      "offset": 1830,
       "length": 42,
       "value": "\"[DEBUG] Load model without configuration\""
     },
