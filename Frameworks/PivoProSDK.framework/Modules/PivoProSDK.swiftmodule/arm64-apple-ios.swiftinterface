@@ -43,7 +43,6 @@ import _SwiftConcurrencyShims
   public func getSupportedTrackingModes() -> [PivoProSDK.TrackingType]
   public func startObjectTracking(image: UIKit.UIImage, boundingBox: CoreFoundation.CGRect, trackingSensitivity: PivoProSDK.TrackingSensitivity, delegate: any PivoProSDK.TrackerDelegate) throws
   public func startHumanTracking(image: UIKit.UIImage, trackingSensitivity: PivoProSDK.TrackingSensitivity, delegate: any PivoProSDK.TrackerDelegate) throws
-  public func startHorseTracking(image: UIKit.UIImage, trackingSensitivity: PivoProSDK.TrackingSensitivity, delegate: any PivoProSDK.TrackerDelegate) throws
   public func updateTracking(image: UIKit.UIImage)
   public func stopTracking()
   public func turnHold()
@@ -98,7 +97,6 @@ public enum PivoError : Foundation.LocalizedError {
 public enum TrackingType {
   case object
   case human
-  case horse
   public static func == (a: PivoProSDK.TrackingType, b: PivoProSDK.TrackingType) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {

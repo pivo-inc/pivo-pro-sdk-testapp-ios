@@ -2650,47 +2650,6 @@
           },
           {
             "kind": "Function",
-            "name": "startHorseTracking",
-            "printedName": "startHorseTracking(image:trackingSensitivity:delegate:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "UIImage",
-                "printedName": "UIKit.UIImage",
-                "usr": "c:objc(cs)UIImage"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "TrackingSensitivity",
-                "printedName": "PivoProSDK.TrackingSensitivity",
-                "usr": "s:10PivoProSDK19TrackingSensitivityO"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "TrackerDelegate",
-                "printedName": "PivoProSDK.TrackerDelegate",
-                "usr": "s:10PivoProSDK15TrackerDelegateP"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:10PivoProSDK0aC0C18startHorseTracking5image19trackingSensitivity8delegateySo7UIImageC_AA0fI0OAA15TrackerDelegate_ptKF",
-            "mangledName": "$s10PivoProSDK0aC0C18startHorseTracking5image19trackingSensitivity8delegateySo7UIImageC_AA0fI0OAA15TrackerDelegate_ptKF",
-            "moduleName": "PivoProSDK",
-            "isOpen": true,
-            "declAttributes": [
-              "AccessControl",
-              "RawDocComment"
-            ],
-            "throwing": true,
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
             "name": "updateTracking",
             "printedName": "updateTracking(image:)",
             "children": [
@@ -7196,46 +7155,6 @@
             "declKind": "EnumElement",
             "usr": "s:10PivoProSDK12TrackingTypeO5humanyA2CmF",
             "mangledName": "$s10PivoProSDK12TrackingTypeO5humanyA2CmF",
-            "moduleName": "PivoProSDK",
-            "declAttributes": [
-              "RawDocComment"
-            ]
-          },
-          {
-            "kind": "Var",
-            "name": "horse",
-            "printedName": "horse",
-            "children": [
-              {
-                "kind": "TypeFunc",
-                "name": "Function",
-                "printedName": "(PivoProSDK.TrackingType.Type) -> PivoProSDK.TrackingType",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "TrackingType",
-                    "printedName": "PivoProSDK.TrackingType",
-                    "usr": "s:10PivoProSDK12TrackingTypeO"
-                  },
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Metatype",
-                    "printedName": "PivoProSDK.TrackingType.Type",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "TrackingType",
-                        "printedName": "PivoProSDK.TrackingType",
-                        "usr": "s:10PivoProSDK12TrackingTypeO"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ],
-            "declKind": "EnumElement",
-            "usr": "s:10PivoProSDK12TrackingTypeO5horseyA2CmF",
-            "mangledName": "$s10PivoProSDK12TrackingTypeO5horseyA2CmF",
             "moduleName": "PivoProSDK",
             "declAttributes": [
               "RawDocComment"

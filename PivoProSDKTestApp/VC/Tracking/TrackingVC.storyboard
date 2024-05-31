@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JYK-4h-vC0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JYK-4h-vC0">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,13 +25,13 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Draw bounding box to start object tracking" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BuF-KZ-Ehw">
-                                <rect key="frame" x="44" y="402.5" width="326" height="41"/>
+                                <rect key="frame" x="44" y="415" width="326" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQQ-R9-sdw">
-                                <rect key="frame" x="20" y="44" width="44" height="44"/>
+                                <rect key="frame" x="20" y="48" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Jcl-Fw-6dM"/>
                                     <constraint firstAttribute="height" constant="44" id="Xgm-Og-2oj"/>
@@ -41,7 +41,7 @@
                                     <action selector="didFlipCameraButtonClicked:" destination="JYK-4h-vC0" eventType="touchUpInside" id="zV6-MN-Mj6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6r-Pg-LqI">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u6r-Pg-LqI">
                                 <rect key="frame" x="137" y="692" width="140" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -69,7 +69,6 @@
                                         <segments>
                                             <segment title="Object"/>
                                             <segment title="Human"/>
-                                            <segment title="Horse"/>
                                         </segments>
                                         <connections>
                                             <action selector="didTrackingTypeOptionChanged:" destination="JYK-4h-vC0" eventType="valueChanged" id="r0Z-C9-gRO"/>
@@ -91,6 +90,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="bAN-XY-UJJ"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="XQQ-R9-sdw" firstAttribute="leading" secondItem="bAN-XY-UJJ" secondAttribute="leading" constant="20" id="0xs-gf-Qog"/>
@@ -113,7 +113,6 @@
                             <constraint firstItem="XQQ-R9-sdw" firstAttribute="top" secondItem="bAN-XY-UJJ" secondAttribute="top" id="voB-ZC-kYQ"/>
                             <constraint firstItem="BuF-KZ-Ehw" firstAttribute="leading" secondItem="bAN-XY-UJJ" secondAttribute="leading" constant="44" id="zRC-3q-wvv"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="bAN-XY-UJJ"/>
                     </view>
                     <connections>
                         <outlet property="buttonTrackingState" destination="u6r-Pg-LqI" id="PCh-5d-vtc"/>
