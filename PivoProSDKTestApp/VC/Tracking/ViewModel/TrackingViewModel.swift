@@ -137,6 +137,14 @@ class TrackingViewModel {
     let image = getImageBasedOnOrientation(image: image)
     
     switch trackingType {
+    case .face:
+      do {
+        try pivoSDK.startFaceTracking(image: image, trackingSensitivity: trackingSensitivity, delegate: self)
+        trackingState = .updating
+      }
+      catch {
+        trackingState = .prepare
+      }
     case .human:
       do {
         try pivoSDK.startHumanTracking(image: image, trackingSensitivity: trackingSensitivity, delegate: self)

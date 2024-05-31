@@ -68,7 +68,8 @@
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <segments>
                                             <segment title="Object"/>
-                                            <segment title="Human"/>
+                                            <segment title="Face"/>
+                                            <segment title="Body"/>
                                         </segments>
                                         <connections>
                                             <action selector="didTrackingTypeOptionChanged:" destination="JYK-4h-vC0" eventType="valueChanged" id="r0Z-C9-gRO"/>
