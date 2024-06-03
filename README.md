@@ -6,14 +6,6 @@ An iOS application that uses PivoProSDK to connect and control the Pivo Pod.
 
 Please visit [Pivo developer website](https://developer.pivo.app/) and generate the license file to include it into your project. 
 
-## Installation
-
-#### CocoaPods
-In your pod file, add this:
-
-```
-pod 'PivoProSDK', :git => 'https://github.com/pivo-inc/pivo-pro-sdk-ios.git', :tag => '0.0.8'
-```
 ## Usage
 
 In your AppDelegate.swift
@@ -49,7 +41,7 @@ To check whick type of tracking are supported, you can call:
   let supportedTrackingType = pivoSDK.getSupportedTrackingModes()
 ```
 
-Notice that Human and Horse Tracking are only supported on iOS 12 and above
+Notice that Human and Face Tracking are only supported on iOS 12 and above
 
 ### Action/Object Tracking:
 
@@ -60,13 +52,13 @@ First, you need to select the region on interest then
   try self.pivoSDK.startObjectTracking(image: image, boundingBox: regionOfInterest, trackingSensitivity: trackingSensitivity, delegate: self)
 ```
 
-### Person/Horse Tracking:
+### Person/Face Tracking:
 
-To start person or horse tracking, simple call
+To start person or Face tracking, simply call
 
 ```swift
   try pivoSDK.startHumanTracking(image: image, trackingSensitivity: trackingSensitivity, delegate: self)
-  try pivoSDK.startHorseTracking(image: image, trackingSensitivity: trackingSensitivity, delegate: self)
+  try pivoSDK.startFaceTracking(image: image, trackingSensitivity: trackingSensitivity, delegate: self)
 ```
 
 To receive tracking output information, set your class as TrackerDelegate
@@ -83,6 +75,9 @@ class YourClass: TrackerDelegate {
 If you encounter an issue during setting up the sdk, please contact us at app@3i.ai or open an issue.
 
 ## Changelogs
+
+In version 0.1.0:
+- Fix connection issue with pod version 9
 
 In version 0.0.8:
 - Change class name from `PivoProSDK` to `PivoSDK` to prevent an error
