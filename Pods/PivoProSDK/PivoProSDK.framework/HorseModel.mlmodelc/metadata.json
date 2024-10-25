@@ -1,0 +1,119 @@
+[
+  {
+    "shortDescription" : "Trained with backgrounds and random boxes 100k iterations",
+    "metadataOutputVersion" : "3.0",
+    "outputSchema" : [
+      {
+        "dataType" : "Double",
+        "hasShapeFlexibility" : "1",
+        "isOptional" : "0",
+        "shapeFlexibility" : "0... × 2",
+        "shapeRange" : "[[0, -1], [2, 2]]",
+        "formattedType" : "MultiArray (Double 0 × 2)",
+        "type" : "MultiArray",
+        "shape" : "[0, 2]",
+        "name" : "confidence",
+        "shortDescription" : "Boxes × Class confidence"
+      },
+      {
+        "dataType" : "Double",
+        "hasShapeFlexibility" : "1",
+        "isOptional" : "0",
+        "shapeFlexibility" : "0... × 4",
+        "shapeRange" : "[[0, -1], [4, 4]]",
+        "formattedType" : "MultiArray (Double 0 × 4)",
+        "type" : "MultiArray",
+        "shape" : "[0, 4]",
+        "name" : "coordinates",
+        "shortDescription" : "Boxes × [x, y, width, height] (relative to image size)"
+      }
+    ],
+    "version" : "3i Inc Horse and human detection model",
+    "modelParameters" : [
+
+    ],
+    "author" : "Farkhod Khudayberganov & Mikhail Li",
+    "specificationVersion" : 3,
+    "storagePrecision" : "Int8",
+    "license" : "https:\/\/www.3i.ai\/privacy-policy\/",
+    "computePrecision" : "Float16",
+    "isUpdatable" : "0",
+    "availability" : {
+      "macOS" : "10.14",
+      "tvOS" : "12.0",
+      "watchOS" : "5.0",
+      "iOS" : "12.0",
+      "macCatalyst" : "12.0"
+    },
+    "modelType" : {
+      "name" : "MLModelType_pipeline",
+      "structure" : [
+        {
+          "name" : "MLModelType_neuralNetwork"
+        },
+        {
+          "name" : "MLModelType_neuralNetwork"
+        },
+        {
+          "name" : "MLModelType_nonMaximumSuppression"
+        }
+      ]
+    },
+    "inputSchema" : [
+      {
+        "height" : "300",
+        "colorspace" : "RGB",
+        "isOptional" : "0",
+        "width" : "300",
+        "isColor" : "1",
+        "formattedType" : "Image (Color 300 × 300)",
+        "hasSizeFlexibility" : "0",
+        "type" : "Image",
+        "shortDescription" : "Input image",
+        "name" : "image"
+      },
+      {
+        "isOptional" : "0",
+        "formattedType" : "Double",
+        "type" : "Double",
+        "name" : "iouThreshold",
+        "shortDescription" : "(optional) IOU Threshold override"
+      },
+      {
+        "isOptional" : "0",
+        "formattedType" : "Double",
+        "type" : "Double",
+        "name" : "confidenceThreshold",
+        "shortDescription" : "(optional) Confidence Threshold override"
+      }
+    ],
+    "classLabels" : [
+      "human",
+      "horse"
+    ],
+    "generatedClassName" : "HorseModel",
+    "userDefinedMetadata" : {
+      "confidence_threshold" : "0.4",
+      "classes" : "human,horse",
+      "iou_threshold" : "0.6",
+      "coremltoolsVersion" : "3.4"
+    },
+    "neuralNetworkLayerTypeHistogram" : {
+      "PoolingAverage" : 9,
+      "Concat" : 3,
+      "UnaryExp" : 1,
+      "UnaryThreshold" : 51,
+      "Convolution" : 88,
+      "ActivationSigmoid" : 1,
+      "Reshape" : 12,
+      "Permute" : 16,
+      "Add" : 34,
+      "Multiply" : 59,
+      "Slice" : 7,
+      "ActivationLinear" : 102,
+      "ActivationReLU" : 65,
+      "LoadConstant" : 2
+    },
+    "method" : "predict"
+  }
+]

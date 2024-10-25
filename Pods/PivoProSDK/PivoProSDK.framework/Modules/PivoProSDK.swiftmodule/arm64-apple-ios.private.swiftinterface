@@ -1,0 +1,2883 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
+// swift-module-flags: -target arm64-apple-ios13.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PivoProSDK
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import CoreBluetooth
+import CoreML
+import CoreVideo
+import Foundation
+import ImageIO
+import LocalAuthentication
+@_exported import PivoProSDK
+import Security
+import Swift
+import UIKit
+import Vision
+import _Concurrency
+import _StringProcessing
+public enum TrackingSensitivity {
+  case off
+  case slow
+  case normal
+  case fast
+  case frenzy
+  public static func == (a: PivoProSDK.TrackingSensitivity, b: PivoProSDK.TrackingSensitivity) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct Target {
+  public let boundingBox: CoreFoundation.CGRect
+  public var isTracking: Swift.Bool
+  public init(boundingBox: CoreFoundation.CGRect, isTracking: Swift.Bool)
+}
+public protocol TrackerDelegate : AnyObject {
+  func tracker(didDetected targets: [PivoProSDK.Target])
+}
+public enum TrackingSpeed {
+  case slower
+  case slow
+  case normal
+  case fast
+  case frenzy
+  case turbo
+  public var name: Swift.String {
+    get
+  }
+}
+extension PivoProSDK.TrackingSpeed : Swift.RawRepresentable {
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum TrackingTarget {
+  public enum Auto {
+    case face
+    case body
+    case horse
+    case dog
+    public var name: Swift.String {
+      get
+    }
+    public var confidence: Swift.Float {
+      get
+    }
+    public static func == (a: PivoProSDK.TrackingTarget.Auto, b: PivoProSDK.TrackingTarget.Auto) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum PreSelectTarget {
+    case action
+    public static func == (a: PivoProSDK.TrackingTarget.PreSelectTarget, b: PivoProSDK.TrackingTarget.PreSelectTarget) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+public enum CameraSide {
+  case front
+  case rear
+  public var name: Swift.String {
+    get
+  }
+  public static func == (a: PivoProSDK.CameraSide, b: PivoProSDK.CameraSide) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct InputFrame {
+  public let buffer: CoreVideo.CVPixelBuffer
+  public let imageOrientation: PivoProSDK.Orientation
+  public let needMirror: Swift.Bool
+  public let deviceOrientation: PivoProSDK.Orientation
+  public let cameraPosition: PivoProSDK.CameraSide
+  public init(buffer: CoreVideo.CVPixelBuffer, imageOrientation: PivoProSDK.Orientation, needMirror: Swift.Bool, deviceOrientation: PivoProSDK.Orientation, cameraPosition: PivoProSDK.CameraSide, trackingMode: PivoProSDK.TrackingMode)
+  public var size: CoreFoundation.CGSize {
+    get
+  }
+  public var detectOrientation: PivoProSDK.Orientation {
+    get
+  }
+}
+public enum TrackingPosition : Swift.Int {
+  case left
+  case center
+  case right
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension PivoProSDK.TrackingPosition {
+  public var name: Swift.String {
+    get
+  }
+}
+public enum TrackingMode {
+  case off
+  case body
+  case face
+  case action
+  case horse
+  case dog
+  public func toAutoTrackingTarget() -> PivoProSDK.TrackingTarget.Auto?
+  public func toPreSelectTrackingTarget() -> PivoProSDK.TrackingTarget.PreSelectTarget?
+  public var name: Swift.String {
+    get
+  }
+}
+extension PivoProSDK.TrackingMode : Swift.RawRepresentable {
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum PivoError : Foundation.LocalizedError {
+  case cannotReadLicenseKeyFile
+  case licenseNotProvided
+  case invalidLicenseKey
+  case expiredLicenseKey
+  case bluetoothOff
+  case bluetoothPermissionNotAllowed
+  case trackingModeNotSupported
+  case feedbackNotSupported
+  case pivoNotConnected
+  case savingLocationCantBeEmpty
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public static func == (a: PivoProSDK.PivoError, b: PivoProSDK.PivoError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum Orientation {
+  case portrait
+  case portraitUpsideDown
+  case landscapeLeft
+  case landscapeRight
+  public var eventName: Swift.String? {
+    get
+  }
+  public static func == (a: PivoProSDK.Orientation, b: PivoProSDK.Orientation) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension PivoProSDK.Orientation {
+  public func toDeviceOrientation() -> UIKit.UIDeviceOrientation
+}
+extension PivoProSDK.Orientation {
+  public func toCGImageOrientation() -> ImageIO.CGImagePropertyOrientation
+  public func toCGImageOrientationMirrored() -> ImageIO.CGImagePropertyOrientation
+}
+extension PivoProSDK.Orientation {
+  public var videoOrientation: AVFoundation.AVCaptureVideoOrientation {
+    get
+  }
+}
+public enum CaptureSettingMode {
+  case photo
+  case video
+  case common
+}
+extension PivoProSDK.CaptureSettingMode : Swift.RawRepresentable {
+  public typealias RawValue = Swift.Int
+  public init?(rawValue: Swift.Int)
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension Swift.Collection {
+  public subscript(safe index: Self.Index) -> Self.Element? {
+    get
+  }
+}
+public struct AppHelper {
+  public static func getFileURLInTempFolder(fileName: Swift.String) -> Foundation.URL
+  public static func getDocumentFolder() -> Foundation.URL
+  public static func getFileURLInDocumentFolder(fileName: Swift.String) -> Foundation.URL
+  public static func createFileURLIn(parentFolder: Swift.String, fileName: Swift.String) -> Foundation.URL
+}
+extension PivoProSDK.AppHelper {
+  public static func fileInParentDirectoryPath(parentFolder: Swift.String, folderName: Swift.String?, filename: Swift.String) -> Swift.String
+  public static func fileInTempDirectoryPath(_ filename: Swift.String) -> Swift.String
+  public static func createFolderInDocumentFolder(folderName: Swift.String)
+}
+extension Swift.String {
+  public func stringByAppendingPathComponent(_ path: Swift.String) -> Swift.String
+}
+public enum VideoOutputFormat {
+  case mp4
+  case mov
+  public static func == (a: PivoProSDK.VideoOutputFormat, b: PivoProSDK.VideoOutputFormat) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct PivoAppConfig {
+  public static let videoOutputFormat: PivoProSDK.VideoOutputFormat
+}
+extension PivoProSDK.AppHelper {
+  public static func getVideoFileExtension() -> Swift.String
+  public static func makeUniqueFileNameWithoutExtension() -> Swift.String
+  public static func getCurrentTimeInMiliseconds() -> Swift.String
+  public static func makeUniqueVideoName() -> Swift.String
+  public static func makeUniqueMovVideoName() -> Swift.String
+  public static func makeUniqueAudioName() -> Swift.String
+  public static func makeUniqueImageName() -> Swift.String
+}
+public let KeychainAccessErrorDomain: Swift.String
+public enum ItemClass {
+  case genericPassword
+  case internetPassword
+}
+public enum ProtocolType {
+  case ftp
+  case ftpAccount
+  case http
+  case irc
+  case nntp
+  case pop3
+  case smtp
+  case socks
+  case imap
+  case ldap
+  case appleTalk
+  case afp
+  case telnet
+  case ssh
+  case ftps
+  case https
+  case httpProxy
+  case httpsProxy
+  case ftpProxy
+  case smb
+  case rtsp
+  case rtspProxy
+  case daap
+  case eppc
+  case ipp
+  case nntps
+  case ldaps
+  case telnetS
+  case imaps
+  case ircs
+  case pop3S
+}
+public enum AuthenticationType {
+  case ntlm
+  case msn
+  case dpa
+  case rpa
+  case httpBasic
+  case httpDigest
+  case htmlForm
+  case `default`
+}
+public enum Accessibility {
+  case whenUnlocked
+  case afterFirstUnlock
+  @available(macCatalyst, unavailable)
+  case always
+  @available(iOS 8.0, macOS 10.10, *)
+  case whenPasscodeSetThisDeviceOnly
+  case whenUnlockedThisDeviceOnly
+  case afterFirstUnlockThisDeviceOnly
+  @available(macCatalyst, unavailable)
+  case alwaysThisDeviceOnly
+}
+public enum AuthenticationUI {
+  case allow
+  case fail
+  case skip
+  public static func == (a: PivoProSDK.AuthenticationUI, b: PivoProSDK.AuthenticationUI) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 9.0, macOS 10.11, *)
+extension PivoProSDK.AuthenticationUI {
+  public var rawValue: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+}
+public struct AuthenticationPolicy : Swift.OptionSet {
+  @available(iOS 8.0, macOS 10.10, watchOS 2.0, tvOS 8.0, *)
+  public static let userPresence: PivoProSDK.AuthenticationPolicy
+  @available(iOS 11.3, macOS 10.13.4, watchOS 4.3, tvOS 11.3, *)
+  public static let biometryAny: PivoProSDK.AuthenticationPolicy
+  @available(iOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryAny")
+  @available(macOS, introduced: 10.12.1, deprecated: 10.13.4, renamed: "biometryAny")
+  @available(watchOS, introduced: 2.0, deprecated: 4.3, renamed: "biometryAny")
+  @available(tvOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryAny")
+  public static let touchIDAny: PivoProSDK.AuthenticationPolicy
+  @available(iOS 11.3, macOS 10.13, watchOS 4.3, tvOS 11.3, *)
+  public static let biometryCurrentSet: PivoProSDK.AuthenticationPolicy
+  @available(iOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryCurrentSet")
+  @available(macOS, introduced: 10.12.1, deprecated: 10.13.4, renamed: "biometryCurrentSet")
+  @available(watchOS, introduced: 2.0, deprecated: 4.3, renamed: "biometryCurrentSet")
+  @available(tvOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryCurrentSet")
+  public static let touchIDCurrentSet: PivoProSDK.AuthenticationPolicy
+  @available(iOS 9.0, macOS 10.11, watchOS 2.0, tvOS 9.0, *)
+  public static let devicePasscode: PivoProSDK.AuthenticationPolicy
+  @available(macOS 10.15, *)
+  @available(iOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let watch: PivoProSDK.AuthenticationPolicy
+  @available(iOS 9.0, macOS 10.12.1, watchOS 2.0, tvOS 9.0, *)
+  public static let or: PivoProSDK.AuthenticationPolicy
+  @available(iOS 9.0, macOS 10.12.1, watchOS 2.0, tvOS 9.0, *)
+  public static let and: PivoProSDK.AuthenticationPolicy
+  @available(iOS 9.0, macOS 10.12.1, watchOS 2.0, tvOS 9.0, *)
+  public static let privateKeyUsage: PivoProSDK.AuthenticationPolicy
+  @available(iOS 9.0, macOS 10.12.1, watchOS 2.0, tvOS 9.0, *)
+  public static let applicationPassword: PivoProSDK.AuthenticationPolicy
+  public let rawValue: Swift.UInt
+  public init(rawValue: Swift.UInt)
+  public typealias ArrayLiteralElement = PivoProSDK.AuthenticationPolicy
+  public typealias Element = PivoProSDK.AuthenticationPolicy
+  public typealias RawValue = Swift.UInt
+}
+public struct Attributes {
+  public var `class`: Swift.String? {
+    get
+  }
+  public var data: Foundation.Data? {
+    get
+  }
+  public var ref: Foundation.Data? {
+    get
+  }
+  public var persistentRef: Foundation.Data? {
+    get
+  }
+  public var accessible: Swift.String? {
+    get
+  }
+  public var accessControl: Security.SecAccessControl? {
+    get
+  }
+  public var accessGroup: Swift.String? {
+    get
+  }
+  public var synchronizable: Swift.Bool? {
+    get
+  }
+  public var creationDate: Foundation.Date? {
+    get
+  }
+  public var modificationDate: Foundation.Date? {
+    get
+  }
+  public var attributeDescription: Swift.String? {
+    get
+  }
+  public var comment: Swift.String? {
+    get
+  }
+  public var creator: Swift.String? {
+    get
+  }
+  public var type: Swift.String? {
+    get
+  }
+  public var label: Swift.String? {
+    get
+  }
+  public var isInvisible: Swift.Bool? {
+    get
+  }
+  public var isNegative: Swift.Bool? {
+    get
+  }
+  public var account: Swift.String? {
+    get
+  }
+  public var service: Swift.String? {
+    get
+  }
+  public var generic: Foundation.Data? {
+    get
+  }
+  public var securityDomain: Swift.String? {
+    get
+  }
+  public var server: Swift.String? {
+    get
+  }
+  public var `protocol`: Swift.String? {
+    get
+  }
+  public var authenticationType: Swift.String? {
+    get
+  }
+  public var port: Swift.Int? {
+    get
+  }
+  public var path: Swift.String? {
+    get
+  }
+  public init(attributes: [Swift.String : Any])
+  public subscript(key: Swift.String) -> Any? {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class Keychain {
+  final public var itemClass: PivoProSDK.ItemClass {
+    get
+  }
+  final public var service: Swift.String {
+    get
+  }
+  final public var accessGroup: Swift.String? {
+    get
+  }
+  final public var server: Foundation.URL {
+    get
+  }
+  final public var protocolType: PivoProSDK.ProtocolType {
+    get
+  }
+  final public var authenticationType: PivoProSDK.AuthenticationType {
+    get
+  }
+  final public var accessibility: PivoProSDK.Accessibility {
+    get
+  }
+  @available(iOS 8.0, macOS 10.10, *)
+  @available(watchOS, unavailable)
+  final public var authenticationPolicy: PivoProSDK.AuthenticationPolicy? {
+    get
+  }
+  final public var synchronizable: Swift.Bool {
+    get
+  }
+  final public var label: Swift.String? {
+    get
+  }
+  final public var comment: Swift.String? {
+    get
+  }
+  @available(iOS 8.0, macOS 10.10, *)
+  @available(watchOS, unavailable)
+  final public var authenticationPrompt: Swift.String? {
+    get
+  }
+  @available(iOS 9.0, macOS 10.11, *)
+  final public var authenticationUI: PivoProSDK.AuthenticationUI {
+    get
+  }
+  @available(iOS 9.0, macOS 10.11, *)
+  final public var authenticationContext: LocalAuthentication.LAContext? {
+    get
+  }
+  convenience public init()
+  convenience public init(service: Swift.String)
+  convenience public init(accessGroup: Swift.String)
+  convenience public init(service: Swift.String, accessGroup: Swift.String)
+  convenience public init(server: Swift.String, protocolType: PivoProSDK.ProtocolType, accessGroup: Swift.String? = nil, authenticationType: PivoProSDK.AuthenticationType = .default)
+  convenience public init(server: Foundation.URL, protocolType: PivoProSDK.ProtocolType, accessGroup: Swift.String? = nil, authenticationType: PivoProSDK.AuthenticationType = .default)
+  final public func accessibility(_ accessibility: PivoProSDK.Accessibility) -> PivoProSDK.Keychain
+  @available(iOS 8.0, macOS 10.10, *)
+  @available(watchOS, unavailable)
+  final public func accessibility(_ accessibility: PivoProSDK.Accessibility, authenticationPolicy: PivoProSDK.AuthenticationPolicy) -> PivoProSDK.Keychain
+  final public func synchronizable(_ synchronizable: Swift.Bool) -> PivoProSDK.Keychain
+  final public func label(_ label: Swift.String) -> PivoProSDK.Keychain
+  final public func comment(_ comment: Swift.String) -> PivoProSDK.Keychain
+  final public func attributes(_ attributes: [Swift.String : Any]) -> PivoProSDK.Keychain
+  @available(iOS 8.0, macOS 10.10, *)
+  @available(watchOS, unavailable)
+  final public func authenticationPrompt(_ authenticationPrompt: Swift.String) -> PivoProSDK.Keychain
+  @available(iOS 9.0, macOS 10.11, *)
+  final public func authenticationUI(_ authenticationUI: PivoProSDK.AuthenticationUI) -> PivoProSDK.Keychain
+  @available(iOS 9.0, macOS 10.11, *)
+  final public func authenticationContext(_ authenticationContext: LocalAuthentication.LAContext) -> PivoProSDK.Keychain
+  final public func get(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws -> Swift.String?
+  final public func getString(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws -> Swift.String?
+  final public func getData(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws -> Foundation.Data?
+  final public func get<T>(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true, handler: (PivoProSDK.Attributes?) -> T) throws -> T
+  final public func set(_ value: Swift.String, key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws
+  final public func set(_ value: Foundation.Data, key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws
+  final public subscript(key: Swift.String) -> Swift.String? {
+    get
+    set
+  }
+  final public subscript(string key: Swift.String) -> Swift.String? {
+    get
+    set
+  }
+  final public subscript(data key: Swift.String) -> Foundation.Data? {
+    get
+    set
+  }
+  final public subscript(attributes key: Swift.String) -> PivoProSDK.Attributes? {
+    get
+  }
+  final public func remove(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws
+  final public func removeAll() throws
+  final public func contains(_ key: Swift.String, withoutAuthenticationUI: Swift.Bool = false) throws -> Swift.Bool
+  final public class func allKeys(_ itemClass: PivoProSDK.ItemClass) -> [(Swift.String, Swift.String)]
+  final public func allKeys() -> [Swift.String]
+  final public class func allItems(_ itemClass: PivoProSDK.ItemClass) -> [[Swift.String : Any]]
+  final public func allItems() -> [[Swift.String : Any]]
+  @available(iOS 8.0, *)
+  final public func getSharedPassword(_ completion: @escaping (_ account: Swift.String?, _ password: Swift.String?, _ error: Swift.Error?) -> () = { account, password, error -> () in })
+  @available(iOS 8.0, *)
+  final public func getSharedPassword(_ account: Swift.String, completion: @escaping (_ password: Swift.String?, _ error: Swift.Error?) -> () = { password, error -> () in })
+  @available(iOS 8.0, *)
+  final public func setSharedPassword(_ password: Swift.String, account: Swift.String, completion: @escaping (_ error: Swift.Error?) -> () = { e -> () in })
+  @available(iOS 8.0, *)
+  final public func removeSharedPassword(_ account: Swift.String, completion: @escaping (_ error: Swift.Error?) -> () = { e -> () in })
+  @available(iOS 8.0, *)
+  final public class func requestSharedWebCredential(_ completion: @escaping (_ credentials: [[Swift.String : Swift.String]], _ error: Swift.Error?) -> () = { credentials, error -> () in })
+  @available(iOS 8.0, *)
+  final public class func requestSharedWebCredential(domain: Swift.String, completion: @escaping (_ credentials: [[Swift.String : Swift.String]], _ error: Swift.Error?) -> () = { credentials, error -> () in })
+  @available(iOS 8.0, *)
+  final public class func requestSharedWebCredential(domain: Swift.String, account: Swift.String, completion: @escaping (_ credentials: [[Swift.String : Swift.String]], _ error: Swift.Error?) -> () = { credentials, error -> () in })
+  @available(iOS 8.0, *)
+  final public class func generatePassword() -> Swift.String
+  @objc deinit
+}
+extension PivoProSDK.Keychain : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  final public var description: Swift.String {
+    get
+  }
+  final public var debugDescription: Swift.String {
+    get
+  }
+}
+extension PivoProSDK.Attributes : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+extension PivoProSDK.ItemClass : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.String
+}
+extension PivoProSDK.ProtocolType : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.String
+}
+extension PivoProSDK.AuthenticationType : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.String
+}
+extension PivoProSDK.Accessibility : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.String
+}
+public enum Status : Darwin.OSStatus, Swift.Error {
+  case success
+  case unimplemented
+  case diskFull
+  case io
+  case opWr
+  case param
+  case wrPerm
+  case allocate
+  case userCanceled
+  case badReq
+  case internalComponent
+  case notAvailable
+  case readOnly
+  case authFailed
+  case noSuchKeychain
+  case invalidKeychain
+  case duplicateKeychain
+  case duplicateCallback
+  case invalidCallback
+  case duplicateItem
+  case itemNotFound
+  case bufferTooSmall
+  case dataTooLarge
+  case noSuchAttr
+  case invalidItemRef
+  case invalidSearchRef
+  case noSuchClass
+  case noDefaultKeychain
+  case interactionNotAllowed
+  case readOnlyAttr
+  case wrongSecVersion
+  case keySizeNotAllowed
+  case noStorageModule
+  case noCertificateModule
+  case noPolicyModule
+  case interactionRequired
+  case dataNotAvailable
+  case dataNotModifiable
+  case createChainFailed
+  case invalidPrefsDomain
+  case inDarkWake
+  case aclNotSimple
+  case policyNotFound
+  case invalidTrustSetting
+  case noAccessForItem
+  case invalidOwnerEdit
+  case trustNotAvailable
+  case unsupportedFormat
+  case unknownFormat
+  case keyIsSensitive
+  case multiplePrivKeys
+  case passphraseRequired
+  case invalidPasswordRef
+  case invalidTrustSettings
+  case noTrustSettings
+  case pkcs12VerifyFailure
+  case invalidCertificate
+  case notSigner
+  case policyDenied
+  case invalidKey
+  case decode
+  case `internal`
+  case unsupportedAlgorithm
+  case unsupportedOperation
+  case unsupportedPadding
+  case itemInvalidKey
+  case itemInvalidKeyType
+  case itemInvalidValue
+  case itemClassMissing
+  case itemMatchUnsupported
+  case useItemListUnsupported
+  case useKeychainUnsupported
+  case useKeychainListUnsupported
+  case returnDataUnsupported
+  case returnAttributesUnsupported
+  case returnRefUnsupported
+  case returnPersitentRefUnsupported
+  case valueRefUnsupported
+  case valuePersistentRefUnsupported
+  case returnMissingPointer
+  case matchLimitUnsupported
+  case itemIllegalQuery
+  case waitForCallback
+  case missingEntitlement
+  case upgradePending
+  case mpSignatureInvalid
+  case otrTooOld
+  case otrIDTooNew
+  case serviceNotAvailable
+  case insufficientClientID
+  case deviceReset
+  case deviceFailed
+  case appleAddAppACLSubject
+  case applePublicKeyIncomplete
+  case appleSignatureMismatch
+  case appleInvalidKeyStartDate
+  case appleInvalidKeyEndDate
+  case conversionError
+  case appleSSLv2Rollback
+  case quotaExceeded
+  case fileTooBig
+  case invalidDatabaseBlob
+  case invalidKeyBlob
+  case incompatibleDatabaseBlob
+  case incompatibleKeyBlob
+  case hostNameMismatch
+  case unknownCriticalExtensionFlag
+  case noBasicConstraints
+  case noBasicConstraintsCA
+  case invalidAuthorityKeyID
+  case invalidSubjectKeyID
+  case invalidKeyUsageForPolicy
+  case invalidExtendedKeyUsage
+  case invalidIDLinkage
+  case pathLengthConstraintExceeded
+  case invalidRoot
+  case crlExpired
+  case crlNotValidYet
+  case crlNotFound
+  case crlServerDown
+  case crlBadURI
+  case unknownCertExtension
+  case unknownCRLExtension
+  case crlNotTrusted
+  case crlPolicyFailed
+  case idpFailure
+  case smimeEmailAddressesNotFound
+  case smimeBadExtendedKeyUsage
+  case smimeBadKeyUsage
+  case smimeKeyUsageNotCritical
+  case smimeNoEmailAddress
+  case smimeSubjAltNameNotCritical
+  case sslBadExtendedKeyUsage
+  case ocspBadResponse
+  case ocspBadRequest
+  case ocspUnavailable
+  case ocspStatusUnrecognized
+  case endOfData
+  case incompleteCertRevocationCheck
+  case networkFailure
+  case ocspNotTrustedToAnchor
+  case recordModified
+  case ocspSignatureError
+  case ocspNoSigner
+  case ocspResponderMalformedReq
+  case ocspResponderInternalError
+  case ocspResponderTryLater
+  case ocspResponderSignatureRequired
+  case ocspResponderUnauthorized
+  case ocspResponseNonceMismatch
+  case codeSigningBadCertChainLength
+  case codeSigningNoBasicConstraints
+  case codeSigningBadPathLengthConstraint
+  case codeSigningNoExtendedKeyUsage
+  case codeSigningDevelopment
+  case resourceSignBadCertChainLength
+  case resourceSignBadExtKeyUsage
+  case trustSettingDeny
+  case invalidSubjectName
+  case unknownQualifiedCertStatement
+  case mobileMeRequestQueued
+  case mobileMeRequestRedirected
+  case mobileMeServerError
+  case mobileMeServerNotAvailable
+  case mobileMeServerAlreadyExists
+  case mobileMeServerServiceErr
+  case mobileMeRequestAlreadyPending
+  case mobileMeNoRequestPending
+  case mobileMeCSRVerifyFailure
+  case mobileMeFailedConsistencyCheck
+  case notInitialized
+  case invalidHandleUsage
+  case pvcReferentNotFound
+  case functionIntegrityFail
+  case internalError
+  case memoryError
+  case invalidData
+  case mdsError
+  case invalidPointer
+  case selfCheckFailed
+  case functionFailed
+  case moduleManifestVerifyFailed
+  case invalidGUID
+  case invalidHandle
+  case invalidDBList
+  case invalidPassthroughID
+  case invalidNetworkAddress
+  case crlAlreadySigned
+  case invalidNumberOfFields
+  case verificationFailure
+  case unknownTag
+  case invalidSignature
+  case invalidName
+  case invalidCertificateRef
+  case invalidCertificateGroup
+  case tagNotFound
+  case invalidQuery
+  case invalidValue
+  case callbackFailed
+  case aclDeleteFailed
+  case aclReplaceFailed
+  case aclAddFailed
+  case aclChangeFailed
+  case invalidAccessCredentials
+  case invalidRecord
+  case invalidACL
+  case invalidSampleValue
+  case incompatibleVersion
+  case privilegeNotGranted
+  case invalidScope
+  case pvcAlreadyConfigured
+  case invalidPVC
+  case emmLoadFailed
+  case emmUnloadFailed
+  case addinLoadFailed
+  case invalidKeyRef
+  case invalidKeyHierarchy
+  case addinUnloadFailed
+  case libraryReferenceNotFound
+  case invalidAddinFunctionTable
+  case invalidServiceMask
+  case moduleNotLoaded
+  case invalidSubServiceID
+  case attributeNotInContext
+  case moduleManagerInitializeFailed
+  case moduleManagerNotFound
+  case eventNotificationCallbackNotFound
+  case inputLengthError
+  case outputLengthError
+  case privilegeNotSupported
+  case deviceError
+  case attachHandleBusy
+  case notLoggedIn
+  case algorithmMismatch
+  case keyUsageIncorrect
+  case keyBlobTypeIncorrect
+  case keyHeaderInconsistent
+  case unsupportedKeyFormat
+  case unsupportedKeySize
+  case invalidKeyUsageMask
+  case unsupportedKeyUsageMask
+  case invalidKeyAttributeMask
+  case unsupportedKeyAttributeMask
+  case invalidKeyLabel
+  case unsupportedKeyLabel
+  case invalidKeyFormat
+  case unsupportedVectorOfBuffers
+  case invalidInputVector
+  case invalidOutputVector
+  case invalidContext
+  case invalidAlgorithm
+  case invalidAttributeKey
+  case missingAttributeKey
+  case invalidAttributeInitVector
+  case missingAttributeInitVector
+  case invalidAttributeSalt
+  case missingAttributeSalt
+  case invalidAttributePadding
+  case missingAttributePadding
+  case invalidAttributeRandom
+  case missingAttributeRandom
+  case invalidAttributeSeed
+  case missingAttributeSeed
+  case invalidAttributePassphrase
+  case missingAttributePassphrase
+  case invalidAttributeKeyLength
+  case missingAttributeKeyLength
+  case invalidAttributeBlockSize
+  case missingAttributeBlockSize
+  case invalidAttributeOutputSize
+  case missingAttributeOutputSize
+  case invalidAttributeRounds
+  case missingAttributeRounds
+  case invalidAlgorithmParms
+  case missingAlgorithmParms
+  case invalidAttributeLabel
+  case missingAttributeLabel
+  case invalidAttributeKeyType
+  case missingAttributeKeyType
+  case invalidAttributeMode
+  case missingAttributeMode
+  case invalidAttributeEffectiveBits
+  case missingAttributeEffectiveBits
+  case invalidAttributeStartDate
+  case missingAttributeStartDate
+  case invalidAttributeEndDate
+  case missingAttributeEndDate
+  case invalidAttributeVersion
+  case missingAttributeVersion
+  case invalidAttributePrime
+  case missingAttributePrime
+  case invalidAttributeBase
+  case missingAttributeBase
+  case invalidAttributeSubprime
+  case missingAttributeSubprime
+  case invalidAttributeIterationCount
+  case missingAttributeIterationCount
+  case invalidAttributeDLDBHandle
+  case missingAttributeDLDBHandle
+  case invalidAttributeAccessCredentials
+  case missingAttributeAccessCredentials
+  case invalidAttributePublicKeyFormat
+  case missingAttributePublicKeyFormat
+  case invalidAttributePrivateKeyFormat
+  case missingAttributePrivateKeyFormat
+  case invalidAttributeSymmetricKeyFormat
+  case missingAttributeSymmetricKeyFormat
+  case invalidAttributeWrappedKeyFormat
+  case missingAttributeWrappedKeyFormat
+  case stagedOperationInProgress
+  case stagedOperationNotStarted
+  case verifyFailed
+  case querySizeUnknown
+  case blockSizeMismatch
+  case publicKeyInconsistent
+  case deviceVerifyFailed
+  case invalidLoginName
+  case alreadyLoggedIn
+  case invalidDigestAlgorithm
+  case invalidCRLGroup
+  case certificateCannotOperate
+  case certificateExpired
+  case certificateNotValidYet
+  case certificateRevoked
+  case certificateSuspended
+  case insufficientCredentials
+  case invalidAction
+  case invalidAuthority
+  case verifyActionFailed
+  case invalidCertAuthority
+  case invaldCRLAuthority
+  case invalidCRLEncoding
+  case invalidCRLType
+  case invalidCRL
+  case invalidFormType
+  case invalidID
+  case invalidIdentifier
+  case invalidIndex
+  case invalidPolicyIdentifiers
+  case invalidTimeString
+  case invalidReason
+  case invalidRequestInputs
+  case invalidResponseVector
+  case invalidStopOnPolicy
+  case invalidTuple
+  case multipleValuesUnsupported
+  case notTrusted
+  case noDefaultAuthority
+  case rejectedForm
+  case requestLost
+  case requestRejected
+  case unsupportedAddressType
+  case unsupportedService
+  case invalidTupleGroup
+  case invalidBaseACLs
+  case invalidTupleCredendtials
+  case invalidEncoding
+  case invalidValidityPeriod
+  case invalidRequestor
+  case requestDescriptor
+  case invalidBundleInfo
+  case invalidCRLIndex
+  case noFieldValues
+  case unsupportedFieldFormat
+  case unsupportedIndexInfo
+  case unsupportedLocality
+  case unsupportedNumAttributes
+  case unsupportedNumIndexes
+  case unsupportedNumRecordTypes
+  case fieldSpecifiedMultiple
+  case incompatibleFieldFormat
+  case invalidParsingModule
+  case databaseLocked
+  case datastoreIsOpen
+  case missingValue
+  case unsupportedQueryLimits
+  case unsupportedNumSelectionPreds
+  case unsupportedOperator
+  case invalidDBLocation
+  case invalidAccessRequest
+  case invalidIndexInfo
+  case invalidNewOwner
+  case invalidModifyMode
+  case missingRequiredExtension
+  case extendedKeyUsageNotCritical
+  case timestampMissing
+  case timestampInvalid
+  case timestampNotTrusted
+  case timestampServiceNotAvailable
+  case timestampBadAlg
+  case timestampBadRequest
+  case timestampBadDataFormat
+  case timestampTimeNotAvailable
+  case timestampUnacceptedPolicy
+  case timestampUnacceptedExtension
+  case timestampAddInfoNotAvailable
+  case timestampSystemFailure
+  case signingTimeMissing
+  case timestampRejection
+  case timestampWaiting
+  case timestampRevocationWarning
+  case timestampRevocationNotification
+  case unexpectedError
+}
+extension PivoProSDK.Status : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  public init(status: Darwin.OSStatus)
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Darwin.OSStatus)
+  public typealias RawValue = Darwin.OSStatus
+  public var rawValue: Darwin.OSStatus {
+    get
+  }
+}
+extension PivoProSDK.Status : Foundation.CustomNSError {
+  public static let errorDomain: Swift.String
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public var deviceModel: PivoProSDK.DeviceModel {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var modelName: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public func getMaxFrontCameraResolution() -> PivoProSDK.CameraResolution
+  @_Concurrency.MainActor(unsafe) public func getMaxRearCameraResolution() -> PivoProSDK.CameraResolution
+  @_Concurrency.MainActor(unsafe) public var isRearCameraSupport4K: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isFrontCameraSupport4K: Swift.Bool {
+    get
+  }
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public var deviceModelString: Swift.String {
+    get
+  }
+}
+public struct DirectoryManager {
+  public static let defaultDirectoryName: Swift.String
+  public static func getTemporaryDirectory(subdirectory: Swift.String = defaultDirectoryName) -> Foundation.URL?
+  public static func clearCache()
+  @discardableResult
+  public static func deleteFile(at url: Foundation.URL) -> Swift.Bool
+  public static func getDocumentsDirectory(subdirectory: Swift.String) -> Foundation.URL
+  public static func createDirectoryIfNeeded(url: Foundation.URL)
+  public static func randomFileUrlWithIdentifier(prefix: Swift.String = "REC", ext: Swift.String = "mp4", temporaryFile: Swift.Bool = true, subdirectory: Swift.String) -> Foundation.URL?
+  public static func fileUrlWithIdentifier(identifier: Swift.String, ext: Swift.String = "mp4", temporaryFile: Swift.Bool, subdirectory: Swift.String) -> Foundation.URL?
+}
+public protocol BluetoothConnectionManagerDelegate : AnyObject {
+  func bluetoothConnectionDidUpdateState(_ state: PivoProSDK.BluetoothState)
+  func bluetoothConnectionDidDeviceFound(_ device: PivoProSDK.BluetoothDevice)
+  func bluetoothConnectionDidConnectionFailed(_ device: PivoProSDK.BluetoothDevice)
+  func bluetoothConnectionDidConnectionEstablished(serviceUUID: Swift.String, device: PivoProSDK.BluetoothDevice)
+  func bluetoothAccessRespondedFirstTime(allowed: Swift.Bool)
+  func bluetoothConnectionDisconnected(_ device: PivoProSDK.BluetoothDevice?)
+  func bluetoothConnectionDidReceiveValue(_ data: Foundation.Data)
+}
+public enum UUIDTypes {
+  case Pod, Light, Mic, RemoteControll
+  public static func == (a: PivoProSDK.UUIDTypes, b: PivoProSDK.UUIDTypes) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol PivoDeviceUUID {
+  static var service: Swift.String { get }
+  static var writeCharacteristic: Swift.String { get }
+  static var readCharacteristic: Swift.String { get }
+  static func toScannableDevice() -> PivoProSDK.ScannableDevice
+}
+extension PivoProSDK.PivoDeviceUUID {
+  public static func toScannableDevice() -> PivoProSDK.ScannableDevice
+}
+@objc @_inheritsConvenienceInitializers public class ScannableDevices : ObjectiveC.NSObject {
+  public class func scannableDevicesType(service: Swift.String?) -> PivoProSDK.PivoDeviceType
+  public class func getScannableDevices(type: PivoProSDK.UUIDTypes) -> [PivoProSDK.ScannableDevice]
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol BluetoothConnectionManager {
+  var delegate: PivoProSDK.BluetoothConnectionManagerDelegate? { get set }
+  func scan(with scannableDevices: [PivoProSDK.ScannableDevice]) throws
+  func stopScan()
+  func connect(to device: PivoProSDK.BluetoothDevice)
+  func disconnect(device: PivoProSDK.BluetoothDevice)
+  func write(data: Foundation.Data, to device: PivoProSDK.BluetoothDevice) -> Swift.Bool
+  func writeWithResponse(data: Foundation.Data, to device: PivoProSDK.BluetoothDevice) -> Swift.Bool
+}
+@_hasMissingDesignatedInitializers open class BluetoothDevice : Swift.Equatable, Swift.Hashable, Swift.Codable {
+  public var type: PivoProSDK.PivoDeviceType
+  public var pivoType: PivoProSDK.PivoType?
+  public var id: Swift.String
+  public var name: Swift.String
+  public var firmwareVersion: Swift.Int
+  public var serialNumber: Swift.String?
+  public var macAddress: [Swift.String]?
+  public var batteryLevel: Swift.Int
+  public var reportName: Swift.String
+  public var connectedAt: Foundation.Date
+  required public init(from decoder: Swift.Decoder) throws
+  open func encode(to encoder: Swift.Encoder) throws
+  public init(id: Swift.String, name: Swift.String, type: PivoProSDK.PivoDeviceType = .pod)
+  public init(device: PivoProSDK.BluetoothDevice)
+  public func connectedUpdate()
+  public static func == (lhs: PivoProSDK.BluetoothDevice, rhs: PivoProSDK.BluetoothDevice) -> Swift.Bool
+  @objc deinit
+  open var hashValue: Swift.Int {
+    get
+  }
+}
+extension PivoProSDK.BluetoothDevice {
+  public func hash(into hasher: inout Swift.Hasher)
+}
+public struct ScannableDevice {
+  public let serviceUUID: Swift.String
+  public let writeCharacteristicUUID: Swift.String
+  public let readCharacteristicUUID: Swift.String
+  public init(serviceUUID: Swift.String, writeCharacteristicUUID: Swift.String, readCharacteristicUUID: Swift.String)
+}
+@_hasMissingDesignatedInitializers open class PivoSettingModel : PivoProSDK.BluetoothDevice {
+  public var product: Swift.String
+  public var zendeskName: Swift.String
+  public var iconImage: UIKit.UIImage?
+  public var batteryColor: UIKit.UIColor
+  override public init(device: PivoProSDK.BluetoothDevice)
+  required public init(from decoder: Swift.Decoder) throws
+  override open func encode(to encoder: Swift.Encoder) throws
+  @objc deinit
+}
+public enum BluetoothState {
+  case on
+  case off
+  case denied
+  public static func == (a: PivoProSDK.BluetoothState, b: PivoProSDK.BluetoothState) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum BluetoothError : Foundation.LocalizedError {
+  case bluetoothOff
+  case bluetoothPermissionNotAllowed
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public static func == (a: PivoProSDK.BluetoothError, b: PivoProSDK.BluetoothError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Swift.Int {
+  public func toUInt8(noOfBytes: Swift.Int = 2) -> [Swift.UInt8]
+}
+public protocol DelayExecutor {
+  func execute(action: Dispatch.DispatchWorkItem, after seconds: Swift.Double)
+}
+extension Dispatch.DispatchQueue : PivoProSDK.DelayExecutor {
+  public func execute(action: Dispatch.DispatchWorkItem, after seconds: Swift.Double)
+}
+extension Swift.StringProtocol {
+  public var ascii: [Swift.UInt8] {
+    get
+  }
+}
+extension Swift.UInt8 {
+  public func toString() -> Swift.String
+}
+extension Swift.Character {
+  public var ascii: Swift.UInt32? {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class PivoSDK {
+  public static var shared: PivoProSDK.PivoSDK
+  public func unlockWithLicenseKey(licenseKeyFileURL url: Foundation.URL) throws
+  public func isPivoConnected() -> Swift.Bool
+  public func addDelegate(_ delegate: PivoProSDK.PodConnectionDelegate)
+  public func removeDelegate(_ delegate: PivoProSDK.PodConnectionDelegate)
+  public func scan() throws
+  public func stopScan()
+  public func connect(device: PivoProSDK.BluetoothDevice)
+  public func disconnect()
+  public func setFastestSpeed()
+  public func getSupportedSpeedsInSecondsPerRound() -> [Swift.Int]
+  public func setSpeedBySecondsPerRound(_ speed: Swift.Int)
+  public func getSupportedSpeedsByRemoteControllerInSecoundsPerRound() -> [Swift.Int]
+  public func turnRight(angle: Swift.Int)
+  public func turnRight(angle: Swift.Int, speed: Swift.Int)
+  public func turnLeft(angle: Swift.Int)
+  public func turnLeft(angle: Swift.Int, speed: Swift.Int)
+  public func turnRightContinuously()
+  public func turnRightContinuously(speed: Swift.Int)
+  public func turnLeftContinuously()
+  public func turnLeftContinuously(speed: Swift.Int)
+  public func stop()
+  public func requestBatteryLevel()
+  public func changePivoName(newName: Swift.String)
+  public func keepPivoWakeUp(_ wakeUp: Swift.Bool)
+  public func getPivoVersion() -> Swift.String
+  public func getSupportedTrackingModes() -> [PivoProSDK.TrackingType]
+  public func startObjectTracking(image: UIKit.UIImage, boundingBox: CoreFoundation.CGRect, trackingSensitivity: PivoProSDK.TrackingSensitivity, delegate: PivoProSDK.TrackerDelegate) throws
+  public func startHumanTracking(image: UIKit.UIImage, trackingSensitivity: PivoProSDK.TrackingSensitivity, delegate: PivoProSDK.TrackerDelegate) throws
+  public func startHorseTracking(image: UIKit.UIImage, trackingSensitivity: PivoProSDK.TrackingSensitivity, delegate: PivoProSDK.TrackerDelegate) throws
+  public func updateTracking(image: UIKit.UIImage)
+  public func stopTracking()
+  public func turnHold()
+  public func turnLeftWithFeedback(angle: Swift.Int) throws
+  public func turnRightWithFeedback(angle: Swift.Int) throws
+  public func isByPassRemoteControllerSupported() throws -> Swift.Bool
+  public func turnOnByPassRemoteController()
+  public func turnOffBypassRemoteController()
+  @objc deinit
+}
+public enum RCButton {
+  case center
+  case left, right
+  case up, down
+  case minus, plus
+  case stop
+  case alt
+  public static func == (a: PivoProSDK.RCButton, b: PivoProSDK.RCButton) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum ButtonState : Swift.UInt8 {
+  case pressed
+  case released
+  case doubleClicked
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+indirect public enum PodResponse : Swift.Equatable {
+  case MODE
+  case CAMERA
+  case STOP
+  case STOP_RELEASED
+  case OFF
+  case CONNECTION_COMPLETED
+  case NAME_CHANGED
+  case VERSION(version: Swift.Int, firmwareVersion: Swift.Int)
+  case BATTERY_CHANGED(batteryLevel: Swift.Int)
+  case LEFT_PRESSED
+  case LEFT_RELEASED
+  case RIGHT_PRESSED
+  case RIGHT_RELEASED
+  case LEFT_CONTINOUS_PRESSED
+  case LEFT_CONTINOUS_RELEASED
+  case RIGHT_CONTINOUS_PRESSED
+  case RIGHT_CONTINOUS_RELEASED
+  case SPEEDUP_PRESSED(secondsPerRound: Swift.Int)
+  case SPEEDUP_RELEASED(secondsPerRound: Swift.Int)
+  case SPEEDDOWN_PRESSED(secondsPerRound: Swift.Int)
+  case SPEEDDOWN_RELEASED(secondsPerRound: Swift.Int)
+  case SPEED(secondsPerRound: Swift.Int)
+  case ROTATED(direction: PivoProSDK.Direction, angle: Swift.Int)
+  case SERIAL_NUMBER(Swift.String?)
+  case TIMEOUT_OFF
+  case TIMEOUT_ON(seconds: Swift.Int)
+  case HORIZONTAL_ANGLE(angle: Swift.Int)
+  case GOTO_HORIZONTAL_ROTATED(angle: Swift.Int)
+  case HORIZONTAL_ZERO_POSITION_RESET
+  case VERTICAL_ANGLE(angle: Swift.Int)
+  case GOTO_VERTICAL_ROTATED(angle: Swift.Int)
+  case ROTATED_2D(direction: PivoProSDK.Direction, xAngle: Swift.Int, yAngle: Swift.Int)
+  case NOTIFY_ROTATED_1DEGREE(direction: PivoProSDK.Direction)
+  case SET_LED_COLOR(success: Swift.Bool)
+  case GET_LED_COLOR(colors: [Swift.UInt8])
+  case RUN_PRESET(pattern: PivoProSDK.LedsPresetPattern, level: Swift.UInt8)
+  case STOP_PRESET
+  case REMOTE_CONTROLLER(button: PivoProSDK.RCButton, state: PivoProSDK.ButtonState)
+  case REMOTE_CONTROL(command: PivoProSDK.PodResponse, state: PivoProSDK.ButtonState)
+  case MAC_ADDRESS([Swift.String]?)
+  public static func == (a: PivoProSDK.PodResponse, b: PivoProSDK.PodResponse) -> Swift.Bool
+}
+public enum DeviceStatus : Swift.UInt8 {
+  case goingToSleep
+  case goingToBeOff
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public class PivoXAxisLegacyProtocol : PivoProSDK.XAxisControllable, PivoProSDK.SupportedSpeedGettable, PivoProSDK.XSpeedSettable {
+  public var speedInSecondsPerRound: Swift.Int
+  public init(fastestSpeed: Swift.Int)
+  public func getContinueBytes(direction: PivoProSDK.XAxisDirection) -> [Swift.UInt8]
+  public func getRotationBytesWithFeedBack(angle: Swift.Int, direction: PivoProSDK.XAxisDirection) throws -> [Swift.UInt8]
+  public func getRotationBytes(angle: Swift.Int, direction: PivoProSDK.XAxisDirection) -> [Swift.UInt8]
+  public func getIsPivoPodLiveV7() -> Swift.Bool
+  public func getSpeedByte() -> Swift.UInt8
+  public func getSupportedSpeed() -> [Swift.Int]
+  public func getSuppotedSpeedByRemoteController() -> [Swift.Int]
+  public func setSpeedXBySecondsPerRound(_ seconds: Swift.Int)
+  public func setSpeedXFastest()
+  @objc deinit
+}
+public class PivoDevices : PivoProSDK.PivoXAxisLegacyProtocol, PivoProSDK.PivoLegacyProtocol {
+  public var pivoType: PivoProSDK.PodDeviceType {
+    get
+  }
+  public var firmwareVersion: Swift.Int {
+    get
+  }
+  public init(pivoType: PivoProSDK.PodDeviceType, firmwareVersion: Swift.Int, isPivoPodLiteV7: Swift.Bool = false)
+  public func getTurnHoldBytes() -> [Swift.UInt8]
+  override public func getIsPivoPodLiveV7() -> Swift.Bool
+  override public func getSpeedByte() -> Swift.UInt8
+  @objc deinit
+}
+extension PivoProSDK.PivoDevices : PivoProSDK.HandshakeRequire {
+}
+public protocol SupportedSpeedGettable {
+  func getSupportedSpeed() -> [Swift.Int]
+  func getSuppotedSpeedByRemoteController() -> [Swift.Int]
+}
+public protocol XSpeedSettable {
+  func setSpeedXFastest()
+  func setSpeedXBySecondsPerRound(_ seconds: Swift.Int)
+}
+public protocol YSpeedSettable {
+  func setSpeedYFastest()
+  func setSpeedYBySecondsPerRound(_ seconds: Swift.Int)
+}
+public protocol XAxisControllable {
+  func getContinueBytes(direction: PivoProSDK.XAxisDirection) -> [Swift.UInt8]
+  func getRotationBytes(angle: Swift.Int, direction: PivoProSDK.XAxisDirection) -> [Swift.UInt8]
+  func getRotationBytesWithFeedBack(angle: Swift.Int, direction: PivoProSDK.XAxisDirection) throws -> [Swift.UInt8]
+}
+extension PivoProSDK.XAxisControllable {
+  public func getContinueBytes(direction: PivoProSDK.XAxisDirection) -> [Swift.UInt8]
+}
+public protocol XYAxisControllable {
+  func getRotationBytes(direction: PivoProSDK.XYAxisDirection, horizontalAngle: Swift.Int, verticalAngle: Swift.Int) -> [Swift.UInt8]
+}
+public protocol XPositionCommandGetter {
+  func getHorizontalPositionBytes() -> [Swift.UInt8]
+  func gotoHorizontalPositionBytes(angle: Swift.Int) -> [Swift.UInt8]
+  func resetHorizontalZeroPosition() -> [Swift.UInt8]
+}
+public protocol YPositionCommandGetter {
+  func getVerticalPositionBytes() -> [Swift.UInt8]
+  func gotoVerticalPositionBytes(angle: Swift.Int) -> [Swift.UInt8]
+}
+public protocol XYPositionCommandGetter : PivoProSDK.XPositionCommandGetter, PivoProSDK.YPositionCommandGetter {
+}
+public protocol HandshakeHandler {
+  var delegate: PivoProSDK.HandshakeResultDelegate? { get set }
+  var didHandShakeSuccessfully: Swift.Bool { get }
+  func startHandshakeProcess()
+  func handleHandshakeData(_ data: [Swift.UInt8])
+}
+public protocol HandshakeRequire {
+}
+public protocol HandshakeResultDelegate {
+  func handshake(commandNeedToSend bytes: [Swift.UInt8])
+  func handshake(processResult isSucess: Swift.Bool)
+}
+public protocol StopControllable {
+  func getStopBytes() -> [Swift.UInt8]
+  func getTurnHoldBytes() -> [Swift.UInt8]
+}
+public protocol PivoLegacyStopControllable : PivoProSDK.StopControllable {
+}
+extension PivoProSDK.PivoLegacyStopControllable {
+  public func getStopBytes() -> [Swift.UInt8]
+  public func getStopBytesForPivoLite() -> [Swift.UInt8]
+}
+public protocol PivoNewStopControllable : PivoProSDK.StopControllable {
+}
+extension PivoProSDK.PivoNewStopControllable {
+  public func getStopBytes() -> [Swift.UInt8]
+  public func getTurnHoldBytes() -> [Swift.UInt8]
+}
+public protocol SupportOTAUpdate {
+  func getOTAUpdater(commandSender: @escaping ([Swift.UInt8]) -> ()) -> PivoProSDK.PivoOTAUpdater
+}
+public protocol Pivo : PivoProSDK.StopControllable, PivoProSDK.SupportedSpeedGettable, PivoProSDK.XAxisControllable, PivoProSDK.XSpeedSettable {
+  var pivoType: PivoProSDK.PodDeviceType { get }
+  var firmwareVersion: Swift.Int { get }
+}
+public protocol PivoLegacyProtocol : PivoProSDK.Pivo, PivoProSDK.PivoLegacyStopControllable {
+}
+public protocol PivoNewProtocol : PivoProSDK.HandshakeRequire, PivoProSDK.Pivo, PivoProSDK.PivoNewStopControllable {
+}
+public class PivoXAxisNewProtocol : PivoProSDK.XAxisControllable, PivoProSDK.SupportedSpeedGettable, PivoProSDK.XSpeedSettable {
+  public init(fastestSpeed: Swift.Int = 10)
+  public func getRotationBytesWithFeedBack(angle: Swift.Int, direction: PivoProSDK.XAxisDirection) throws -> [Swift.UInt8]
+  public func getRotationBytes(angle: Swift.Int, direction: PivoProSDK.XAxisDirection) -> [Swift.UInt8]
+  public func getContinueBytes(direction: PivoProSDK.XAxisDirection) -> [Swift.UInt8]
+  public func getSupportedSpeed() -> [Swift.Int]
+  public func getSuppotedSpeedByRemoteController() -> [Swift.Int]
+  public func setSpeedXFastest()
+  public func setSpeedXBySecondsPerRound(_ seconds: Swift.Int)
+  @objc deinit
+}
+extension PivoProSDK.PivoXAxisNewProtocol : PivoProSDK.XPositionCommandGetter {
+  public func getHorizontalPositionBytes() -> [Swift.UInt8]
+  public func gotoHorizontalPositionBytes(angle: Swift.Int) -> [Swift.UInt8]
+  public func resetHorizontalZeroPosition() -> [Swift.UInt8]
+}
+public class PivoXYAxis : PivoProSDK.XAxisControllable, PivoProSDK.XYAxisControllable, PivoProSDK.SupportedSpeedGettable, PivoProSDK.XSpeedSettable, PivoProSDK.YSpeedSettable {
+  public init(fastestSpeed: Swift.Int = 10)
+  public func getRotationBytesWithFeedBack(angle: Swift.Int, direction: PivoProSDK.XAxisDirection) throws -> [Swift.UInt8]
+  public func getRotationBytes(angle: Swift.Int, direction: PivoProSDK.XAxisDirection) -> [Swift.UInt8]
+  public func getContinueBytes(direction: PivoProSDK.XAxisDirection) -> [Swift.UInt8]
+  public func getRotationBytes(direction: PivoProSDK.XYAxisDirection, horizontalAngle: Swift.Int, verticalAngle: Swift.Int) -> [Swift.UInt8]
+  public func getSupportedSpeed() -> [Swift.Int]
+  public func getSuppotedSpeedByRemoteController() -> [Swift.Int]
+  public func setSpeedXFastest()
+  public func setSpeedXBySecondsPerRound(_ seconds: Swift.Int)
+  public func setSpeedYFastest()
+  public func setSpeedYBySecondsPerRound(_ seconds: Swift.Int)
+  @objc deinit
+}
+extension PivoProSDK.PivoXYAxis : PivoProSDK.XYPositionCommandGetter {
+  public func getVerticalPositionBytes() -> [Swift.UInt8]
+  public func gotoVerticalPositionBytes(angle: Swift.Int) -> [Swift.UInt8]
+  public func getHorizontalPositionBytes() -> [Swift.UInt8]
+  public func gotoHorizontalPositionBytes(angle: Swift.Int) -> [Swift.UInt8]
+  public func resetHorizontalZeroPosition() -> [Swift.UInt8]
+}
+public class PivoX : PivoProSDK.PivoXYAxis, PivoProSDK.PivoNewProtocol {
+  public var pivoType: PivoProSDK.PodDeviceType
+  public var firmwareVersion: Swift.Int {
+    get
+  }
+  public init(firmwareVersion: Swift.Int)
+  @objc deinit
+}
+extension PivoProSDK.PivoX : PivoProSDK.SupportOTAUpdate {
+  public func getOTAUpdater(commandSender: @escaping ([Swift.UInt8]) -> ()) -> PivoProSDK.PivoOTAUpdater
+}
+public class PivoMax : PivoProSDK.PivoXAxisNewProtocol, PivoProSDK.PivoNewProtocol {
+  public var pivoType: PivoProSDK.PodDeviceType
+  public var firmwareVersion: Swift.Int {
+    get
+  }
+  public init(firmwareVersion: Swift.Int)
+  @objc deinit
+}
+extension PivoProSDK.PivoMax : PivoProSDK.SupportOTAUpdate {
+  public func getOTAUpdater(commandSender: @escaping ([Swift.UInt8]) -> ()) -> PivoProSDK.PivoOTAUpdater
+}
+public enum PivoDeviceType : Swift.Equatable, Swift.Codable {
+  case pod
+  case mic
+  case light
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: PivoProSDK.PivoDeviceType, b: PivoProSDK.PivoDeviceType) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+public enum PivoType : Swift.Codable, Swift.CaseIterable {
+  public static var allCases: [PivoProSDK.PivoType] {
+    get
+  }
+  case red, silver, black, gold, lite, x, max, pro
+  public var name: Swift.String {
+    get
+  }
+  public func reportName() -> Swift.String
+  public var getProductName: Swift.String {
+    get
+  }
+  public var supportsFrenzy: Swift.Bool {
+    get
+  }
+  public var supportsSlower: Swift.Bool {
+    get
+  }
+  public func image() -> UIKit.UIImage?
+  public static func == (a: PivoProSDK.PivoType, b: PivoProSDK.PivoType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public typealias AllCases = [PivoProSDK.PivoType]
+  public func encode(to encoder: Swift.Encoder) throws
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: Swift.Decoder) throws
+}
+public class PivoCommand {
+  public init(command: PivoProSDK.PodResponse, value: [Swift.UInt8], valueByteIndexes: Swift.Set<Swift.Int> = [])
+  @objc deinit
+}
+public enum PodDeviceType : Swift.Equatable {
+  case V0, V1, V2, V3, V4, red, silver, black, gold, lite, x, max, pro
+  public func hash(into hasher: inout Swift.Hasher)
+  public static func == (a: PivoProSDK.PodDeviceType, b: PivoProSDK.PodDeviceType) -> Swift.Bool
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum Speed {
+  case SLOW
+  case NORMAL
+  case FASTER
+  case FASTEST
+  case SPEED_1
+  case SPEED_2
+  case SPEED_3
+  case SPEED_4
+  case SPEED_5
+  case SPEED_6
+  case SPEED_7
+  case SPEED_8
+  case SPEED_9
+  case SPEED_10
+  case SPEED_11
+  case CUSTOM(secondsPerRound: Swift.Int)
+}
+public enum Sound {
+  case SWITCH_ON
+  case SWITCH_OFF
+  case SUCCESS
+  case DISCONNECTED
+  case OTHER_1
+  case OTHER_2
+  public static func == (a: PivoProSDK.Sound, b: PivoProSDK.Sound) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum PivoAngle {
+  case DEGREE_1
+  case DEGREE_4
+  public static func == (a: PivoProSDK.PivoAngle, b: PivoProSDK.PivoAngle) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum Mode {
+  case NORMAL
+  case HYBRID_VIDEO
+  case TIMELAPSE
+  public static func == (a: PivoProSDK.Mode, b: PivoProSDK.Mode) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum Direction {
+  case right
+  case left
+  case up
+  case down
+  case upRight
+  case upLeft
+  case downRight
+  case downLeft
+  public func toXAxisDirection() -> PivoProSDK.XAxisDirection?
+  public static func == (a: PivoProSDK.Direction, b: PivoProSDK.Direction) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum XAxisDirection {
+  case right
+  case left
+  public static func == (a: PivoProSDK.XAxisDirection, b: PivoProSDK.XAxisDirection) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public typealias XYAxisDirection = PivoProSDK.Direction
+public protocol PivoCommandGetter {
+  func getConnectionCheckCmd() -> [Swift.UInt8]
+  func getBatteryLevelCmd() -> [Swift.UInt8]
+  func getBluetoothMacAddressCmd() -> [Swift.UInt8]
+  func getSerialNumber() -> [Swift.UInt8]
+  func getChangeNameCmd(_ name: Swift.String) -> [Swift.UInt8]
+  func startNotifierBytes() -> [Swift.UInt8]
+  func stopNotifierBytes() -> [Swift.UInt8]
+  func getStopBytes() -> [Swift.UInt8]
+}
+public struct BrightLevel {
+  public let warm: Swift.UInt8
+  public let cool: Swift.UInt8
+  public init(warm: Swift.UInt8, cool: Swift.UInt8)
+}
+@_hasMissingDesignatedInitializers public class PivoCommandGetterImp : PivoProSDK.PivoCommandGetter {
+  final public let header: Swift.UInt8
+  final public let type: Swift.UInt8
+  public func getConnectionCheckCmd() -> [Swift.UInt8]
+  public func getBatteryLevelCmd() -> [Swift.UInt8]
+  public func getBluetoothMacAddressCmd() -> [Swift.UInt8]
+  public func getSerialNumber() -> [Swift.UInt8]
+  public func getChangeNameCmd(_ name: Swift.String) -> [Swift.UInt8]
+  public func startNotifierBytes() -> [Swift.UInt8]
+  public func stopNotifierBytes() -> [Swift.UInt8]
+  public func getStopBytes() -> [Swift.UInt8]
+  public func getToogleOnByPassRemoteControllerBytes() -> [Swift.UInt8]
+  public func getToogleOffByPassRemoteControllerBytes() -> [Swift.UInt8]
+  public func getTimeoutNeverBytes() -> [Swift.UInt8]
+  public func getTimeoutBytes(seconds: Swift.Int) -> [Swift.UInt8]
+  public func getTurnOffCmd() -> [Swift.UInt8]
+  public func getTurnOnCmd(level: PivoProSDK.BrightLevel) -> [Swift.UInt8]
+  public func getSetFlashLevelCmd(level: PivoProSDK.BrightLevel) -> [Swift.UInt8]
+  public func getDimFlashCmd(level: PivoProSDK.BrightLevel) -> [Swift.UInt8]
+  public func getGetCurrentBrightnessLevelCmd() -> [Swift.UInt8]
+  public func getStopPresetCmd() -> [Swift.UInt8]
+  public func getRunPresetCmd(patternType: PivoProSDK.PatternType, interval: PivoProSDK.PresetInterval, level: PivoProSDK.BrightLevel) -> [Swift.UInt8]
+  public func getControlLedCmd(_ ledColor: PivoProSDK.MicLedColor) -> [Swift.UInt8]
+  public func getSetNoiseCancellationCmd(_ noiseCancellationState: PivoProSDK.NoiseCancellationState) -> [Swift.UInt8]
+  public func getSetSoundModeCmd(_ soundMode: PivoProSDK.SoundMode) -> [Swift.UInt8]
+  public func getSetMicModeCmd(_ micMode: PivoProSDK.MicMode) -> [Swift.UInt8]
+  public func getSetBypassButtonPress(_ byPassState: PivoProSDK.ByPassState) -> [Swift.UInt8]
+  public func getMicStatusCmd() -> [Swift.UInt8]
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class PivoNewCommandGetterImp : PivoProSDK.PivoCommandGetterImp {
+  override public func getConnectionCheckCmd() -> [Swift.UInt8]
+  override public func getBatteryLevelCmd() -> [Swift.UInt8]
+  override public func getBluetoothMacAddressCmd() -> [Swift.UInt8]
+  override public func getSerialNumber() -> [Swift.UInt8]
+  override public func getChangeNameCmd(_ name: Swift.String) -> [Swift.UInt8]
+  override public func startNotifierBytes() -> [Swift.UInt8]
+  override public func stopNotifierBytes() -> [Swift.UInt8]
+  override public func getStopBytes() -> [Swift.UInt8]
+  override public func getToogleOnByPassRemoteControllerBytes() -> [Swift.UInt8]
+  override public func getToogleOffByPassRemoteControllerBytes() -> [Swift.UInt8]
+  override public func getTimeoutNeverBytes() -> [Swift.UInt8]
+  override public func getTimeoutBytes(seconds: Swift.Int) -> [Swift.UInt8]
+  public func getSetLedsColorBytes(_ color: PivoProSDK.PodLedColor, level: Swift.UInt8) -> [Swift.UInt8]
+  public func getSetLedsPresetBytes(_ preset: PivoProSDK.LedsPresetPattern, level: Swift.UInt8) -> [Swift.UInt8]
+  public func getStopPresetBytes() -> [Swift.UInt8]
+  @objc deinit
+}
+public enum PatternType : Swift.UInt8 {
+  case sineWave
+  case squareWave
+  case blinkWave
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum PresetInterval : Swift.UInt8 {
+  case point1sec
+  case point2sec
+  case point3sec
+  case point4sec
+  case point5sec
+  case point6sec
+  case point7sec
+  case point8sec
+  case point9sec
+  case oneSec
+  case twoSec
+  case threeSec
+  case fourSec
+  case fiveSec
+  case sixSec
+  case sevenSec
+  case eightSec
+  case nineSec
+  case tenSec
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum PodLedColor {
+  case off
+  case cyan
+  case blue
+  case red
+  case green
+  case yellow
+  case purple
+  case orange
+  case white
+  public static func == (a: PivoProSDK.PodLedColor, b: PivoProSDK.PodLedColor) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum LedsPresetPattern : Swift.UInt8 {
+  case a
+  case b
+  case c
+  case d
+  case e
+  case f
+  case g
+  case h
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum MovementCommandType : Swift.UInt8 {
+  case stop
+  case rotateRightSecPerRound
+  case rotateLeftSecPerRound
+  case getHorizontalPosition
+  case goToHorizontalPositionSecPerRound
+  case setHorizontalSpeedSecPerRound
+  case resetHorizontalZeroPosition
+  case rotateRightDegressPerSec
+  case rotateLeftDegreePerSec
+  case goToHorizontalPositionDegreePerSec
+  case setHorizontalSpeedDegreePerSec
+  case moveUpSecPerRound
+  case moveDownSecPerRound
+  case getVericalPosition
+  case gotoVerticalPositionSecPerRound
+  case setVerticalSpeedSecPerRound
+  case moveUpDegreePerSec
+  case moveDownDegreePerSec
+  case gotoVerticalPositionDegreePerSec
+  case setVerticalSpeedDegreePerSec
+  case notifier
+  case rightUpSecPerRound
+  case rightDownSecPerRound
+  case leftUpSecPerRound
+  case leftDownSecPerRound
+  case rightUpDegreePerSec
+  case rightDownDegreePerSec
+  case leftUpDegreePerSec
+  case leftDownDegreePerSec
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum LedCommandType : Swift.UInt8 {
+  case setLedColors
+  case getLedColors
+  case stopPreset
+  case runPreset
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum CommandGroup : Swift.UInt8 {
+  case basic
+  case remoteController
+  case movement
+  case led
+  case info
+  case authentication
+  case otaUpdate
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum BasicCommandType : Swift.UInt8 {
+  case connectionCheck
+  case timeoutOnOff
+  case batteryLevel
+  case makeBeamSound
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum BufferType {
+  case video
+  case audio
+  public static func == (a: PivoProSDK.BufferType, b: PivoProSDK.BufferType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum CameraResolution {
+  case hd, fhd, p4K
+  public static func == (a: PivoProSDK.CameraResolution, b: PivoProSDK.CameraResolution) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum EngineCamera {
+  case front
+  case rear
+  case ultraWide
+  case dual
+  public static func == (a: PivoProSDK.EngineCamera, b: PivoProSDK.EngineCamera) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum RCCommandType : Swift.UInt8 {
+  case bypass
+  case startPairingRC
+  case cancelPairingRC
+  case btnCenter
+  case btnLeft
+  case btnRight
+  case btnUp
+  case btnDown
+  case btnMinus
+  case btnPlus
+  case btnStop
+  case btnAlt
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum MicMode : Swift.UInt8 {
+  case `default`
+  case internalMic
+  case externalMic
+  case off
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum ByPassState : Swift.UInt8 {
+  case off
+  case on
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum EarphoneStatus : Swift.UInt8 {
+  case notPlugged
+  case pluggedWithMic
+  case pluggedWithOutMic
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum MicLedColor : Swift.UInt8 {
+  case off
+  case blinkingWhite
+  case white
+  case blinkingBlue
+  case blue
+  case blinkingRed
+  case red
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum NoiseCancellationState : Swift.UInt8 {
+  case off
+  case on
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum SoundMode : Swift.UInt8 {
+  case normal
+  case bass
+  case smooth
+  case vibrant
+  case voice
+  case treble
+  public init?(rawValue: Swift.UInt8)
+  public typealias RawValue = Swift.UInt8
+  public var rawValue: Swift.UInt8 {
+    get
+  }
+}
+public enum DeviceModel : Swift.Int, Swift.CaseIterable {
+  public static let cameraDevices_fhd_hd: [PivoProSDK.DeviceModel]
+  public static let cameraDevices_4k_hd: [PivoProSDK.DeviceModel]
+  case none
+  case iPhone4
+  case iPhone4s
+  case iPhone5
+  case iPhone5c
+  case iPhone5s
+  case iPhone6
+  case iPhone6Plus
+  case iPhone6s
+  case iPhone6sPlus
+  case iPhone7
+  case iPhone7Plus
+  case iPhoneSE
+  case iPhone8
+  case iPhone8Plus
+  case iPhoneX
+  case iPhoneXS
+  case iPhoneXSMax
+  case iPhoneXR
+  case iPhone11
+  case iPhone11Pro
+  case iPhone11ProMax
+  case iPhoneSE2
+  case iPhone12
+  case iPhone12mini
+  case iPhone12Pro
+  case iPhone12ProMax
+  case iPhone13mini
+  case iPhone13
+  case iPhone13Pro
+  case iPhone13ProMax
+  case simulator
+  public var modelName: Swift.String {
+    get
+  }
+  public init(identifier: Swift.String)
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [PivoProSDK.DeviceModel]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [PivoProSDK.DeviceModel] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol ConnectionDelegate : AnyObject {
+  func pivoConnectLog(_ log: Swift.String)
+  func pivoConnection(bluetoothIsOn: Swift.Bool)
+  func pivoConnectionBluetoothPermissionDenied()
+  func pivoConnectionBluetoothPermissionResponded(allowed: Swift.Bool)
+  func pivoConnection(didDiscover device: PivoProSDK.BluetoothDevice)
+  func pivoConnection(didFailToConnect device: PivoProSDK.BluetoothDevice)
+  func pivoConnection(didEstablishSuccessfully device: PivoProSDK.BluetoothDevice)
+  func pivoConnection(didDisconnect device: PivoProSDK.BluetoothDevice)
+  func pivoBatteryUpdate(device: PivoProSDK.BluetoothDevice)
+}
+extension PivoProSDK.ConnectionDelegate {
+  public func pivoConnectLog(_ log: Swift.String)
+  public func pivoConnection(bluetoothIsOn: Swift.Bool)
+  public func pivoConnectionBluetoothPermissionDenied()
+  public func pivoConnectionBluetoothPermissionResponded(allowed: Swift.Bool)
+  public func pivoConnection(didDiscover device: PivoProSDK.BluetoothDevice)
+  public func pivoConnection(didFailToConnect device: PivoProSDK.BluetoothDevice)
+  public func pivoConnection(didEstablishSuccessfully device: PivoProSDK.BluetoothDevice)
+  public func pivoConnection(didDisconnect device: PivoProSDK.BluetoothDevice)
+  public func pivoBatteryUpdate(device: PivoProSDK.BluetoothDevice)
+}
+public protocol PodConnectionDelegate : PivoProSDK.ConnectionDelegate {
+  func pivoConnectionDidRotate()
+  func pivoConnectionDidStop()
+  func pivoConnection(remoteControlerCommandReceived command: PivoProSDK.PodResponse)
+  func pivoConnection(otaUpdateProgress percentage: Swift.Int)
+  func pivoConnectionStartOTAUpdateFailed()
+  func pivoConnectionOTAUpdateSuccessfully()
+  func pivoConnectionOTAUpdateFailed()
+}
+extension PivoProSDK.PodConnectionDelegate {
+  public func pivoConnectionDidRotate()
+  public func pivoConnectionDidStop()
+  public func pivoConnection(remoteControlerCommandReceived command: PivoProSDK.PodResponse)
+  public func pivoConnection(otaUpdateProgress percentage: Swift.Int)
+  public func pivoConnectionStartOTAUpdateFailed()
+  public func pivoConnectionOTAUpdateSuccessfully()
+  public func pivoConnectionOTAUpdateFailed()
+}
+public protocol GradientPalette {
+  var from: UIKit.UIColor { get }
+  var to: UIKit.UIColor { get }
+}
+public struct GradientColor : PivoProSDK.GradientPalette {
+  public let from: UIKit.UIColor
+  public let to: UIKit.UIColor
+  @available(iOS 13.0, *)
+  public init(from: Swift.String, to: Swift.String)
+  public init(from: UIKit.UIColor, to: UIKit.UIColor)
+}
+public struct TriGradientColor : PivoProSDK.GradientPalette {
+  public let from: UIKit.UIColor
+  public let middle: UIKit.UIColor
+  public let to: UIKit.UIColor
+  @available(iOS 13.0, *)
+  public init(from: Swift.String, middle: Swift.String, to: Swift.String)
+  @available(iOS 13.0, *)
+  public init(from: UIKit.UIColor, middle: UIKit.UIColor, to: UIKit.UIColor)
+}
+extension UIKit.UIColor {
+  @available(iOS 13.0, *)
+  convenience public init(hexString: Swift.String, alpha: CoreFoundation.CGFloat = 1.0)
+  convenience public init(red: Swift.Int, green: Swift.Int, blue: Swift.Int, alpha: CoreFoundation.CGFloat)
+  public var inverted: UIKit.UIColor {
+    get
+  }
+}
+extension UIKit.UIColor {
+  public struct Gradient {
+    public static var red: PivoProSDK.GradientColor
+    public static var yellow: PivoProSDK.GradientColor
+    public static var blue: PivoProSDK.GradientColor
+    public static var purple: PivoProSDK.GradientColor
+    public static var green: PivoProSDK.GradientColor
+    public static var grey: PivoProSDK.GradientColor
+    public static var redVariation: PivoProSDK.GradientColor
+    public static var yellowVariation: PivoProSDK.GradientColor
+    public static var blueVariation: PivoProSDK.GradientColor
+    public static var purpleVariation: PivoProSDK.GradientColor
+    public static var greenVariation: PivoProSDK.GradientColor
+    public static var greyVariation: PivoProSDK.GradientColor
+    public static var redPurpleVaridation: PivoProSDK.GradientColor
+    public static var redOrangePurpleVaridation: PivoProSDK.TriGradientColor
+  }
+  public enum type {
+    case plain(UIKit.UIColor)
+    case gradient(PivoProSDK.GradientPalette)
+  }
+}
+public struct ColorLevel {
+  public var original: UIKit.UIColor
+  public var light1: UIKit.UIColor
+  public var light2: UIKit.UIColor
+  public var light3: UIKit.UIColor
+  public var light4: UIKit.UIColor
+  public var light5: UIKit.UIColor
+  public var light6: UIKit.UIColor
+  public var dark1: UIKit.UIColor
+  public var dark2: UIKit.UIColor
+  public var dark3: UIKit.UIColor
+  public var dark4: UIKit.UIColor
+  public var dark5: UIKit.UIColor
+  public init(original: UIKit.UIColor, light1: UIKit.UIColor, light2: UIKit.UIColor, light3: UIKit.UIColor, light4: UIKit.UIColor, light5: UIKit.UIColor, light6: UIKit.UIColor, dark1: UIKit.UIColor, dark2: UIKit.UIColor, dark3: UIKit.UIColor, dark4: UIKit.UIColor, dark5: UIKit.UIColor)
+}
+extension UIKit.UIColor {
+  public struct Pivo {
+    public static var white: UIKit.UIColor
+    public static var white20: UIKit.UIColor
+    public static var white30: UIKit.UIColor
+    public static var black: UIKit.UIColor
+    public static var black50: UIKit.UIColor
+    public static var charcoal: UIKit.UIColor
+    public static var dividerBackground: UIKit.UIColor
+    public static var exposureSliderBackground: UIKit.UIColor
+    public static var red: PivoProSDK.ColorLevel
+    public static var yellow: PivoProSDK.ColorLevel
+    public static var orange: UIKit.UIColor
+    public static var blue: PivoProSDK.ColorLevel
+    public static var purple: PivoProSDK.ColorLevel
+    public static var green: PivoProSDK.ColorLevel
+    public static var gray: PivoProSDK.ColorLevel
+    public static let grayLight7: UIKit.UIColor
+    public static let grayLight8: UIKit.UIColor
+    public static let grayLight9: UIKit.UIColor
+  }
+}
+public protocol LightConnectionDelegate : PivoProSDK.ConnectionDelegate {
+  func lightDeviceNameChanged(_ name: Swift.String)
+  func lightOn(warm: Swift.UInt8, cool: Swift.UInt8)
+  func lightOff()
+  func lightFlash(warm: Swift.UInt8, cool: Swift.UInt8)
+  func lightDimSmoothly(warm: Swift.UInt8, cool: Swift.UInt8)
+  func lightCurrentBrightnessLevel(warm: Swift.UInt8, cool: Swift.UInt8)
+  func lightPresetStopRunning()
+  func lightRunPreset(type: PivoProSDK.PatternType, interval: PivoProSDK.PresetInterval, warm: Swift.UInt8, cool: Swift.UInt8)
+}
+extension PivoProSDK.LightConnectionDelegate {
+  public func lightDeviceNameChanged(_ name: Swift.String)
+  public func lightOn(warm: Swift.UInt8, cool: Swift.UInt8)
+  public func lightOff()
+  public func lightFlash(warm: Swift.UInt8, cool: Swift.UInt8)
+  public func lightDimSmoothly(warm: Swift.UInt8, cool: Swift.UInt8)
+  public func lightCurrentBrightnessLevel(warm: Swift.UInt8, cool: Swift.UInt8)
+  public func lightPresetStopRunning()
+  public func lightRunPreset(type: PivoProSDK.PatternType, interval: PivoProSDK.PresetInterval, warm: Swift.UInt8, cool: Swift.UInt8)
+}
+public protocol MicConnectionDelegate : PivoProSDK.ConnectionDelegate {
+  func micLedColorChanged(_ color: PivoProSDK.MicLedColor)
+  func micNoiseCancellationChanged(_ state: PivoProSDK.NoiseCancellationState)
+  func micSoundModeChanged(_ soundMode: PivoProSDK.SoundMode)
+  func micModeChanged(_ micMode: PivoProSDK.MicMode)
+  func micByPassChanged(_ state: PivoProSDK.ByPassState)
+  func micDeviceNameChanged(_ name: Swift.String)
+  func micStatusChanged(ledColor: PivoProSDK.MicLedColor, noiseCancellation: PivoProSDK.NoiseCancellationState, soundMode: PivoProSDK.SoundMode, micMode: PivoProSDK.MicMode, byPass: PivoProSDK.ByPassState, earphoneStatus: PivoProSDK.EarphoneStatus)
+  func micMainButtonEvent(_ state: PivoProSDK.ButtonState)
+  func micPlusButtonEvent(_ state: PivoProSDK.ButtonState)
+  func micMinusButtonEvent(_ state: PivoProSDK.ButtonState)
+  func micDeviceStatusChanged(_ status: PivoProSDK.DeviceStatus)
+  func micEarphoneStatusChanged(_ status: PivoProSDK.EarphoneStatus)
+}
+extension PivoProSDK.MicConnectionDelegate {
+  public func micLedColorChanged(_ color: PivoProSDK.MicLedColor)
+  public func micNoiseCancellationChanged(_ state: PivoProSDK.NoiseCancellationState)
+  public func micSoundModeChanged(_ soundMode: PivoProSDK.SoundMode)
+  public func micModeChanged(_ micMode: PivoProSDK.MicMode)
+  public func micByPassChanged(_ state: PivoProSDK.ByPassState)
+  public func micDeviceNameChanged(_ name: Swift.String)
+  public func micStatusChanged(ledColor: PivoProSDK.MicLedColor, noiseCancellation: PivoProSDK.NoiseCancellationState, soundMode: PivoProSDK.SoundMode, micMode: PivoProSDK.MicMode, byPass: PivoProSDK.ByPassState, earphoneStatus: PivoProSDK.EarphoneStatus)
+  public func micMainButtonEvent(_ state: PivoProSDK.ButtonState)
+  public func micPlusButtonEvent(_ state: PivoProSDK.ButtonState)
+  public func micMinusButtonEvent(_ state: PivoProSDK.ButtonState)
+  public func micDeviceStatusChanged(_ status: PivoProSDK.DeviceStatus)
+  public func micEarphoneStatusChanged(_ status: PivoProSDK.EarphoneStatus)
+}
+public protocol PivoConnection {
+  func scan() throws
+  func stopScan()
+  func connect(device: PivoProSDK.BluetoothDevice)
+  func disconnect()
+  func isPivoConnected() -> Swift.Bool
+  func addDelegate(_ delegate: PivoProSDK.ConnectionDelegate)
+  func removeDelegate(_ delegate: PivoProSDK.ConnectionDelegate)
+  func requestBatteryLevel()
+  func changePivoName(name: Swift.String)
+}
+public protocol PodConnection : PivoProSDK.PivoConnection {
+  func getSupportedSpeedsInSecondsPerRound() -> [Swift.Int]
+  func getSupportedSpeedsByRemoteController() -> [Swift.Int]
+  func keepPivoWakeUp(_ wakeUp: Swift.Bool)
+  func getPivoVersion() -> Swift.String
+  func getPivoPodFirmwareVersion() -> Swift.Int
+  func getPivoType() -> PivoProSDK.PivoType?
+  func is2AxisPivo() -> Swift.Bool?
+  func getLatestConnectedPivoID() -> Swift.String?
+  func startRotatingNotifier()
+  func stopRotatingNotifier()
+  func toogleOnByPassRemoteControllerSignal()
+  func toogleOffBypassRemoteControllerSignal()
+  func setPivoTimeout(_ timeout: PivoProSDK.Timeout)
+  func setLedsColor(_ color: PivoProSDK.PodLedColor, level: Swift.UInt8)
+  func setLedsPreset(_ preset: PivoProSDK.LedsPresetPattern, level: Swift.UInt8)
+  func stopLedsPreset()
+  func isSupportOTAUpdate() -> Swift.Bool
+  func startOTAUpdate(firmwareFileURL: Foundation.URL) throws
+}
+public enum Timeout {
+  case never
+  case seconds(Swift.Int)
+}
+public protocol LightConnection : PivoProSDK.PivoConnection {
+  func turnLightOff()
+  func turnLightOn(level: PivoProSDK.BrightLevel)
+  func setFlash(level: PivoProSDK.BrightLevel)
+  func setLightDim(to level: PivoProSDK.BrightLevel)
+  func getCurrentBrightnessLevel()
+  func turnOffLightPreset()
+  func setLightPreset(pattern: PivoProSDK.PatternType, interval: PivoProSDK.PresetInterval, level: PivoProSDK.BrightLevel)
+  func getLatestConnectedPivoLight() -> PivoProSDK.BluetoothDevice?
+}
+public protocol MicConnection : PivoProSDK.PivoConnection {
+  func setLedColor(_ color: PivoProSDK.MicLedColor)
+  func setNoiseCancellation(_ state: PivoProSDK.NoiseCancellationState)
+  func setSoundMode(_ mode: PivoProSDK.SoundMode)
+  func setMicMode(_ mode: PivoProSDK.MicMode)
+  func setByPass(_ state: PivoProSDK.ByPassState)
+  func requestMicStatus()
+  func getLatestConnectedPivoMic() -> PivoProSDK.BluetoothDevice?
+}
+public enum PivoConnectionStatus {
+  case notConnected
+  case connecting
+  case connected
+  public static func == (a: PivoProSDK.PivoConnectionStatus, b: PivoProSDK.PivoConnectionStatus) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class PivoBluetoothConnection : ObjectiveC.NSObject {
+  public var delegates: [PivoProSDK.AnyPivoConnectionDelegate]
+  public var pivo: PivoProSDK.Pivo?
+  public var latestConnectedDevice: PivoProSDK.BluetoothDevice?
+  public var connectedDevice: PivoProSDK.BluetoothDevice? {
+    get
+    set
+  }
+  public var bConnection: PivoProSDK.BluetoothConnectionManager?
+  public var pivoBeforeCommend: Foundation.Data?
+  public var sendCommandGetter: PivoProSDK.PivoCommandGetterImp
+  @objc override dynamic public init()
+  public func addDelegate(_ delegate: PivoProSDK.ConnectionDelegate)
+  public func removeDelegate(_ delegate: PivoProSDK.ConnectionDelegate)
+  public func notifyFailToConnect(device: PivoProSDK.BluetoothDevice)
+  public func resetPivoWhenDisconnected()
+  @objc deinit
+}
+extension PivoProSDK.PivoBluetoothConnection : PivoProSDK.PivoConnection {
+  public func scan() throws
+  public func stopScan()
+  public func connect(device: PivoProSDK.BluetoothDevice)
+  public func disconnect()
+  public func isPivoConnected() -> Swift.Bool
+  public func requestBatteryLevel()
+  public func changePivoName(name: Swift.String)
+  public func writeToPivo(_ data: [Swift.UInt8])
+}
+extension PivoProSDK.PivoBluetoothConnection {
+  public func didUpdateState(_ state: PivoProSDK.BluetoothState)
+  public func didDeviceFound(_ device: PivoProSDK.BluetoothDevice)
+  public func didConnectionFailed(_ device: PivoProSDK.BluetoothDevice)
+  public func didConnectionEstablished(device: PivoProSDK.BluetoothDevice)
+  public func accessRespondedFirstTime(allowed: Swift.Bool)
+  public func disconnected()
+  public func didReceiveValue(_ data: Foundation.Data)
+}
+public class AnyPivoConnectionDelegate {
+  public init(_ delegate: PivoProSDK.PodConnectionDelegate)
+  public init(_ delegate: PivoProSDK.LightConnectionDelegate)
+  public init(_ delegate: PivoProSDK.MicConnectionDelegate)
+  public init(_ delegate: PivoProSDK.ConnectionDelegate)
+  @objc deinit
+}
+public enum OTAUpdateError : Swift.Error {
+  case notValidFirmwareFile
+  case pivoNotConnected
+  public static func == (a: PivoProSDK.OTAUpdateError, b: PivoProSDK.OTAUpdateError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc public class PodBluetoothConnection : PivoProSDK.PivoBluetoothConnection, PivoProSDK.PodConnection, PivoProSDK.PivoControllerForDeviceConnection {
+  public init(bluetoothConnectionManager: PivoProSDK.BluetoothConnectionManager, delayExecutor: PivoProSDK.DelayExecutor = DispatchQueue.global(qos: .userInitiated), pivoFactory: PivoProSDK.PivoFactory? = nil, keepAliveTimer: PivoProSDK.KeepAliveTimer? = nil)
+  public func tryConnect(device: PivoProSDK.BluetoothDevice)
+  public func keepPivoWakeUp(_ wakeUp: Swift.Bool)
+  public func getPivoVersion() -> Swift.String
+  public func getPivoPodFirmwareVersion() -> Swift.Int
+  public func getPivoType() -> PivoProSDK.PivoType?
+  public func getLatestConnectedPivoID() -> Swift.String?
+  public func is2AxisPivo() -> Swift.Bool?
+  @objc deinit
+}
+extension PivoProSDK.PodBluetoothConnection : PivoProSDK.PivoOTAUpdaterDelegate {
+  public func isSupportOTAUpdate() -> Swift.Bool
+  public func startOTAUpdate(firmwareFileURL: Foundation.URL) throws
+  public func otaUpdaterChangeToOTAModeSuccessfully()
+  public func otaUpdaterChangeToOTAModeFailed()
+  public func otaUpdaterOTAUpdateFailed()
+  public func otaUpdaterOTAUpdateSuccessfully()
+  public func otaUpdateProgress(_ percentage: Swift.Int)
+}
+extension PivoProSDK.PodBluetoothConnection {
+  public func turnRight(angle: Swift.Int)
+  public func turnLeft(angle: Swift.Int)
+  public func turnRightContinuously()
+  public func turnLeftContinuously()
+  public func turnHold()
+  public func turnLeftWithFeedback(angle: Swift.Int) throws
+  public func turnRightWithFeedback(angle: Swift.Int) throws
+  public func setXSpeedBySecondsPerRound(_ seconds: Swift.Int)
+  public func setYSpeedBySecondsPerRound(_ seconds: Swift.Int)
+  public func turn(direction: PivoProSDK.Direction, xAngle: Swift.Int, yAngle: Swift.Int)
+  public func stopRotating(isForce: Swift.Bool)
+  public func setFastestSpeed()
+  public func getSupportedSpeedsInSecondsPerRound() -> [Swift.Int]
+  public func getSupportedSpeedsByRemoteController() -> [Swift.Int]
+  public func setSpeedBySecondsPerRound(_ seconds: Swift.Int)
+  public func toogleOnByPassRemoteControllerSignal()
+  public func toogleOffBypassRemoteControllerSignal()
+  public func startRotatingNotifier()
+  public func stopRotatingNotifier()
+  public func setPivoTimeout(_ timeout: PivoProSDK.Timeout)
+  public func setLedsColor(_ color: PivoProSDK.PodLedColor, level: Swift.UInt8)
+  public func setLedsPreset(_ preset: PivoProSDK.LedsPresetPattern, level: Swift.UInt8)
+  public func stopLedsPreset()
+}
+extension PivoProSDK.PodBluetoothConnection {
+  public func ChangeConnectionStatus(_ status: PivoProSDK.PivoConnectionStatus)
+}
+extension PivoProSDK.PodBluetoothConnection : PivoProSDK.PivoFactoryDelegate {
+  public func pivoFactory(didPivoCreated pivo: PivoProSDK.Pivo)
+  public func pivoFactoryNotPivoDevice()
+  public func pivoFactory(commandNeedToSend bytes: [Swift.UInt8])
+}
+extension Foundation.Data {
+  public func toUInt8Array() -> [Swift.UInt8]
+}
+extension PivoProSDK.PodBluetoothConnection {
+  public func getScannableDevices() -> [PivoProSDK.ScannableDevice]
+  public func handleReceivedData(_ vals: [Swift.UInt8], _ device: PivoProSDK.BluetoothDevice)
+  public func bluetoothDidConnection(serviceUUID: Swift.String, device: PivoProSDK.BluetoothDevice)
+}
+extension PivoProSDK.PodBluetoothConnection : PivoProSDK.BluetoothConnectionManagerDelegate {
+  public func bluetoothConnectionDidUpdateState(_ state: PivoProSDK.BluetoothState)
+  public func bluetoothConnectionDidConnectionFailed(_ device: PivoProSDK.BluetoothDevice)
+  public func bluetoothConnectionDidDeviceFound(_ device: PivoProSDK.BluetoothDevice)
+  public func bluetoothConnectionDidConnectionEstablished(serviceUUID: Swift.String, device: PivoProSDK.BluetoothDevice)
+  public func bluetoothAccessRespondedFirstTime(allowed: Swift.Bool)
+  public func bluetoothConnectionDisconnected(_ device: PivoProSDK.BluetoothDevice?)
+  public func bluetoothConnectionDidReceiveValue(_ data: Foundation.Data)
+}
+@objc public class LightBluetoothConnection : PivoProSDK.PivoBluetoothConnection, PivoProSDK.LightConnection {
+  public init(_ bConnectionManager: PivoProSDK.BluetoothConnectionManager)
+  public func turnLightOff()
+  public func turnLightOn(level: PivoProSDK.BrightLevel)
+  public func setFlash(level: PivoProSDK.BrightLevel)
+  public func setLightDim(to level: PivoProSDK.BrightLevel)
+  public func getCurrentBrightnessLevel()
+  public func getLatestConnectedPivoLight() -> PivoProSDK.BluetoothDevice?
+  public func turnOffLightPreset()
+  public func setLightPreset(pattern: PivoProSDK.PatternType, interval: PivoProSDK.PresetInterval, level: PivoProSDK.BrightLevel)
+  @objc deinit
+}
+extension PivoProSDK.LightBluetoothConnection : PivoProSDK.BluetoothConnectionManagerDelegate {
+  public func bluetoothConnectionDidUpdateState(_ state: PivoProSDK.BluetoothState)
+  public func bluetoothConnectionDidDeviceFound(_ device: PivoProSDK.BluetoothDevice)
+  public func bluetoothConnectionDidConnectionFailed(_ device: PivoProSDK.BluetoothDevice)
+  public func bluetoothConnectionDidConnectionEstablished(serviceUUID: Swift.String, device: PivoProSDK.BluetoothDevice)
+  public func bluetoothAccessRespondedFirstTime(allowed: Swift.Bool)
+  public func bluetoothConnectionDisconnected(_ device: PivoProSDK.BluetoothDevice?)
+  public func bluetoothConnectionDidReceiveValue(_ data: Foundation.Data)
+}
+extension PivoProSDK.LightBluetoothConnection {
+  public func getScannableDevices() -> [PivoProSDK.ScannableDevice]
+  public func tryConnect(device: PivoProSDK.BluetoothDevice)
+}
+@objc public class MicBluetoothConnection : PivoProSDK.PivoBluetoothConnection, PivoProSDK.MicConnection {
+  public init(_ bConnectionManager: PivoProSDK.BluetoothConnectionManager)
+  public func setLedColor(_ color: PivoProSDK.MicLedColor)
+  public func setNoiseCancellation(_ state: PivoProSDK.NoiseCancellationState)
+  public func setSoundMode(_ mode: PivoProSDK.SoundMode)
+  public func setMicMode(_ mode: PivoProSDK.MicMode)
+  public func setByPass(_ state: PivoProSDK.ByPassState)
+  public func requestMicStatus()
+  public func getLatestConnectedPivoMic() -> PivoProSDK.BluetoothDevice?
+  @objc deinit
+}
+extension PivoProSDK.MicBluetoothConnection : PivoProSDK.BluetoothConnectionManagerDelegate {
+  public func bluetoothConnectionDidUpdateState(_ state: PivoProSDK.BluetoothState)
+  public func bluetoothConnectionDidDeviceFound(_ device: PivoProSDK.BluetoothDevice)
+  public func bluetoothConnectionDidConnectionFailed(_ device: PivoProSDK.BluetoothDevice)
+  public func bluetoothConnectionDidConnectionEstablished(serviceUUID: Swift.String, device: PivoProSDK.BluetoothDevice)
+  public func bluetoothAccessRespondedFirstTime(allowed: Swift.Bool)
+  public func bluetoothConnectionDisconnected(_ device: PivoProSDK.BluetoothDevice?)
+  public func bluetoothConnectionDidReceiveValue(_ data: Foundation.Data)
+}
+extension PivoProSDK.MicBluetoothConnection {
+  public func getScannableDevices() -> [PivoProSDK.ScannableDevice]
+  public func tryConnect(device: PivoProSDK.BluetoothDevice)
+}
+public protocol PivoOTAUpdaterDelegate : AnyObject {
+  func otaUpdaterChangeToOTAModeSuccessfully()
+  func otaUpdaterChangeToOTAModeFailed()
+  func otaUpdaterOTAUpdateFailed()
+  func otaUpdaterOTAUpdateSuccessfully()
+  func otaUpdateProgress(_ percentage: Swift.Int)
+}
+public enum PivoOTAUpdaterError : Swift.Error {
+  case notInOTAMode
+  public static func == (a: PivoProSDK.PivoOTAUpdaterError, b: PivoProSDK.PivoOTAUpdaterError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol PivoOTAUpdater {
+  var delegate: PivoProSDK.PivoOTAUpdaterDelegate? { get set }
+  func initiateOTAUpdate()
+  func handleResponse(_ data: [Swift.UInt8])
+  func startOTAUpdate(firmwareData: [Swift.UInt8]) throws
+}
+public class Pivo2DOTAUpdater : PivoProSDK.PivoOTAUpdater {
+  public var delegate: PivoProSDK.PivoOTAUpdaterDelegate?
+  public enum Status {
+    case prepare
+    case otaUpdateReady
+    public static func == (a: PivoProSDK.Pivo2DOTAUpdater.Status, b: PivoProSDK.Pivo2DOTAUpdater.Status) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(maxPayloadSize: Swift.Int = 64, commandSender: @escaping ([Swift.UInt8]) -> ())
+  public func initiateOTAUpdate()
+  public func handleResponse(_ data: [Swift.UInt8])
+  public func startOTAUpdate(firmwareData: [Swift.UInt8]) throws
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class WeakObject<T> where T : AnyObject {
+  @objc deinit
+}
+extension PivoProSDK.WeakObject : PivoProSDK.PivoOTAUpdaterDelegate where T : PivoProSDK.PivoOTAUpdaterDelegate {
+  public func otaUpdaterChangeToOTAModeSuccessfully()
+  public func otaUpdaterChangeToOTAModeFailed()
+  public func otaUpdaterOTAUpdateFailed()
+  public func otaUpdaterOTAUpdateSuccessfully()
+  public func otaUpdateProgress(_ percentage: Swift.Int)
+}
+public protocol CRC8Maker {
+  func makeCRC8(data: Foundation.Data) -> Swift.UInt8
+}
+public struct CRC8MakerImp : PivoProSDK.CRC8Maker {
+  public init()
+  public func makeCRC8(data: Foundation.Data) -> Swift.UInt8
+}
+public class PivoAuth {
+  public init(gAuthKey: Swift.Int32, gAuthIV: Swift.Int32)
+  public func getInquiry() -> Swift.Int32
+  public func calculateAnswer(_ input: Swift.Int32) -> Swift.Int32
+  public func verifyAnswer(input: Swift.Int32, answer: Swift.Int32) -> Swift.Bool
+  @objc deinit
+}
+public class Pivo2DHandshakeHandler : PivoProSDK.HandshakeHandler {
+  public var delegate: PivoProSDK.HandshakeResultDelegate?
+  public var didHandShakeSuccessfully: Swift.Bool
+  public init(pivoFirmwareVersion: Swift.Int)
+  public func startHandshakeProcess()
+  public func handleHandshakeData(_ data: [Swift.UInt8])
+  @objc deinit
+}
+public class Pivo1DHandshakeHandler : PivoProSDK.HandshakeHandler {
+  public var delegate: PivoProSDK.HandshakeResultDelegate?
+  public var didHandShakeSuccessfully: Swift.Bool
+  public init(pivoFirmwareVersion: Swift.Int)
+  public func startHandshakeProcess()
+  public func handleHandshakeData(_ data: [Swift.UInt8])
+  @objc deinit
+}
+public struct PivoHandshakeHandlerFactory {
+  public static func make(pivoVersion: Swift.Int, firmwareVersion: Swift.Int) -> PivoProSDK.HandshakeHandler
+}
+public protocol KeepAliveTimer {
+  func start()
+  func stop()
+}
+public class KeepAliveTimerImp : PivoProSDK.KeepAliveTimer {
+  public typealias Action = () -> ()
+  public init(actionToKeepAlive: @escaping PivoProSDK.KeepAliveTimerImp.Action, actionInterval: Swift.Double = 30)
+  public func start()
+  public func stop()
+  @objc deinit
+}
+public class PivoConnectionManager : PivoProSDK.PivoConnection {
+  public var pivoConnection: PivoProSDK.PivoConnection
+  public init(_ pivoConnection: PivoProSDK.PivoConnection)
+  public func addDelegate(_ delegate: PivoProSDK.ConnectionDelegate)
+  public func removeDelegate(_ delegate: PivoProSDK.ConnectionDelegate)
+  public func scan() throws
+  public func stopScan()
+  public func connect(device: PivoProSDK.BluetoothDevice)
+  public func disconnect()
+  public func isPivoConnected() -> Swift.Bool
+  public func requestBatteryLevel()
+  public func changePivoName(name: Swift.String)
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class PivoPodConnectionManager : PivoProSDK.PivoConnectionManager, PivoProSDK.PodConnection {
+  public static var shared: PivoProSDK.PivoPodConnectionManager
+  override public func isPivoConnected() -> Swift.Bool
+  public func setFastestSpeed()
+  public func getSupportedSpeedsInSecondsPerRound() -> [Swift.Int]
+  public func setSpeedBySecondsPerRound(_ speed: Swift.Int)
+  public func getPivoPodFirmwareVersion() -> Swift.Int
+  public func getSupportedSpeedsByRemoteController() -> [Swift.Int]
+  public func isSupportOTAUpdate() -> Swift.Bool
+  public func startOTAUpdate(firmwareFileURL: Foundation.URL) throws
+  public func turnRight(angle: Swift.Int)
+  public func turnRight(angle: Swift.Int, speed: Swift.Int)
+  public func turnLeft(angle: Swift.Int)
+  public func turnLeft(angle: Swift.Int, speed: Swift.Int)
+  public func turnRightContinuously()
+  public func turnRightContinuously(speed: Swift.Int)
+  public func turnLeftContinuously()
+  public func turnLeftContinuously(speed: Swift.Int)
+  public func turn(direction: PivoProSDK.Direction, xSpeed: Swift.Int, ySpeed: Swift.Int, xAngle: Swift.Int, yAngle: Swift.Int)
+  public func stop()
+  public func stop(isForce: Swift.Bool)
+  public func turnHold()
+  public func turnLeftWithFeedback(angle: Swift.Int, speed: Swift.Int) throws
+  public func turnRightWithFeedback(angle: Swift.Int, speed: Swift.Int) throws
+  public func forceTurnLeft(angle: Swift.Int, speed: Swift.Int)
+  public func forceTurnRight(angle: Swift.Int, speed: Swift.Int)
+  public func keepPivoWakeUp(_ wakeUp: Swift.Bool)
+  public func getPivoVersion() -> Swift.String
+  public func getPivoType() -> PivoProSDK.PivoType?
+  public func is2AxisPivo() -> Swift.Bool?
+  public func getLatestConnectedPivoID() -> Swift.String?
+  public func startRotatingNotifier()
+  public func stopRotatingNotifier()
+  public func toogleOnByPassRemoteControllerSignal()
+  public func toogleOffBypassRemoteControllerSignal()
+  public func setPivoTimeout(_ timeout: PivoProSDK.Timeout)
+  public func setLedsColor(_ color: PivoProSDK.PodLedColor, level: Swift.UInt8)
+  public func setLedsPreset(_ preset: PivoProSDK.LedsPresetPattern, level: Swift.UInt8)
+  public func stopLedsPreset()
+  override public init(_ pivoConnection: PivoProSDK.PivoConnection)
+  @objc deinit
+}
+extension PivoProSDK.PivoPodConnectionManager : PivoProSDK.PivoRCConnection {
+  public func scanRemoteController() throws
+  public func stopScanRemoteController()
+  public func connectRemoteController(id: Swift.String) -> Swift.Bool
+  public func disconnectRemoteController()
+  public func addRemoteControllerDelegate(_ delegate: PivoProSDK.PivoRCConnectionDelegate)
+  public func removeRemoteControllerDelegate(_ delegate: PivoProSDK.PivoRCConnectionDelegate)
+  public func isRemoteControllerSupportOTAUpdate() -> Swift.Bool
+  public func startRemoteControllerOTAUpdate(firmwareFileURL: Foundation.URL) throws
+}
+public class PivoLightConnectionManager : PivoProSDK.PivoConnectionManager, PivoProSDK.LightConnection {
+  public init()
+  public func turnLightOff()
+  public func turnLightOn(level: PivoProSDK.BrightLevel)
+  public func setFlash(level: PivoProSDK.BrightLevel)
+  public func setLightDim(to level: PivoProSDK.BrightLevel)
+  public func getCurrentBrightnessLevel()
+  public func getLatestConnectedPivoLight() -> PivoProSDK.BluetoothDevice?
+  public func turnOffLightPreset()
+  public func setLightPreset(pattern: PivoProSDK.PatternType, interval: PivoProSDK.PresetInterval, level: PivoProSDK.BrightLevel)
+  @objc deinit
+}
+public class PivoMicConnectionManager : PivoProSDK.PivoConnectionManager, PivoProSDK.MicConnection {
+  public init()
+  public func setLedColor(_ color: PivoProSDK.MicLedColor)
+  public func setNoiseCancellation(_ state: PivoProSDK.NoiseCancellationState)
+  public func setSoundMode(_ mode: PivoProSDK.SoundMode)
+  public func setMicMode(_ mode: PivoProSDK.MicMode)
+  public func setByPass(_ state: PivoProSDK.ByPassState)
+  public func requestMicStatus()
+  public func getLatestConnectedPivoMic() -> PivoProSDK.BluetoothDevice?
+  @objc deinit
+}
+public protocol PivoFactoryDelegate : AnyObject {
+  func pivoFactory(didPivoCreated pivo: PivoProSDK.Pivo)
+  func pivoFactoryNotPivoDevice()
+  func pivoFactory(commandNeedToSend bytes: [Swift.UInt8])
+}
+public protocol PivoFactory {
+  var delegate: PivoProSDK.PivoFactoryDelegate? { get set }
+  func makePivo(version: Swift.Int, firmware: Swift.Int)
+  func handleHandshakeData(_ data: [Swift.UInt8])
+}
+@_hasMissingDesignatedInitializers public class PivoFactoryImp : PivoProSDK.PivoFactory {
+  weak public var delegate: PivoProSDK.PivoFactoryDelegate?
+  public func makePivo(version: Swift.Int, firmware: Swift.Int)
+  public func handleHandshakeData(_ data: [Swift.UInt8])
+  @objc deinit
+}
+extension PivoProSDK.PivoFactoryImp : PivoProSDK.HandshakeResultDelegate {
+  public func handshake(commandNeedToSend bytes: [Swift.UInt8])
+  public func handshake(processResult isSucess: Swift.Bool)
+}
+public protocol PivoControllerForDeviceConnection {
+  func setFastestSpeed()
+  func setSpeedBySecondsPerRound(_ seconds: Swift.Int)
+  func turnRight(angle: Swift.Int)
+  func turnLeft(angle: Swift.Int)
+  func turnRightContinuously()
+  func turnLeftContinuously()
+  func stopRotating(isForce: Swift.Bool)
+  func setXSpeedBySecondsPerRound(_ seconds: Swift.Int)
+  func setYSpeedBySecondsPerRound(_ seconds: Swift.Int)
+  func turn(direction: PivoProSDK.Direction, xAngle: Swift.Int, yAngle: Swift.Int)
+  func turnHold()
+  func turnLeftWithFeedback(angle: Swift.Int) throws
+  func turnRightWithFeedback(angle: Swift.Int) throws
+}
+public protocol ForceableControl {
+  func forceTurnLeft(angle: Swift.Int)
+  func forceTurnRight(angle: Swift.Int)
+}
+public class ThrottlePivoController : PivoProSDK.PivoControllerForDeviceConnection, PivoProSDK.ForceableControl {
+  public typealias DateGetter = () -> (Foundation.Date)
+  public init(pivoController: PivoProSDK.PivoControllerForDeviceConnection, maximumNumberOfCommandInASecond: Swift.UInt = 20, currentDateGetter: @escaping PivoProSDK.ThrottlePivoController.DateGetter = Date.init)
+  public func setFastestSpeed()
+  public func setSpeedBySecondsPerRound(_ seconds: Swift.Int)
+  public func setXSpeedBySecondsPerRound(_ seconds: Swift.Int)
+  public func setYSpeedBySecondsPerRound(_ seconds: Swift.Int)
+  public func turn(direction: PivoProSDK.Direction, xAngle: Swift.Int, yAngle: Swift.Int)
+  public func turnRight(angle: Swift.Int)
+  public func turnLeft(angle: Swift.Int)
+  public func forceTurnLeft(angle: Swift.Int)
+  public func forceTurnRight(angle: Swift.Int)
+  public func turnRightContinuously()
+  public func turnLeftContinuously()
+  public func stopRotating(isForce: Swift.Bool)
+  public func turnHold()
+  public func turnLeftWithFeedback(angle: Swift.Int) throws
+  public func turnRightWithFeedback(angle: Swift.Int) throws
+  @objc deinit
+}
+extension ObjectiveC.NSObject {
+  public var className: Swift.String {
+    get
+  }
+}
+public protocol PivoEventLogger {
+  func addEvent(_ event: Swift.String)
+}
+public enum PivoLogLevel : Swift.Int {
+  case Debug
+  case Release
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public class VoidPivoEventLogger : PivoProSDK.PivoEventLogger {
+  public init(_ superclass: Any? = nil)
+  public func addEvent(_ event: Swift.String)
+  @objc deinit
+}
+public struct Common {
+  public static func convertUInt32ToUInt8Array(number: Swift.Int32) -> [Swift.UInt8]
+  public static func convertUInt8ArrayToUInt32(number: [Swift.UInt8]) -> Swift.Int32
+}
+public protocol PivoRCConnection {
+  func scanRemoteController() throws
+  func stopScanRemoteController()
+  func connectRemoteController(id: Swift.String) -> Swift.Bool
+  func disconnectRemoteController()
+  func addRemoteControllerDelegate(_ delegate: PivoProSDK.PivoRCConnectionDelegate)
+  func removeRemoteControllerDelegate(_ delegate: PivoProSDK.PivoRCConnectionDelegate)
+  func isRemoteControllerSupportOTAUpdate() -> Swift.Bool
+  func startRemoteControllerOTAUpdate(firmwareFileURL: Foundation.URL) throws
+}
+public enum TrackingType {
+  case object
+  case human
+  case horse
+  public static func == (a: PivoProSDK.TrackingType, b: PivoProSDK.TrackingType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public protocol PivoRCConnectionDelegate : AnyObject {
+  func pivoRCConnection(bluetoothIsOn: Swift.Bool)
+  func pivoRCConnectionBluetoothPermissionDenied()
+  func pivoRCConnection(didDiscover id: Swift.String, deviceName: Swift.String)
+  func pivoRCConnection(didFailToConnect id: Swift.String)
+  func pivoRCConnection(didDisconnect id: Swift.String, deviceName: Swift.String)
+  func pivoRCConnectionBluetoothPermissionResponded(allowed: Swift.Bool)
+  func pivoRCConnection(didEstablishSuccessfully id: Swift.String)
+  func pivoRCConnection(otaUpdateProgress percentage: Swift.Int)
+  func pivoRCConnectionStartOTAUpdateFailed()
+  func pivoRCConnectionOTAUpdateSuccessfully()
+  func pivoRCConnectionOTAUpdateFailed()
+}
+extension PivoProSDK.PivoRCConnectionDelegate {
+  public func pivoRCConnection(bluetoothIsOn: Swift.Bool)
+  public func pivoRCConnectionBluetoothPermissionDenied()
+  public func pivoRCConnection(didDiscover id: Swift.String, deviceName: Swift.String)
+  public func pivoRCConnection(didFailToConnect id: Swift.String)
+  public func pivoRCConnectionBluetoothPermissionResponded(allowed: Swift.Bool)
+  public func pivoRCConnection(otaUpdateProgress percentage: Swift.Int)
+  public func pivoRCConnectionFailedToStartOTAUpdate()
+  public func pivoRCConnectionOTAUpdateSuccessfully()
+  public func pivoRCConnectionOTAUpdateFailed()
+}
+public class AnyPivoRCConnectionDelegate : PivoProSDK.PivoRCConnectionDelegate {
+  public init(_ delegate: PivoProSDK.PivoRCConnectionDelegate)
+  public func pivoRCConnection(bluetoothIsOn: Swift.Bool)
+  public func pivoRCConnectionBluetoothPermissionDenied()
+  public func pivoRCConnection(didDiscover id: Swift.String, deviceName: Swift.String)
+  public func pivoRCConnection(didFailToConnect id: Swift.String)
+  public func pivoRCConnection(didDisconnect id: Swift.String, deviceName: Swift.String)
+  public func pivoRCConnectionBluetoothPermissionResponded(allowed: Swift.Bool)
+  public func pivoRCConnection(didEstablishSuccessfully id: Swift.String)
+  public func pivoRCConnection(otaUpdateProgress percentage: Swift.Int)
+  public func pivoRCConnectionStartOTAUpdateFailed()
+  public func pivoRCConnectionOTAUpdateSuccessfully()
+  public func pivoRCConnectionOTAUpdateFailed()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PivoXRC : PivoProSDK.RemoteController, PivoProSDK.SupportOTAUpdate {
+  public func getOTAUpdater(commandSender: @escaping ([Swift.UInt8]) -> ()) -> PivoProSDK.PivoOTAUpdater
+  @objc deinit
+}
+public protocol RemoteController {
+}
+@objc public class PivoRCBluetoothConnection : ObjectiveC.NSObject, PivoProSDK.PivoRCConnection {
+  public enum PivoConnectionStatus {
+    case notConnected
+    case connecting
+    case connected
+    public static func == (a: PivoProSDK.PivoRCBluetoothConnection.PivoConnectionStatus, b: PivoProSDK.PivoRCBluetoothConnection.PivoConnectionStatus) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public static let shared: PivoProSDK.PivoRCBluetoothConnection
+  public var logger: PivoProSDK.PivoEventLogger {
+    get
+    set
+  }
+  public init(bluetoothConnectionManager: PivoProSDK.BluetoothConnectionManager, delayExecutor: PivoProSDK.DelayExecutor = DispatchQueue.global(qos: .userInitiated))
+  public func addRemoteControllerDelegate(_ delegate: PivoProSDK.PivoRCConnectionDelegate)
+  public func removeRemoteControllerDelegate(_ delegate: PivoProSDK.PivoRCConnectionDelegate)
+  public func scanRemoteController() throws
+  public func stopScanRemoteController()
+  public func connectRemoteController(id: Swift.String) -> Swift.Bool
+  public func disconnectRemoteController()
+  @objc deinit
+}
+extension PivoProSDK.PivoRCBluetoothConnection : PivoProSDK.PivoOTAUpdaterDelegate {
+  public func isRemoteControllerSupportOTAUpdate() -> Swift.Bool
+  public func startRemoteControllerOTAUpdate(firmwareFileURL: Foundation.URL) throws
+  public func otaUpdaterChangeToOTAModeSuccessfully()
+  public func otaUpdaterChangeToOTAModeFailed()
+  public func otaUpdaterOTAUpdateFailed()
+  public func otaUpdaterOTAUpdateSuccessfully()
+  public func otaUpdateProgress(_ percentage: Swift.Int)
+}
+extension PivoProSDK.PivoRCBluetoothConnection : PivoProSDK.BluetoothConnectionManagerDelegate {
+  public func bluetoothConnectionDisconnected(_ device: PivoProSDK.BluetoothDevice?)
+  public func bluetoothConnectionDidReceiveValue(_ data: Foundation.Data)
+  public func bluetoothConnectionDidUpdateState(_ state: PivoProSDK.BluetoothState)
+  public func bluetoothConnectionDidDeviceFound(_ device: PivoProSDK.BluetoothDevice)
+  public func bluetoothConnectionDidConnectionFailed(_ device: PivoProSDK.BluetoothDevice)
+  public func bluetoothConnectionDidConnectionEstablished(serviceUUID: Swift.String, device: PivoProSDK.BluetoothDevice)
+  public func bluetoothAccessRespondedFirstTime(allowed: Swift.Bool)
+}
+extension PivoProSDK.TrackingSensitivity : Swift.Equatable {}
+extension PivoProSDK.TrackingSensitivity : Swift.Hashable {}
+extension PivoProSDK.TrackingSpeed : Swift.Equatable {}
+extension PivoProSDK.TrackingSpeed : Swift.Hashable {}
+extension PivoProSDK.TrackingTarget.Auto : Swift.Equatable {}
+extension PivoProSDK.TrackingTarget.Auto : Swift.Hashable {}
+extension PivoProSDK.TrackingTarget.PreSelectTarget : Swift.Equatable {}
+extension PivoProSDK.TrackingTarget.PreSelectTarget : Swift.Hashable {}
+extension PivoProSDK.CameraSide : Swift.Equatable {}
+extension PivoProSDK.CameraSide : Swift.Hashable {}
+extension PivoProSDK.TrackingPosition : Swift.Equatable {}
+extension PivoProSDK.TrackingPosition : Swift.Hashable {}
+extension PivoProSDK.TrackingPosition : Swift.RawRepresentable {}
+extension PivoProSDK.TrackingMode : Swift.Equatable {}
+extension PivoProSDK.TrackingMode : Swift.Hashable {}
+extension PivoProSDK.PivoError : Swift.Equatable {}
+extension PivoProSDK.PivoError : Swift.Hashable {}
+extension PivoProSDK.Orientation : Swift.Equatable {}
+extension PivoProSDK.Orientation : Swift.Hashable {}
+extension PivoProSDK.CaptureSettingMode : Swift.Equatable {}
+extension PivoProSDK.CaptureSettingMode : Swift.Hashable {}
+extension PivoProSDK.VideoOutputFormat : Swift.Equatable {}
+extension PivoProSDK.VideoOutputFormat : Swift.Hashable {}
+extension PivoProSDK.ItemClass : Swift.Equatable {}
+extension PivoProSDK.ItemClass : Swift.Hashable {}
+extension PivoProSDK.ProtocolType : Swift.Equatable {}
+extension PivoProSDK.ProtocolType : Swift.Hashable {}
+extension PivoProSDK.AuthenticationType : Swift.Equatable {}
+extension PivoProSDK.AuthenticationType : Swift.Hashable {}
+extension PivoProSDK.Accessibility : Swift.Equatable {}
+extension PivoProSDK.Accessibility : Swift.Hashable {}
+extension PivoProSDK.AuthenticationUI : Swift.Equatable {}
+extension PivoProSDK.AuthenticationUI : Swift.Hashable {}
+extension PivoProSDK.Status : Swift.Equatable {}
+extension PivoProSDK.Status : Swift.Hashable {}
+extension PivoProSDK.UUIDTypes : Swift.Equatable {}
+extension PivoProSDK.UUIDTypes : Swift.Hashable {}
+extension PivoProSDK.BluetoothState : Swift.Equatable {}
+extension PivoProSDK.BluetoothState : Swift.Hashable {}
+extension PivoProSDK.BluetoothError : Swift.Equatable {}
+extension PivoProSDK.BluetoothError : Swift.Hashable {}
+extension PivoProSDK.RCButton : Swift.Equatable {}
+extension PivoProSDK.RCButton : Swift.Hashable {}
+extension PivoProSDK.ButtonState : Swift.Equatable {}
+extension PivoProSDK.ButtonState : Swift.Hashable {}
+extension PivoProSDK.ButtonState : Swift.RawRepresentable {}
+extension PivoProSDK.DeviceStatus : Swift.Equatable {}
+extension PivoProSDK.DeviceStatus : Swift.Hashable {}
+extension PivoProSDK.DeviceStatus : Swift.RawRepresentable {}
+extension PivoProSDK.PivoDeviceType : Swift.Hashable {}
+extension PivoProSDK.PivoType : Swift.Equatable {}
+extension PivoProSDK.PivoType : Swift.Hashable {}
+extension PivoProSDK.PodDeviceType : Swift.Hashable {}
+extension PivoProSDK.Sound : Swift.Equatable {}
+extension PivoProSDK.Sound : Swift.Hashable {}
+extension PivoProSDK.PivoAngle : Swift.Equatable {}
+extension PivoProSDK.PivoAngle : Swift.Hashable {}
+extension PivoProSDK.Mode : Swift.Equatable {}
+extension PivoProSDK.Mode : Swift.Hashable {}
+extension PivoProSDK.Direction : Swift.Equatable {}
+extension PivoProSDK.Direction : Swift.Hashable {}
+extension PivoProSDK.XAxisDirection : Swift.Equatable {}
+extension PivoProSDK.XAxisDirection : Swift.Hashable {}
+extension PivoProSDK.PatternType : Swift.Equatable {}
+extension PivoProSDK.PatternType : Swift.Hashable {}
+extension PivoProSDK.PatternType : Swift.RawRepresentable {}
+extension PivoProSDK.PresetInterval : Swift.Equatable {}
+extension PivoProSDK.PresetInterval : Swift.Hashable {}
+extension PivoProSDK.PresetInterval : Swift.RawRepresentable {}
+extension PivoProSDK.PodLedColor : Swift.Equatable {}
+extension PivoProSDK.PodLedColor : Swift.Hashable {}
+extension PivoProSDK.LedsPresetPattern : Swift.Equatable {}
+extension PivoProSDK.LedsPresetPattern : Swift.Hashable {}
+extension PivoProSDK.LedsPresetPattern : Swift.RawRepresentable {}
+extension PivoProSDK.MovementCommandType : Swift.Equatable {}
+extension PivoProSDK.MovementCommandType : Swift.Hashable {}
+extension PivoProSDK.MovementCommandType : Swift.RawRepresentable {}
+extension PivoProSDK.LedCommandType : Swift.Equatable {}
+extension PivoProSDK.LedCommandType : Swift.Hashable {}
+extension PivoProSDK.LedCommandType : Swift.RawRepresentable {}
+extension PivoProSDK.CommandGroup : Swift.Equatable {}
+extension PivoProSDK.CommandGroup : Swift.Hashable {}
+extension PivoProSDK.CommandGroup : Swift.RawRepresentable {}
+extension PivoProSDK.BasicCommandType : Swift.Equatable {}
+extension PivoProSDK.BasicCommandType : Swift.Hashable {}
+extension PivoProSDK.BasicCommandType : Swift.RawRepresentable {}
+extension PivoProSDK.BufferType : Swift.Equatable {}
+extension PivoProSDK.BufferType : Swift.Hashable {}
+extension PivoProSDK.CameraResolution : Swift.Equatable {}
+extension PivoProSDK.CameraResolution : Swift.Hashable {}
+extension PivoProSDK.EngineCamera : Swift.Equatable {}
+extension PivoProSDK.EngineCamera : Swift.Hashable {}
+extension PivoProSDK.RCCommandType : Swift.Equatable {}
+extension PivoProSDK.RCCommandType : Swift.Hashable {}
+extension PivoProSDK.RCCommandType : Swift.RawRepresentable {}
+extension PivoProSDK.MicMode : Swift.Equatable {}
+extension PivoProSDK.MicMode : Swift.Hashable {}
+extension PivoProSDK.MicMode : Swift.RawRepresentable {}
+extension PivoProSDK.ByPassState : Swift.Equatable {}
+extension PivoProSDK.ByPassState : Swift.Hashable {}
+extension PivoProSDK.ByPassState : Swift.RawRepresentable {}
+extension PivoProSDK.EarphoneStatus : Swift.Equatable {}
+extension PivoProSDK.EarphoneStatus : Swift.Hashable {}
+extension PivoProSDK.EarphoneStatus : Swift.RawRepresentable {}
+extension PivoProSDK.MicLedColor : Swift.Equatable {}
+extension PivoProSDK.MicLedColor : Swift.Hashable {}
+extension PivoProSDK.MicLedColor : Swift.RawRepresentable {}
+extension PivoProSDK.NoiseCancellationState : Swift.Equatable {}
+extension PivoProSDK.NoiseCancellationState : Swift.Hashable {}
+extension PivoProSDK.NoiseCancellationState : Swift.RawRepresentable {}
+extension PivoProSDK.SoundMode : Swift.Equatable {}
+extension PivoProSDK.SoundMode : Swift.Hashable {}
+extension PivoProSDK.SoundMode : Swift.RawRepresentable {}
+extension PivoProSDK.DeviceModel : Swift.Equatable {}
+extension PivoProSDK.DeviceModel : Swift.Hashable {}
+extension PivoProSDK.DeviceModel : Swift.RawRepresentable {}
+extension PivoProSDK.PivoConnectionStatus : Swift.Equatable {}
+extension PivoProSDK.PivoConnectionStatus : Swift.Hashable {}
+extension PivoProSDK.OTAUpdateError : Swift.Equatable {}
+extension PivoProSDK.OTAUpdateError : Swift.Hashable {}
+extension PivoProSDK.PivoOTAUpdaterError : Swift.Equatable {}
+extension PivoProSDK.PivoOTAUpdaterError : Swift.Hashable {}
+extension PivoProSDK.Pivo2DOTAUpdater.Status : Swift.Equatable {}
+extension PivoProSDK.Pivo2DOTAUpdater.Status : Swift.Hashable {}
+extension PivoProSDK.PivoLogLevel : Swift.Equatable {}
+extension PivoProSDK.PivoLogLevel : Swift.Hashable {}
+extension PivoProSDK.PivoLogLevel : Swift.RawRepresentable {}
+extension PivoProSDK.TrackingType : Swift.Equatable {}
+extension PivoProSDK.TrackingType : Swift.Hashable {}
+extension PivoProSDK.PivoRCBluetoothConnection.PivoConnectionStatus : Swift.Equatable {}
+extension PivoProSDK.PivoRCBluetoothConnection.PivoConnectionStatus : Swift.Hashable {}

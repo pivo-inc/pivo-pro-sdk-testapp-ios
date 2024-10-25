@@ -1,0 +1,22 @@
+PODS:
+  - PivoProSDK (1.0.1)
+
+DEPENDENCIES:
+  - PivoProSDK (from `https://github.com/pivo-inc/pivo-pro-sdk-ios.git`, tag `1.0.1`)
+
+EXTERNAL SOURCES:
+  PivoProSDK:
+    :git: https://github.com/pivo-inc/pivo-pro-sdk-ios.git
+    :tag: 1.0.1
+
+CHECKOUT OPTIONS:
+  PivoProSDK:
+    :git: https://github.com/pivo-inc/pivo-pro-sdk-ios.git
+    :tag: 1.0.1
+
+SPEC CHECKSUMS:
+  PivoProSDK: 348f8df22c7285f4737fe0631d588af659f0d242
+
+PODFILE CHECKSUM: 3e3ca5771f88095003c5501797d92cb578d9dbb6
+
+COCOAPODS: 1.15.2

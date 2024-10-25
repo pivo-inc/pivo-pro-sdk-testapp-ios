@@ -29,18 +29,25 @@
 		36D9EB9D29EE1BE8005E9C51 /* CameraEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D9EB9729EE1BE7005E9C51 /* CameraEngine.swift */; };
 		36D9EB9E29EE1BE8005E9C51 /* TargetSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D9EB9929EE1BE7005E9C51 /* TargetSelectionView.swift */; };
 		36D9EB9F29EE1BE8005E9C51 /* TrackingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36D9EB9A29EE1BE7005E9C51 /* TrackingVC.swift */; };
-		36D9EC0729EF72E8005E9C51 /* PivoProSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 36D9EC0529EF72B4005E9C51 /* PivoProSDK.framework */; };
-		36D9EC0829EF72E8005E9C51 /* PivoProSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 36D9EC0529EF72B4005E9C51 /* PivoProSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4FAC2F2F9580890CCDE21DC8 /* Pods_PivoProSDKTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09454CA21447ACD5BAF559E6 /* Pods_PivoProSDKTestApp.framework */; };
+		AC9A27CD2CCB5B03002FC31F /* MBProgressHUD.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9A27CA2CCB5B02002FC31F /* MBProgressHUD.framework */; };
+		AC9A27CE2CCB5B03002FC31F /* MBProgressHUD.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC9A27CA2CCB5B02002FC31F /* MBProgressHUD.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AC9A27CF2CCB5B03002FC31F /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9A27CB2CCB5B02002FC31F /* RealmSwift.framework */; };
+		AC9A27D02CCB5B03002FC31F /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC9A27CB2CCB5B02002FC31F /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AC9A27D12CCB5B03002FC31F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC9A27CC2CCB5B03002FC31F /* Realm.framework */; };
+		AC9A27D22CCB5B03002FC31F /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC9A27CC2CCB5B03002FC31F /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		36D9EA9A29ECC5B7005E9C51 /* Embed Frameworks */ = {
+		AC9A27D32CCB5B03002FC31F /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				36D9EC0829EF72E8005E9C51 /* PivoProSDK.framework in Embed Frameworks */,
+				AC9A27D22CCB5B03002FC31F /* Realm.framework in Embed Frameworks */,
+				AC9A27D02CCB5B03002FC31F /* RealmSwift.framework in Embed Frameworks */,
+				AC9A27CE2CCB5B03002FC31F /* MBProgressHUD.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -48,6 +55,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		09454CA21447ACD5BAF559E6 /* Pods_PivoProSDKTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PivoProSDKTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1711F0BD2434163700956868 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
 		1711F0D32434168000956868 /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		17402720272A37CF00217B50 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
@@ -66,6 +74,7 @@
 		17DB990E24493B0000D21ECF /* DeviceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceOrientation.swift; sourceTree = "<group>"; };
 		17DB99102449458600D21ECF /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		17FA7547243EF6FC007D1B73 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		1EF7FF66B7F81D9FAA5E78FF /* Pods-PivoProSDKTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PivoProSDKTestApp.debug.xcconfig"; path = "Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		36D9EA7529ECB14E005E9C51 /* licenseKey.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = licenseKey.json; sourceTree = "<group>"; };
 		36D9EB9429EE1BE7005E9C51 /* TrackingViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingViewModel.swift; sourceTree = "<group>"; };
 		36D9EB9529EE1BE7005E9C51 /* TrackingVC.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = TrackingVC.storyboard; sourceTree = "<group>"; };
@@ -73,6 +82,10 @@
 		36D9EB9929EE1BE7005E9C51 /* TargetSelectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TargetSelectionView.swift; sourceTree = "<group>"; };
 		36D9EB9A29EE1BE7005E9C51 /* TrackingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackingVC.swift; sourceTree = "<group>"; };
 		36D9EC0529EF72B4005E9C51 /* PivoProSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PivoProSDK.framework; path = Frameworks/PivoProSDK.framework; sourceTree = "<group>"; };
+		AC9A27CA2CCB5B02002FC31F /* MBProgressHUD.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MBProgressHUD.framework; path = Frameworks/MBProgressHUD.framework; sourceTree = "<group>"; };
+		AC9A27CB2CCB5B02002FC31F /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RealmSwift.framework; path = Frameworks/RealmSwift.framework; sourceTree = "<group>"; };
+		AC9A27CC2CCB5B03002FC31F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Realm.framework; path = Frameworks/Realm.framework; sourceTree = "<group>"; };
+		EEE59F2D16BF903708B9575E /* Pods-PivoProSDKTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PivoProSDKTestApp.release.xcconfig"; path = "Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +94,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				17FA7548243EF6FC007D1B73 /* AssetsLibrary.framework in Frameworks */,
-				36D9EC0729EF72E8005E9C51 /* PivoProSDK.framework in Frameworks */,
+				4FAC2F2F9580890CCDE21DC8 /* Pods_PivoProSDKTestApp.framework in Frameworks */,
+				AC9A27CF2CCB5B03002FC31F /* RealmSwift.framework in Frameworks */,
+				AC9A27CD2CCB5B03002FC31F /* MBProgressHUD.framework in Frameworks */,
+				AC9A27D12CCB5B03002FC31F /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -133,6 +149,7 @@
 				17BDA4DE23FF965000D68E52 /* PivoProSDKTestApp */,
 				17BDA4DD23FF965000D68E52 /* Products */,
 				17BDA4FC23FF96FE00D68E52 /* Frameworks */,
+				BFDE589F7E707CFF511E01D5 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,8 +180,12 @@
 		17BDA4FC23FF96FE00D68E52 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AC9A27CA2CCB5B02002FC31F /* MBProgressHUD.framework */,
+				AC9A27CC2CCB5B03002FC31F /* Realm.framework */,
+				AC9A27CB2CCB5B02002FC31F /* RealmSwift.framework */,
 				36D9EC0529EF72B4005E9C51 /* PivoProSDK.framework */,
 				17FA7547243EF6FC007D1B73 /* AssetsLibrary.framework */,
+				09454CA21447ACD5BAF559E6 /* Pods_PivoProSDKTestApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,6 +260,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		BFDE589F7E707CFF511E01D5 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1EF7FF66B7F81D9FAA5E78FF /* Pods-PivoProSDKTestApp.debug.xcconfig */,
+				EEE59F2D16BF903708B9575E /* Pods-PivoProSDKTestApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,10 +276,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17BDA4F023FF965200D68E52 /* Build configuration list for PBXNativeTarget "PivoProSDKTestApp" */;
 			buildPhases = (
+				8DB10BAAAA88F3FD63CD5A7F /* [CP] Check Pods Manifest.lock */,
 				17BDA4D823FF965000D68E52 /* Sources */,
 				17BDA4D923FF965000D68E52 /* Frameworks */,
 				17BDA4DA23FF965000D68E52 /* Resources */,
-				36D9EA9A29ECC5B7005E9C51 /* Embed Frameworks */,
+				392D3DAE968EFEDB20648BB0 /* [CP] Embed Pods Frameworks */,
+				AC9A27D32CCB5B03002FC31F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,6 +341,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		392D3DAE968EFEDB20648BB0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8DB10BAAAA88F3FD63CD5A7F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PivoProSDKTestApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		17BDA4D823FF965000D68E52 /* Sources */ = {
@@ -462,6 +536,7 @@
 		};
 		17BDA4F123FF965200D68E52 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1EF7FF66B7F81D9FAA5E78FF /* Pods-PivoProSDKTestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -488,6 +563,7 @@
 		};
 		17BDA4F223FF965200D68E52 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EEE59F2D16BF903708B9575E /* Pods-PivoProSDKTestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
