@@ -6,6 +6,14 @@ An iOS application that uses PivoProSDK to connect and control the Pivo Pod.
 
 Please visit [Pivo developer website](https://developer.pivo.app/) and generate the license file to include it into your project. 
 
+## Installation
+
+#### CocoaPods
+In your pod file, add this:
+
+```
+pod 'PivoProSDK', :git => 'https://github.com/pivo-inc/pivo-pro-sdk-ios.git', :tag => '1.0.2'
+```
 ## Usage
 
 In your AppDelegate.swift
@@ -75,6 +83,11 @@ class YourClass: TrackerDelegate {
 If you encounter an issue during setting up the sdk, please contact us at app@3i.ai or open an issue.
 
 ## Changelogs
+
+In version 1.0.2:
+- Support Pivo Max
+- Hide Horse Tracking
+- Add Face Tracking
 
 In version 0.1.0:
 - Fix connection issue with pod version 9
