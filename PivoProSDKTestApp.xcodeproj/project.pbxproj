@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,23 +29,8 @@
 		17DB990F24493B0000D21ECF /* DeviceOrientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DB990E24493B0000D21ECF /* DeviceOrientation.swift */; };
 		17DB99112449458600D21ECF /* UIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17DB99102449458600D21ECF /* UIImageExtension.swift */; };
 		17FA7548243EF6FC007D1B73 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 17FA7547243EF6FC007D1B73 /* AssetsLibrary.framework */; };
-		AC6D1DE52C057599006F4323 /* PivoProSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC6D1DE32C057589006F4323 /* PivoProSDK.framework */; };
-		AC6D1DE62C057599006F4323 /* PivoProSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AC6D1DE32C057589006F4323 /* PivoProSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		748F4F5FF4BD886E08D83947 /* Pods_PivoProSDKTestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4994F000097CC8D50794A0 /* Pods_PivoProSDKTestApp.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		AC6D1DE72C057599006F4323 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				AC6D1DE62C057599006F4323 /* PivoProSDK.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		1711F0BD2434163700956868 /* UIAlertController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extensions.swift"; sourceTree = "<group>"; };
@@ -72,7 +57,10 @@
 		17DB990E24493B0000D21ECF /* DeviceOrientation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DeviceOrientation.swift; sourceTree = "<group>"; };
 		17DB99102449458600D21ECF /* UIImageExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageExtension.swift; sourceTree = "<group>"; };
 		17FA7547243EF6FC007D1B73 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		6D4994F000097CC8D50794A0 /* Pods_PivoProSDKTestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PivoProSDKTestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		85E07BD9E45D2430EAF1C23C /* Pods-PivoProSDKTestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PivoProSDKTestApp.debug.xcconfig"; path = "Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp.debug.xcconfig"; sourceTree = "<group>"; };
 		AC6D1DE32C057589006F4323 /* PivoProSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PivoProSDK.framework; path = Frameworks/PivoProSDK.framework; sourceTree = "<group>"; };
+		D9A56F1C0F69ADA298A607A9 /* Pods-PivoProSDKTestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PivoProSDKTestApp.release.xcconfig"; path = "Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,7 +69,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				17FA7548243EF6FC007D1B73 /* AssetsLibrary.framework in Frameworks */,
-				AC6D1DE52C057599006F4323 /* PivoProSDK.framework in Frameworks */,
+				748F4F5FF4BD886E08D83947 /* Pods_PivoProSDKTestApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -161,6 +149,7 @@
 				17BDA4DE23FF965000D68E52 /* PivoProSDKTestApp */,
 				17BDA4DD23FF965000D68E52 /* Products */,
 				17BDA4FC23FF96FE00D68E52 /* Frameworks */,
+				A4A2D5CD7477292AA9B76A15 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -193,6 +182,7 @@
 			children = (
 				17FA7547243EF6FC007D1B73 /* AssetsLibrary.framework */,
 				AC6D1DE32C057589006F4323 /* PivoProSDK.framework */,
+				6D4994F000097CC8D50794A0 /* Pods_PivoProSDKTestApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -239,6 +229,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		A4A2D5CD7477292AA9B76A15 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				85E07BD9E45D2430EAF1C23C /* Pods-PivoProSDKTestApp.debug.xcconfig */,
+				D9A56F1C0F69ADA298A607A9 /* Pods-PivoProSDKTestApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -246,10 +245,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 17BDA4F023FF965200D68E52 /* Build configuration list for PBXNativeTarget "PivoProSDKTestApp" */;
 			buildPhases = (
+				924FCBB43C5B2C6254AF1CA4 /* [CP] Check Pods Manifest.lock */,
 				17BDA4D823FF965000D68E52 /* Sources */,
 				17BDA4D923FF965000D68E52 /* Frameworks */,
 				17BDA4DA23FF965000D68E52 /* Resources */,
-				AC6D1DE72C057599006F4323 /* Embed Frameworks */,
+				D5D8AA1E03705E35E0D6030D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -309,6 +309,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		924FCBB43C5B2C6254AF1CA4 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PivoProSDKTestApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D5D8AA1E03705E35E0D6030D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PivoProSDKTestApp/Pods-PivoProSDKTestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		17BDA4D823FF965000D68E52 /* Sources */ = {
@@ -462,6 +504,7 @@
 		};
 		17BDA4F123FF965200D68E52 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 85E07BD9E45D2430EAF1C23C /* Pods-PivoProSDKTestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -474,7 +517,7 @@
 				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PivoProSDKTestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,6 +531,7 @@
 		};
 		17BDA4F223FF965200D68E52 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D9A56F1C0F69ADA298A607A9 /* Pods-PivoProSDKTestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -500,7 +544,7 @@
 				);
 				GCC_PREFIX_HEADER = "";
 				INFOPLIST_FILE = PivoProSDKTestApp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
