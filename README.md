@@ -86,7 +86,6 @@ If you encounter an issue during setting up the sdk, please contact us at app@3i
 
 In version 1.0.2:
 - Support Pivo Max
-- Hide Horse Tracking
 - Add Face Tracking
 
 In version 0.1.0:
