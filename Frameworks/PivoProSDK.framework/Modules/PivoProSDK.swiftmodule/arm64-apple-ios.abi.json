@@ -27781,6 +27781,9 @@
                 "moduleName": "PivoProSDK",
                 "static": true,
                 "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -27829,6 +27832,9 @@
                 "moduleName": "PivoProSDK",
                 "static": true,
                 "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -27877,6 +27883,9 @@
                 "moduleName": "PivoProSDK",
                 "static": true,
                 "implicit": true,
+                "declAttributes": [
+                  "Transparent"
+                ],
                 "accessorKind": "get"
               }
             ]
@@ -65137,140 +65146,140 @@
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 1224,
+      "offset": 1620,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 1248,
+      "offset": 1644,
       "length": 3,
       "value": "510"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 1286,
+      "offset": 1682,
       "length": 5,
       "value": "0.055"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 1315,
+      "offset": 1711,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 1349,
+      "offset": 1745,
       "length": 4,
       "value": "0.06"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 2069,
+      "offset": 2511,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 2087,
+      "offset": 2529,
       "length": 3,
       "value": "300"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 2110,
+      "offset": 2552,
       "length": 5,
       "value": "0.055"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 2133,
+      "offset": 2575,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 2152,
+      "offset": 2594,
       "length": 4,
       "value": "0.06"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 2296,
+      "offset": 2784,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 2314,
+      "offset": 2802,
       "length": 3,
       "value": "510"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 2337,
+      "offset": 2825,
       "length": 5,
       "value": "0.055"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 2360,
+      "offset": 2848,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 2379,
+      "offset": 2867,
       "length": 4,
       "value": "0.06"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 2507,
+      "offset": 3041,
       "length": 2,
       "value": "12"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 2525,
+      "offset": 3059,
       "length": 3,
       "value": "510"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 2548,
+      "offset": 3082,
       "length": 5,
       "value": "0.055"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "IntegerLiteral",
-      "offset": 2571,
+      "offset": 3105,
       "length": 2,
       "value": "25"
     },
     {
       "filePath": "\/Users\/3i-a1-2022-059\/Desktop\/PivoBasicProSDK\/SDK\/mobile.ios.sdk.pro\/PivoProSDK\/Easing\/EasingConfig.swift",
       "kind": "FloatLiteral",
-      "offset": 2590,
+      "offset": 3124,
       "length": 4,
       "value": "0.06"
     },
