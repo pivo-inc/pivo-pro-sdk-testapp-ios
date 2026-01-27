@@ -1,7 +1,7 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.9 (swiftlang-5.9.0.128.108 clang-1500.0.40.1)
-// swift-module-flags: -target arm64-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -module-name PivoProSDK
-// swift-module-flags-ignorable: -enable-bare-slash-regex
+// swift-compiler-version: Apple Swift version 6.2.3 effective-5.10 (swiftlang-6.2.3.3.21 clang-1700.6.3.2)
+// swift-module-flags: -target arm64-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name PivoProSDK
+// swift-module-flags-ignorable: -no-verify-emitted-module-interface -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2.3
 import CoreBluetooth
 import CoreML
 import Foundation
@@ -52,6 +52,16 @@ import _SwiftConcurrencyShims
   public func isByPassRemoteControllerSupported() throws -> Swift.Bool
   public func turnOnByPassRemoteController()
   public func turnOffBypassRemoteController()
+  public func isNotifierSupported() throws -> Swift.Bool
+  public func turnOnNotifier()
+  public func turnOffNotifier()
+  public func isEasingSupported() -> Swift.Bool
+  public func turnLeftEasing(angle: Swift.Double, config: PivoProSDK.EasingConfig = .default)
+  public func turnRightEasing(angle: Swift.Double, config: PivoProSDK.EasingConfig = .default)
+  public func finishEasingNow()
+  public var isEasingInProgress: Swift.Bool {
+    get
+  }
   @objc deinit
 }
 public enum TrackingSensitivity {
@@ -70,7 +80,9 @@ public enum TrackingPosition : Swift.Int {
   case left
   case center
   case right
+  #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
+  #endif
   public typealias RawValue = Swift.Int
   public var rawValue: Swift.Int {
     get
@@ -86,9 +98,11 @@ public enum PivoError : Foundation.LocalizedError {
   case trackingModeNotSupported
   case feedbackNotSupported
   case pivoNotConnected
+  #if compiler(>=5.3) && $NonescapableTypes
   public var errorDescription: Swift.String? {
     get
   }
+  #endif
   public static func == (a: PivoProSDK.PivoError, b: PivoProSDK.PivoError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -120,6 +134,8 @@ public protocol PivoConnectionDelegate : AnyObject {
   func pivoConnectionBluetoothPermissionDenied()
   func pivoConnectionByPassRemoteControllerOn()
   func pivoConnectionByPassRemoteControllerOff()
+  func pivoConnectionNotifierOn()
+  func pivoConnectionNotifierOff()
 }
 extension PivoProSDK.PivoConnectionDelegate {
   public func pivoConnection(didDiscover id: Swift.String, deviceName: Swift.String)
@@ -135,6 +151,59 @@ extension PivoProSDK.PivoConnectionDelegate {
   public func pivoConnectionDidRotate1DegreeRight()
   public func pivoConnectionByPassRemoteControllerOn()
   public func pivoConnectionByPassRemoteControllerOff()
+  public func pivoConnectionNotifierOn()
+  public func pivoConnectionNotifierOff()
+}
+public struct EasingConfig {
+  public var easingType: PivoProSDK.EasingType
+  public var startSpeed: Swift.Int
+  public var endSpeed: Swift.Int
+  public var tickInterval: Foundation.TimeInterval
+  public var totalTicks: Swift.Int
+  public var stopDelay: Foundation.TimeInterval
+  public init(easingType: PivoProSDK.EasingType = .cubicEaseIn, startSpeed: Swift.Int = 12, endSpeed: Swift.Int = 510, tickInterval: Foundation.TimeInterval = 0.055, totalTicks: Swift.Int = 20, stopDelay: Foundation.TimeInterval = 0.06)
+  public static let `default`: PivoProSDK.EasingConfig
+  public static let fast: PivoProSDK.EasingConfig
+  public static let slow: PivoProSDK.EasingConfig
+  public static let smooth: PivoProSDK.EasingConfig
+  public static func constantRotationTime(angle: Swift.Double, speed: Swift.Int) -> Foundation.TimeInterval
+  public var easingDuration: Foundation.TimeInterval {
+    get
+  }
+}
+public enum EasingDirection {
+  case left
+  case right
+  public static func == (a: PivoProSDK.EasingDirection, b: PivoProSDK.EasingDirection) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class EasingExecutor {
+  public var isRunning: Swift.Bool {
+    get
+  }
+  @objc deinit
+  public func startWithConstantRotation(angle: Swift.Double, speed: Swift.Int, direction: PivoProSDK.EasingDirection, config: PivoProSDK.EasingConfig)
+  public func finishConstantRotationNow()
+  public func cancel()
+  public func cancelTimerOnly()
+}
+public enum EasingType {
+  case linear
+  case cubicEaseIn
+  case cubicEaseOut
+  case cubicEaseInOut
+  case exponentialEaseIn
+  case exponentialEaseOut
+  case smoothStep
+  public func apply(_ t: Swift.Double) -> Swift.Double
+  public static func == (a: PivoProSDK.EasingType, b: PivoProSDK.EasingType) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
 }
 public struct Target {
   public let boundingBox: CoreFoundation.CGRect
@@ -146,8 +215,14 @@ public protocol TrackerDelegate : AnyObject {
 }
 public enum PivoEvent {
   case MODE
+  case MODE_PRESSED
+  case MODE_RELEASED
   case CAMERA
+  case CENTER_PRESSED
+  case CENTER_RELEASED
   case STOP
+  case STOP_PRESSED
+  case STOP_RELEASED
   case OFF
   case CONNECTION_COMPLETED
   case NAME_CHANGED
@@ -157,8 +232,14 @@ public enum PivoEvent {
   case LEFT_RELEASED
   case RIGHT_PRESSED
   case RIGHT_RELEASED
+  case UP_PRESSED
+  case UP_RELEASED
+  case DOWN_PRESSED
+  case DOWN_RELEASED
   case LEFT_CONTINOUS_PRESSED
+  case LEFT_CONTINOUS_RELEASED
   case RIGHT_CONTINOUS_PRESSED
+  case RIGHT_CONTINOUS_RELEASED
   case SPEEDUP_PRESSED(secondsPerRound: Swift.Int)
   case SPEEDUP_RELEASED(secondsPerRound: Swift.Int)
   case SPEEDDOWN_PRESSED(secondsPerRound: Swift.Int)
@@ -169,6 +250,8 @@ public enum PivoEvent {
   case ROTATED_1DEGREE_RIGHT
   case BYPASS_RC_ON
   case BYPASS_RC_OFF
+  case NOTIFIER_ON
+  case NOTIFIER_OFF
 }
 extension PivoProSDK.PivoEvent : Swift.Equatable {
   public static func == (lhs: PivoProSDK.PivoEvent, rhs: PivoProSDK.PivoEvent) -> Swift.Bool
@@ -207,6 +290,10 @@ extension PivoProSDK.PivoError : Swift.Equatable {}
 extension PivoProSDK.PivoError : Swift.Hashable {}
 extension PivoProSDK.TrackingType : Swift.Equatable {}
 extension PivoProSDK.TrackingType : Swift.Hashable {}
+extension PivoProSDK.EasingDirection : Swift.Equatable {}
+extension PivoProSDK.EasingDirection : Swift.Hashable {}
+extension PivoProSDK.EasingType : Swift.Equatable {}
+extension PivoProSDK.EasingType : Swift.Hashable {}
 extension PivoProSDK.PivoType : Swift.Equatable {}
 extension PivoProSDK.PivoType : Swift.Hashable {}
 extension PivoProSDK.Direction : Swift.Equatable {}

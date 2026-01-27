@@ -1,43 +1,15 @@
 [
   {
-    "shortDescription" : "New class Dogs added",
     "metadataOutputVersion" : "3.0",
-    "outputSchema" : [
-      {
-        "dataType" : "Double",
-        "hasShapeFlexibility" : "1",
-        "isOptional" : "0",
-        "shapeFlexibility" : "0... × 1",
-        "shapeRange" : "[[0, -1], [1, 1]]",
-        "formattedType" : "MultiArray (Double 0 × 1)",
-        "type" : "MultiArray",
-        "shape" : "[0, 1]",
-        "name" : "confidence",
-        "shortDescription" : "Boxes × Class confidence"
-      },
-      {
-        "dataType" : "Double",
-        "hasShapeFlexibility" : "1",
-        "isOptional" : "0",
-        "shapeFlexibility" : "0... × 4",
-        "shapeRange" : "[[0, -1], [4, 4]]",
-        "formattedType" : "MultiArray (Double 0 × 4)",
-        "type" : "MultiArray",
-        "shape" : "[0, 4]",
-        "name" : "coordinates",
-        "shortDescription" : "Boxes × [x, y, width, height] (relative to image size)"
-      }
+    "userDefinedMetadata" : {
+      "confidence_threshold" : "0.4",
+      "classes" : "person",
+      "iou_threshold" : "0.6",
+      "coremltoolsVersion" : "3.4"
+    },
+    "classLabels" : [
+      "person"
     ],
-    "version" : "3i Inc Pivo AI model",
-    "modelParameters" : [
-
-    ],
-    "author" : "Farkhod Khudayberganov & Mikhail Li",
-    "specificationVersion" : 3,
-    "storagePrecision" : "Float32",
-    "license" : "https:\/\/www.3i.ai\/privacy-policy\/",
-    "computePrecision" : "Float16",
-    "isUpdatable" : "0",
     "availability" : {
       "macOS" : "10.14",
       "tvOS" : "12.0",
@@ -45,20 +17,6 @@
       "watchOS" : "5.0",
       "iOS" : "12.0",
       "macCatalyst" : "12.0"
-    },
-    "modelType" : {
-      "name" : "MLModelType_pipeline",
-      "structure" : [
-        {
-          "name" : "MLModelType_neuralNetwork"
-        },
-        {
-          "name" : "MLModelType_neuralNetwork"
-        },
-        {
-          "name" : "MLModelType_nonMaximumSuppression"
-        }
-      ]
     },
     "inputSchema" : [
       {
@@ -88,33 +46,78 @@
         "shortDescription" : "(optional) Confidence Threshold override"
       }
     ],
-    "classLabels" : [
-      "person"
+    "outputSchema" : [
+      {
+        "dataType" : "Double",
+        "hasShapeFlexibility" : "1",
+        "isOptional" : "0",
+        "shapeFlexibility" : "0... × 1",
+        "shapeRange" : "[[0, -1], [1, 1]]",
+        "formattedType" : "MultiArray (Double 0 × 1)",
+        "type" : "MultiArray",
+        "shape" : "[0, 1]",
+        "name" : "confidence",
+        "shortDescription" : "Boxes × Class confidence"
+      },
+      {
+        "dataType" : "Double",
+        "hasShapeFlexibility" : "1",
+        "isOptional" : "0",
+        "shapeFlexibility" : "0... × 4",
+        "shapeRange" : "[[0, -1], [4, 4]]",
+        "formattedType" : "MultiArray (Double 0 × 4)",
+        "type" : "MultiArray",
+        "shape" : "[0, 4]",
+        "name" : "coordinates",
+        "shortDescription" : "Boxes × [x, y, width, height] (relative to image size)"
+      }
     ],
-    "generatedClassName" : "persononly_v2",
-    "userDefinedMetadata" : {
-      "classes" : "person",
-      "confidence_threshold" : "0.4",
-      "iou_threshold" : "0.6",
-      "coremltoolsVersion" : "3.4"
-    },
+    "modelParameters" : [
+
+    ],
+    "storagePrecision" : "Float32",
     "neuralNetworkLayerTypeHistogram" : {
-      "PoolingAverage" : 9,
+      "LoadConstant" : 2,
       "Concat" : 3,
-      "Slice" : 7,
       "UnaryExp" : 1,
-      "Convolution" : 88,
       "UnaryThreshold" : 51,
+      "Convolution" : 88,
+      "Slice" : 7,
       "ActivationSigmoid" : 1,
       "Reshape" : 12,
       "Permute" : 16,
+      "Multiply" : 59,
       "Add" : 34,
       "BatchNorm" : 88,
-      "Multiply" : 59,
       "ActivationLinear" : 102,
       "ActivationReLU" : 65,
-      "LoadConstant" : 2
+      "PoolingAverage" : 9
     },
-    "method" : "predict"
+    "method" : "predict",
+    "version" : "3i Inc Pivo AI model",
+    "isUpdatable" : "0",
+    "specificationVersion" : 3,
+    "stateSchema" : [
+
+    ],
+    "computePrecision" : "Float16",
+    "shortDescription" : "New class Dogs added",
+    "license" : "https:\/\/www.3i.ai\/privacy-policy\/",
+    "generatedClassName" : "persononly_v2",
+    "author" : "Farkhod Khudayberganov & Mikhail Li",
+    "modelType" : {
+      "name" : "MLModelType_pipeline",
+      "structure" : [
+        {
+          "name" : "MLModelType_neuralNetwork"
+        },
+        {
+          "name" : "MLModelType_neuralNetwork"
+        },
+        {
+          "name" : "MLModelType_nonMaximumSuppression"
+        }
+      ]
+    }
   }
 ]
