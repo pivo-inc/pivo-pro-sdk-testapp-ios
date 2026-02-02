@@ -63,16 +63,19 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xwz-8X-3h1">
-                                                                <rect key="frame" x="250" y="0.0" width="132" height="24"/>
+                                                                <rect key="frame" x="242" y="0.0" width="140" height="24"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Easing: " textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Q0-fe-26p">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="61" height="24"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="65" height="24"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="65" id="tOc-SJ-vee"/>
+                                                                        </constraints>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="imR-NT-xv9">
-                                                                        <rect key="frame" x="71" y="0.0" width="63" height="24"/>
+                                                                        <rect key="frame" x="75" y="0.0" width="67" height="24"/>
                                                                         <connections>
                                                                             <action selector="didToggleEasingChanged:" destination="Wx1-xR-Wqw" eventType="valueChanged" id="BA6-n3-Cwx"/>
                                                                         </connections>
@@ -321,7 +324,7 @@
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemRedColor">
-            <color red="1" green="0.2196078431372549" blue="0.23529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
